@@ -26,12 +26,25 @@ public class LoginTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         loginTelajPanel1 = new javax.swing.JPanel();
         usuariojLabel1 = new javax.swing.JLabel();
         nomeUsuariojTextField2 = new javax.swing.JTextField();
         senhajLabel2 = new javax.swing.JLabel();
         entradaSemhajPasswordField1 = new javax.swing.JPasswordField();
         botaoEntrarjButton1 = new javax.swing.JButton();
+        SairLoginjButton1 = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,8 +53,15 @@ public class LoginTela extends javax.swing.JFrame {
         senhajLabel2.setText("Senha");
 
         entradaSemhajPasswordField1.setText("jPasswordField1");
+        entradaSemhajPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaSemhajPasswordField1ActionPerformed(evt);
+            }
+        });
 
         botaoEntrarjButton1.setText("Entrar");
+
+        SairLoginjButton1.setText("Sair");
 
         javax.swing.GroupLayout loginTelajPanel1Layout = new javax.swing.GroupLayout(loginTelajPanel1);
         loginTelajPanel1.setLayout(loginTelajPanel1Layout);
@@ -57,9 +77,11 @@ public class LoginTela extends javax.swing.JFrame {
                             .addComponent(nomeUsuariojTextField2)
                             .addComponent(usuariojLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(loginTelajPanel1Layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addComponent(botaoEntrarjButton1)))
-                .addContainerGap(209, Short.MAX_VALUE))
+                        .addGap(134, 134, 134)
+                        .addComponent(botaoEntrarjButton1)
+                        .addGap(51, 51, 51)
+                        .addComponent(SairLoginjButton1)))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         loginTelajPanel1Layout.setVerticalGroup(
             loginTelajPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,7 +95,9 @@ public class LoginTela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(entradaSemhajPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
-                .addComponent(botaoEntrarjButton1)
+                .addGroup(loginTelajPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoEntrarjButton1)
+                    .addComponent(SairLoginjButton1))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
@@ -84,7 +108,7 @@ public class LoginTela extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(loginTelajPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(379, Short.MAX_VALUE))
+                .addContainerGap(382, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,6 +120,10 @@ public class LoginTela extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void entradaSemhajPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaSemhajPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaSemhajPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,8 +161,10 @@ public class LoginTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton SairLoginjButton1;
     private javax.swing.JButton botaoEntrarjButton1;
     private javax.swing.JPasswordField entradaSemhajPasswordField1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel loginTelajPanel1;
     private javax.swing.JTextField nomeUsuariojTextField2;
     private javax.swing.JLabel senhajLabel2;
