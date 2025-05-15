@@ -1,3 +1,7 @@
-C:\Users\jogar\Documents\GitHub2\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\AdminJFrame.java
-C:\Users\jogar\Documents\GitHub2\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\CadastroUsuarioJFrame.java
-C:\Users\jogar\Documents\GitHub2\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\LoginTela.java
+C:\Users\jogar\Documents\GitHub\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\App.java
+C:\Users\jogar\Documents\GitHub\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\connection\ConnectionFactory.java
+C:\Users\jogar\Documents\GitHub\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\dao\UsuarioDAO.java
+C:\Users\jogar\Documents\GitHub\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\model\Usuario.java
+C:\Users\jogar\Documents\GitHub\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\view\AdminJFrame.java
+C:\Users\jogar\Documents\GitHub\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\view\CadastroUsuarioJFrame.java
+C:\Users\jogar\Documents\GitHub\Sistema-de-Compartilhamento-de-leituras\mavenproject1\src\main\java\com\mycompany\mavenproject1\view\LoginTela.java
