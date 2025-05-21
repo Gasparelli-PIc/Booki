@@ -35,6 +35,8 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
         SalvarLivrojButton1 = new javax.swing.JButton();
         CancelarLivrojButton1 = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(600, 400));
+
         jLabel1.setText("Título do Livro");
 
         AutorjLabel2.setText("Autor");

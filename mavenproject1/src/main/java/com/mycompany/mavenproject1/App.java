@@ -33,7 +33,6 @@ public class App {
          UsuarioJPanel usuario = new UsuarioJPanel();
          VisualizarLivrosJPanel visLivro = new VisualizarLivrosJPanel();
          
-         
          //COLOCAR OS FRAMES DENTRO CARDLAYOUT VARIAS LINHAS 
          container.add(login, "Login");
          container.add(admin, "Admin");

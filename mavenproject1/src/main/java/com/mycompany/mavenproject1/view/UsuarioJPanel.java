@@ -31,7 +31,8 @@ public class UsuarioJPanel extends javax.swing.JPanel {
         CadastrarLivrojButton1 = new javax.swing.JButton();
         VisualizarLivrosjButton1 = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(337, 250));
+        setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
         setRequestFocusEnabled(false);
 
         BemVindojLabel2.setText("Bem Vindo!");

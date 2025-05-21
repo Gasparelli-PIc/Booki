@@ -29,6 +29,8 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         VisualizarLivrosjTable1 = new javax.swing.JTable();
 
+        setMinimumSize(new java.awt.Dimension(600, 400));
+
         VisualizarLivrosjTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},

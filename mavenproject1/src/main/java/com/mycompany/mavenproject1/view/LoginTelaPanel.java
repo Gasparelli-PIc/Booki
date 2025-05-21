@@ -33,7 +33,8 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         LoginjButton1 = new javax.swing.JButton();
         SairLoginjButton1 = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(400, 300));
+        setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
 
         UsuariojLabel1.setText("Usuário");
 

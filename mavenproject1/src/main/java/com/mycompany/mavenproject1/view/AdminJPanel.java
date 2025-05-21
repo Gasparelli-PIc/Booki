@@ -30,6 +30,8 @@ public class AdminJPanel extends javax.swing.JPanel {
         CadastrarUsuariosjButton1 = new javax.swing.JButton();
         VisalizarUsuariojButton2 = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(600, 400));
+
         BemVindojLabel1.setText("Bem Vindo!");
 
         CadastrarUsuariosjButton1.setText("Cadastrar Usuários");
