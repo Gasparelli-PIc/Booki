@@ -8,6 +8,9 @@ public class TipoLivro {
     private int id;
     private String tipo;
     
+    public TipoLivro() {
+    }
+    
     public TipoLivro(int id, String tipo) {
         this.id = id;
         this.tipo = tipo;
