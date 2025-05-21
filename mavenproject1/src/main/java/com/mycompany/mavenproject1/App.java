@@ -1,5 +1,6 @@
 package com.mycompany.mavenproject1;
 
+import com.mycompany.mavenproject1.view.*;
 /**
  *
  * @author Gabriel S.C
@@ -8,14 +9,12 @@ package com.mycompany.mavenproject1;
 import javax.swing.*;
 import java.awt.*;
 
-// IMPORTAR TODOS OS PANES DENTRO DO PECKAGE VIEW
-// PARA COLOCAR DENTRO DO CARDLAYOULT
-
 public class App {
     
     private JFrame frame;
     private JPanel container;
     private CardLayout cardLayout;
+    
     
     public App() {
          frame = new JFrame("Livros");
@@ -26,17 +25,30 @@ public class App {
          cardLayout = new CardLayout();
          container = new JPanel(cardLayout);
          
+         LoginTelaPanel login = new LoginTelaPanel();
+         AdminJPanel admin = new AdminJPanel();
+         CadastroLivroJPanel cadLivro = new CadastroLivroJPanel();
+         CadastroUsuarioLJPanel cadUsuario = new CadastroUsuarioLJPanel();
+         ConsultarUsuariosJPanel consultUsuario = new ConsultarUsuariosJPanel();
+         UsuarioJPanel usuario = new UsuarioJPanel();
+         VisualizarLivrosJPanel visLivro = new VisualizarLivrosJPanel();
+         
          
          //COLOCAR OS FRAMES DENTRO CARDLAYOUT VARIAS LINHAS 
-         container.add(CLASSE, Apelidar o painel dentro do card);
+         container.add(login, "Login");
+         container.add(admin, "Admin");
+         container.add(cadLivro, "CadLivro");
+         container.add(cadUsuario, "CadUsuario");
+         container.add(consultUsuario, "ConsultUsuario");
+         container.add(usuario, "Usuario");
+         container.add(visLivro, "VisLivro");
          
          frame.setContentPane(container);
          
          frame.setVisible(true);
          
-         cardLayout.show(container, COLOCAR O APELIDO DA TELA DE LOGIN);    
+         cardLayout.show(container, "Login");    
     }
-    
     public static void main(String[] args){
         SwingUtilities.invokeLater(() -> new App());
     }

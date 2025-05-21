@@ -26,19 +26,79 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        EntradaTitulojTextField1 = new javax.swing.JTextField();
+        AutorjLabel2 = new javax.swing.JLabel();
+        EntradaAutorjTextField1 = new javax.swing.JTextField();
+        TipoLivrojLabel2 = new javax.swing.JLabel();
+        TipoLivrojComboBox1 = new javax.swing.JComboBox<>();
+        SalvarLivrojButton1 = new javax.swing.JButton();
+        CancelarLivrojButton1 = new javax.swing.JButton();
+
+        jLabel1.setText("Título do Livro");
+
+        AutorjLabel2.setText("Autor");
+
+        TipoLivrojLabel2.setText("Tipo do Livro");
+
+        TipoLivrojComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ciência e Sociedade", "Sustentabilidade", "Tecnologia" }));
+
+        SalvarLivrojButton1.setText("Salvar");
+
+        CancelarLivrojButton1.setText("Cancelar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SalvarLivrojButton1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(EntradaTitulojTextField1)
+                            .addComponent(AutorjLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(EntradaAutorjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TipoLivrojLabel2)
+                        .addComponent(TipoLivrojComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(61, 61, 61)
+                .addComponent(CancelarLivrojButton1)
+                .addContainerGap(318, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(EntradaTitulojTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(AutorjLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(EntradaAutorjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(TipoLivrojLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(TipoLivrojComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SalvarLivrojButton1)
+                    .addComponent(CancelarLivrojButton1))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AutorjLabel2;
+    private javax.swing.JButton CancelarLivrojButton1;
+    private javax.swing.JTextField EntradaAutorjTextField1;
+    private javax.swing.JTextField EntradaTitulojTextField1;
+    private javax.swing.JButton SalvarLivrojButton1;
+    private javax.swing.JComboBox<String> TipoLivrojComboBox1;
+    private javax.swing.JLabel TipoLivrojLabel2;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

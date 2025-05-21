@@ -30,7 +30,7 @@ public class AdminJPanel extends javax.swing.JPanel {
         CadastrarUsuariosjButton1 = new javax.swing.JButton();
         VisalizarUsuariojButton2 = new javax.swing.JButton();
 
-        BemVindojLabel1.setText("Bem Vindo");
+        BemVindojLabel1.setText("Bem Vindo!");
 
         CadastrarUsuariosjButton1.setText("Cadastrar Usuários");
 
@@ -41,24 +41,24 @@ public class AdminJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(BemVindojLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(141, 141, 141)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(CadastrarUsuariosjButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(VisalizarUsuariojButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(331, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(BemVindojLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(BemVindojLabel1)
-                .addGap(82, 82, 82)
+                .addComponent(BemVindojLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
                 .addComponent(CadastrarUsuariosjButton1)
                 .addGap(18, 18, 18)
                 .addComponent(VisalizarUsuariojButton2)
-                .addGap(0, 138, Short.MAX_VALUE))
+                .addGap(0, 238, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

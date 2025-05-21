@@ -39,7 +39,11 @@ public class LoginTelaPanel extends javax.swing.JPanel {
 
         SenhajLabel1.setText("Senha");
 
-        EntradaSenhajPasswordField1.setText("jPasswordField1");
+        EntradaSenhajPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaSenhajPasswordField1ActionPerformed(evt);
+            }
+        });
 
         LoginjButton1.setText("Login");
 
@@ -60,7 +64,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
                     .addComponent(LoginjButton1))
                 .addGap(42, 42, 42)
                 .addComponent(SairLoginjButton1)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(360, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,9 +81,13 @@ public class LoginTelaPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LoginjButton1)
                     .addComponent(SairLoginjButton1))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void EntradaSenhajPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaSenhajPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntradaSenhajPasswordField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
