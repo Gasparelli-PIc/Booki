@@ -145,16 +145,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ci&#xea;ncia e Tecnlogia"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CienciaESociedadejCheckBox1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="SustentabilidadejCheckBox2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sustentabilidade"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SustentabilidadejCheckBox2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="TecnologiajCheckBox3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tecnologia"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TecnologiajCheckBox3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="SalvarUsuariojButton1">
       <Properties>
@@ -168,6 +177,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelarUsuariojButton2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LoginjLabel1">
       <Properties>

@@ -56,6 +56,11 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         });
 
         SairLoginjButton1.setText("Sair");
+        SairLoginjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SairLoginjButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -107,6 +112,10 @@ public class LoginTelaPanel extends javax.swing.JPanel {
             JOptionPane.showConfirmDialog(null, "Usuário ou senha incorreto.");
         }
     }//GEN-LAST:event_LoginjButton1ActionPerformed
+
+    private void SairLoginjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairLoginjButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_SairLoginjButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
