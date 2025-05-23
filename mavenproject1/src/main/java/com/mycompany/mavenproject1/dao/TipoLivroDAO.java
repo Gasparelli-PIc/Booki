@@ -33,7 +33,7 @@ public class TipoLivroDAO {
 	// Buscar todos os tipos de livro
 	public List<TipoLivro> listarTodos() {
 	    List<TipoLivro> lista = new ArrayList<>();
-	    String sql = "SELECT * FROM tipoLivro";
+	    String sql = "SELECT tipoLivro FROM livrosLidos";
 
 	    try (Connection conn = ConnectionFactory.obtemConexao();
 	         PreparedStatement stmt = conn.prepareStatement(sql);
@@ -52,6 +52,7 @@ public class TipoLivroDAO {
 	    return lista;
 	}
 
+	// /*Este comando não da para fazer*/
 	// Buscar TipoLivro por ID
 	public TipoLivro buscarPorId(int id) {
 	    TipoLivro tipo = null;
@@ -78,7 +79,7 @@ public class TipoLivroDAO {
 
 	// Atualizar um TipoLivro
 	public void atualizar(TipoLivro tipoLivro) {
-	    String sql = "UPDATE tipoLivro SET tipo = ? WHERE id = ?";
+	    String sql = "UPDATE livrosLido SET tipoLivro = ? WHERE id = ?";
 
 	    try (Connection conn = ConnectionFactory.obtemConexao();
 	         PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -92,6 +93,7 @@ public class TipoLivroDAO {
 	    }
 	}
 
+	// __________ Este comando não da para fazer também_____________
 	// Deletar TipoLivro por ID
 	public void deletar(int id) {
 	    String sql = "DELETE FROM tipoLivro WHERE id = ?";
