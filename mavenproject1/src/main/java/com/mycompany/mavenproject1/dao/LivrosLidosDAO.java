@@ -17,7 +17,7 @@ public class LivrosLidosDAO {
 
     // Inserir um novo livro lido
     public void inserir(LivrosLidos livro) {
-        String sql = "INSERT INTO livrosLidos (titulo, autor, tipoLivro, idUsers) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO livrosLidos (titulo, autor, idTipo, idUsers) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = ConnectionFactory.obtemConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -48,7 +48,7 @@ public class LivrosLidosDAO {
                         rs.getInt("id"),
                         rs.getString("titulo"),
                         rs.getString("autor"),
-                        rs.getString("tipoLivro"),
+                        rs.getString("idTipo"),
                         rs.getInt("idUsers")
                 );
                 lista.add(livro);
@@ -77,7 +77,7 @@ public class LivrosLidosDAO {
                             rs.getInt("id"),
                             rs.getString("titulo"),
                             rs.getString("autor"),
-                            rs.getString("tipoLivro"),
+                            rs.getString("idTipo"),
                             rs.getInt("idUsers")
                     );
                 }
@@ -92,7 +92,7 @@ public class LivrosLidosDAO {
 
     // Atualizar livro lido
     public void atualizar(LivrosLidos livro) {
-        String sql = "UPDATE livrosLidos SET titulo = ?, autor = ?, tipoLivro = ?, idUsers = ? WHERE id = ?";
+        String sql = "UPDATE livrosLidos SET titulo = ?, autor = ?, idTipo = ? WHERE id = ?";
 
         try (Connection conn = ConnectionFactory.obtemConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
