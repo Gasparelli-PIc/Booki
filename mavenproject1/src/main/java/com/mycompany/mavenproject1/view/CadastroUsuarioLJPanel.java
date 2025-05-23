@@ -4,19 +4,40 @@
  */
 package com.mycompany.mavenproject1.view;
 
+import com.mycompany.mavenproject1.App;
+import javax.swing.*;
 /**
  *
  * @author jogar
  */
 public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form CadastroUsuarioLJPanel
-     */
-    public CadastroUsuarioLJPanel() {
+    private App app;  // ✅ Mantém a referência ao App para controle do CardLayout
+
+    // ✅ Construtor ajustado para receber App
+    public CadastroUsuarioLJPanel(App app) {
+        this.app = app;
         initComponents();
     }
 
+    private boolean validarCampos() {
+        if (EntradaLoginCadjTextField1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo login é obrigatório.");
+        }
+        if (EntradaNomejTextField1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo login é obrigatório.");
+        }
+        if (EntradaIdadejTextField1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo login é obrigatório.");
+        }
+        try {
+            Integer.parseInt(EntradaIdadejTextField1.getText().trim());
+        }catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "O campo idade deve ser um número.");
+            return false;
+        }    
+        
+        return true;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,6 +74,12 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
         IdadejLabel1.setText("Idade");
 
+        EntradaIdadejTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaIdadejTextField1ActionPerformed(evt);
+            }
+        });
+
         TipoUsuariojLabel1.setText("Tipo Usuário");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuário Administrador", "Usuário Comum" }));
@@ -71,10 +98,21 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         TecnologiajCheckBox3.setText("Tecnologia");
 
         SalvarUsuariojButton1.setText("Salvar");
+        SalvarUsuariojButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarUsuariojButton1ActionPerformed(evt);
+            }
+        });
 
         CancelarUsuariojButton2.setText("Cancelar");
 
         LoginjLabel1.setText("Login");
+
+        EntradaLoginCadjTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaLoginCadjTextField1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -150,6 +188,22 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void EntradaLoginCadjTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaLoginCadjTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntradaLoginCadjTextField1ActionPerformed
+
+    private void EntradaIdadejTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaIdadejTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntradaIdadejTextField1ActionPerformed
+
+    private void SalvarUsuariojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarUsuariojButton1ActionPerformed
+       if (validarCampos()) {
+           JOptionPane.showMessageDialog(this, "Usuário salvo com sucesso!");
+           
+           app.getCardLayout().show(app.getContainer(), "ConsultUsuario");
+       }
+    }//GEN-LAST:event_SalvarUsuariojButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

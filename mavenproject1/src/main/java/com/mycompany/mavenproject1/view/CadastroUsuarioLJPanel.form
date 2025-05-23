@@ -111,6 +111,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="EntradaIdadejTextField1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaIdadejTextField1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="TipoUsuariojLabel1">
       <Properties>
@@ -157,6 +160,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalvarUsuariojButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CancelarUsuariojButton2">
       <Properties>
@@ -169,6 +175,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="EntradaLoginCadjTextField1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaLoginCadjTextField1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

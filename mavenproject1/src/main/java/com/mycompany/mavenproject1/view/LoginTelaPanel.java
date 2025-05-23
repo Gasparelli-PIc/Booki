@@ -3,17 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.mavenproject1.view;
-
+import javax.swing.*;
+import com.mycompany.mavenproject1.App;
 /**
  *
  * @author jogar
  */
 public class LoginTelaPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form LoginTelaPanel
-     */
-    public LoginTelaPanel() {
+    private App app;  // ✅ Mantém a referência ao App para controle do CardLayout
+
+    // ✅ Construtor ajustado para receber App
+    public LoginTelaPanel(App app) {
+        this.app = app;
         initComponents();
     }
 
@@ -47,6 +49,11 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         });
 
         LoginjButton1.setText("Login");
+        LoginjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginjButton1ActionPerformed(evt);
+            }
+        });
 
         SairLoginjButton1.setText("Sair");
 
@@ -89,6 +96,17 @@ public class LoginTelaPanel extends javax.swing.JPanel {
     private void EntradaSenhajPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaSenhajPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EntradaSenhajPasswordField1ActionPerformed
+
+    private void LoginjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginjButton1ActionPerformed
+        String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
+        String usuarioDigitado = EntradaUsuariojTextField1.getText();
+        
+        if (usuarioDigitado.equals("Admin") && senhaDigitada.equals("1234")) {
+            app.getCardLayout().show(app.getContainer(), "Admin");
+        } else {
+            JOptionPane.showConfirmDialog(null, "Usuário ou senha incorreto.");
+        }
+    }//GEN-LAST:event_LoginjButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

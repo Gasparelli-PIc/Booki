@@ -3,17 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.mavenproject1.view;
-
+import com.mycompany.mavenproject1.App;
+import javax.swing.*;
 /**
  *
  * @author jogar
  */
 public class AdminJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AdminJPanel
-     */
-    public AdminJPanel() {
+   private App app;  // ✅ Mantém a referência ao App para controle do CardLayout
+
+    // ✅ Construtor ajustado para receber App
+    public AdminJPanel(App app) {
+        this.app = app;
         initComponents();
     }
 
@@ -35,8 +37,18 @@ public class AdminJPanel extends javax.swing.JPanel {
         BemVindojLabel1.setText("Bem Vindo!");
 
         CadastrarUsuariosjButton1.setText("Cadastrar Usuários");
+        CadastrarUsuariosjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarUsuariosjButton1ActionPerformed(evt);
+            }
+        });
 
         VisalizarUsuariojButton2.setText("Visualizar Usuários");
+        VisalizarUsuariojButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VisalizarUsuariojButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -63,6 +75,14 @@ public class AdminJPanel extends javax.swing.JPanel {
                 .addGap(0, 238, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CadastrarUsuariosjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarUsuariosjButton1ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "CadUsuario");
+    }//GEN-LAST:event_CadastrarUsuariosjButton1ActionPerformed
+
+    private void VisalizarUsuariojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisalizarUsuariojButton2ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "CadUsuario");
+    }//GEN-LAST:event_VisalizarUsuariojButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
