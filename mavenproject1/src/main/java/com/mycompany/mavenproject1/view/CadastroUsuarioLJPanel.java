@@ -223,7 +223,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
        if (validarCampos()) {
            JOptionPane.showMessageDialog(this, "Usuário salvo com sucesso!");
            
-           app.getCardLayout().show(app.getContainer(), "ConsultUsuario");
+           app.getCardLayout().show(app.getContainer(), "Admin");
        }
     }//GEN-LAST:event_SalvarUsuariojButton1ActionPerformed
 

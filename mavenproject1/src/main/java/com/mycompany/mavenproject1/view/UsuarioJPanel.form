@@ -62,11 +62,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar Livro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadastrarLivrojButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="VisualizarLivrosjButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Visualizar Livros"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VisualizarLivrosjButton1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

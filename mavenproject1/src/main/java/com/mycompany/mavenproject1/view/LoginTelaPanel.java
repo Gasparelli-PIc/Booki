@@ -109,7 +109,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         if (usuarioDigitado.equals("Admin") && senhaDigitada.equals("1234")) {
             app.getCardLayout().show(app.getContainer(), "Admin");
         } else {
-            JOptionPane.showConfirmDialog(null, "Usuário ou senha incorreto.");
+            app.getCardLayout().show(app.getContainer(), "Usuario");
         }
     }//GEN-LAST:event_LoginjButton1ActionPerformed
 
