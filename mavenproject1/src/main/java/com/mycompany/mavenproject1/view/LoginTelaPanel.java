@@ -23,6 +23,21 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         initComponents();
     }
 
+    private boolean validarCampos() {
+        if (EntradaUsuariojTextField1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo Usuário é obrigatório.");
+        
+            return false;
+        }
+        if (EntradaSenhajPasswordField1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo Senha é obrigatório.");
+        
+            return false; // Impede o salvamento se nenhuma checkbox estiver selecionada
+        }
+        
+            return true;
+        }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -190,15 +205,18 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         UsuarioDAO daoUser = new UsuarioDAO();
         Users usuario = daoUser.BuscarUsuario(usuarioDigitado, senhaDigitada);
         
-        
-        if (usuario != null && usuario.getSenha().equals(senhaDigitada) && usuario.getLogin().equals(usuarioDigitado)) {
-            if (usuario.getAdministrador() == true) {
-                app.getCardLayout().show(app.getContainer(), "Admin");
-            } else if (usuario.getAdministrador() == false){
-                app.getCardLayout().show(app.getContainer(), "Usuario");
+        if (validarCampos()) {
+            if (usuario != null && usuario.getSenha().equals(senhaDigitada) && usuario.getLogin().equals(usuarioDigitado)) {
+                                  
+                if (usuario.getAdministrador() == true) {               
+                    app.getCardLayout().show(app.getContainer(), "Admin");        
+                } else if (usuario.getAdministrador() == false){ 
+                    app.getCardLayout().show(app.getContainer(), "Usuario");
                 }
-            } else if (usuario == null){
-                JOptionPane.showMessageDialog(null, "Usuario nao encontrado.");
+                } else if (usuario == null){
+                    JOptionPane.showMessageDialog(null, "Usuario nao encontrado.");
+                
+                }                
         }
     }//GEN-LAST:event_LoginjButton1ActionPerformed
 

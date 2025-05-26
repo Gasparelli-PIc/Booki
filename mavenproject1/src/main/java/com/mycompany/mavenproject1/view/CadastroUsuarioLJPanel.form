@@ -60,7 +60,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="268" max="32767" attributes="0"/>
+              <EmptySpace pref="293" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -211,8 +211,11 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="entradaSenhaCadjPasswordField1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+        <Property name="text" type="java.lang.String" value="aaaaaaaaaa"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="entradaSenhaCadjPasswordField1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

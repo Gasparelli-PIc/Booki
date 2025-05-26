@@ -27,6 +27,7 @@ com\mycompany\mavenproject1\view\CadastroLivroJPanel$1.class
 com\mycompany\mavenproject1\view\ConsultarUsuariosJPanel$1.class
 com\mycompany\mavenproject1\view\LoginTelaPanel$4.class
 com\mycompany\mavenproject1\view\VisualizarLivrosJPanel.class
+com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$10.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$4.class
 com\mycompany\mavenproject1\dao\TipoLivroDAO.class
 com\mycompany\mavenproject1\view\CadastroLivroJPanel$2.class

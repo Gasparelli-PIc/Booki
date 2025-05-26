@@ -23,7 +23,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         this.app = app;
         initComponents();
     }
-
+     
     private boolean validarCampos() {
         if (EntradaLoginCadjTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo login é obrigatório.");
@@ -34,10 +34,32 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         if (EntradaIdadejTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo idade é obrigatório.");
         }
-//      if (CienciaESociedadejCheckBox1.isSelected() && SustentabilidadejCheckBox2.isSelected() && TecnologiajCheckBox3.isSelected()) {
-//          JOptionPane.showMessageDialog(this, "Selecione apenas dois tipos de livro favorito.");
-//          return false; // Impede o salvamento se todas checkbox estiver selecionada
-//      }
+        if (entradaSenhaCadjPasswordField1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo Senha é obrigatório.");
+        }
+        if (!CienciaESociedadejCheckBox1.isSelected() &&
+        !SustentabilidadejCheckBox2.isSelected() &&
+        !TecnologiajCheckBox3.isSelected()) {
+        JOptionPane.showMessageDialog(this, "Selecione pelo menos um Tipo de Livro Favorito.");
+        return false; // Impede o salvamento se nenhuma checkbox estiver selecionada
+        }
+
+        int selectedCount = 0;
+        if (CienciaESociedadejCheckBox1.isSelected()) {
+            selectedCount++;
+        }
+        if (SustentabilidadejCheckBox2.isSelected()) {
+        selectedCount++;
+        }
+        if (TecnologiajCheckBox3.isSelected()) {
+        selectedCount++;
+        }
+
+        if (selectedCount > 2) { // Alterado de '== 3' para '> 2' para ser mais robusto caso adicione mais no futuro
+        JOptionPane.showMessageDialog(this, "Selecione no máximo dois Tipos de Livro Favorito.");
+        return false; // Impede o salvamento se mais de duas checkbox estiverem selecionadas
+        }
+
         try {
             Integer.parseInt(EntradaIdadejTextField1.getText().trim());
         } catch (NumberFormatException e) {
@@ -90,7 +112,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
         TipoUsuariojLabel1.setText("Tipo Usuário");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Usuário Administrador", "Usuário Comum"}));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuário Administrador", "Usuário Comum" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -144,7 +166,12 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Senha");
 
-        entradaSenhaCadjPasswordField1.setText("jPasswordField1");
+        entradaSenhaCadjPasswordField1.setText("aaaaaaaaaa");
+        entradaSenhaCadjPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaSenhaCadjPasswordField1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -179,7 +206,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(entradaSenhaCadjPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))))
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,6 +247,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+   
     private void EntradaNomejTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaNomejTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EntradaNomejTextField1ActionPerformed
@@ -292,6 +320,10 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     private void TecnologiajCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TecnologiajCheckBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TecnologiajCheckBox3ActionPerformed
+
+    private void entradaSenhaCadjPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaSenhaCadjPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaSenhaCadjPasswordField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelarUsuariojButton2;
