@@ -4,19 +4,36 @@
  */
 package com.mycompany.mavenproject1.view;
 
+import javax.swing.JOptionPane;
+import com.mycompany.mavenproject1.App;
 /**
  *
  * @author jogar
  */
 public class CadastroLivroJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form CadastroLivroJPanel
-     */
-    public CadastroLivroJPanel() {
+    private App app;
+    
+    public CadastroLivroJPanel(App app) {
+        this.app = app;
         initComponents();
     }
 
+    private boolean validarCampos() {
+        if (EntradaTitulojTextField1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo Título do livro é obrigatório.");
+        
+            return false;
+        }
+        if (EntradaAutorjTextField1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O campo Autor é obrigatório.");
+        
+            return false; // Impede o salvamento se nenhuma checkbox estiver selecionada
+        }
+        
+            return true;
+        }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,15 +56,37 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Título do Livro");
 
+        EntradaTitulojTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaTitulojTextField1ActionPerformed(evt);
+            }
+        });
+
         AutorjLabel2.setText("Autor");
+
+        EntradaAutorjTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaAutorjTextField1ActionPerformed(evt);
+            }
+        });
 
         TipoLivrojLabel2.setText("Tipo do Livro");
 
         TipoLivrojComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ciência e Sociedade", "Sustentabilidade", "Tecnologia" }));
 
         SalvarLivrojButton1.setText("Salvar");
+        SalvarLivrojButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarLivrojButton1ActionPerformed(evt);
+            }
+        });
 
         CancelarLivrojButton1.setText("Cancelar");
+        CancelarLivrojButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarLivrojButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -91,6 +130,25 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
                 .addContainerGap(119, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void EntradaTitulojTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaTitulojTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntradaTitulojTextField1ActionPerformed
+
+    private void SalvarLivrojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarLivrojButton1ActionPerformed
+        if (validarCampos()) {
+           JOptionPane.showMessageDialog(this, "Livro salvo com sucesso!");
+           
+           app.getCardLayout().show(app.getContainer(), "Usuario");
+    }//GEN-LAST:event_SalvarLivrojButton1ActionPerformed
+    }
+    private void EntradaAutorjTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaAutorjTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntradaAutorjTextField1ActionPerformed
+
+    private void CancelarLivrojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarLivrojButton1ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "Usuario");
+    }//GEN-LAST:event_CancelarLivrojButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

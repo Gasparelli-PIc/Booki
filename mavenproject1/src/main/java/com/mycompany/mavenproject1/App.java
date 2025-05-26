@@ -4,36 +4,30 @@ import com.mycompany.mavenproject1.view.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
-/**
- *
- * @author Gabriel
- */
-public class App {
+public class App extends JFrame {
 
-    private JFrame frame;
     private JPanel container;
     private CardLayout cardLayout;
 
     public App() {
         // Configuração da janela
-        frame = new JFrame("Sistema de Compartilhamento de Leituras");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
-        frame.setLocationRelativeTo(null);
+        setTitle("Sistema de Compartilhamento de Leituras");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 450);
+        setLocationRelativeTo(null);
 
         // Layout e container principal
         cardLayout = new CardLayout();
         container = new JPanel(cardLayout);
 
-        // Instanciar os painéis (telas)
-        LoginTelaPanel login = new LoginTelaPanel();
-        AdminJPanel admin = new AdminJPanel();
-        CadastroLivroJPanel cadLivro = new CadastroLivroJPanel();
-        CadastroUsuarioLJPanel cadUsuario = new CadastroUsuarioLJPanel();
+        // Instanciar os painéis (telas), passando this (referência do App)
+        LoginTelaPanel login = new LoginTelaPanel(this);
+        AdminJPanel admin = new AdminJPanel(this);
+        CadastroLivroJPanel cadLivro = new CadastroLivroJPanel(this);
+        CadastroUsuarioLJPanel cadUsuario = new CadastroUsuarioLJPanel(this);
         ConsultarUsuariosJPanel consultUsuario = new ConsultarUsuariosJPanel();
-        UsuarioJPanel usuario = new UsuarioJPanel();
+        UsuarioJPanel usuario = new UsuarioJPanel(this);
         VisualizarLivrosJPanel visLivro = new VisualizarLivrosJPanel();
 
         // Adicionar os painéis no container com nomes para navegação
@@ -45,74 +39,20 @@ public class App {
         container.add(usuario, "Usuario");
         container.add(visLivro, "VisLivro");
 
-        // =========================
-        // 🔐 Login ➝ Admin (validação)
-        login.getLoginjButton1().addActionListener((ActionEvent e) -> {
-            String usuarioDigitado = login.getEntradaUsuariojTextField1().getText();
-            String senhaDigitada = new String(login.getEntradaSenhajPasswordField1().getPassword());
-
-            if (usuarioDigitado.equalsIgnoreCase("Admin") && senhaDigitada.equals("1234")) {
-                cardLayout.show(container, "Admin");
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
-            }
-        });
-
-        // 🔘 Sair no Login (opcional)
-        login.getSairLoginjButton1().addActionListener(e -> {
-            frame.dispose();
-        });
-
-        // =========================
-        // 🔄 Navegação dos botões
-
-        // Admin ➝ Cadastro Usuário
-        admin.getCadastrarUsuariosjButton1().addActionListener(e -> {
-            cardLayout.show(container, "CadUsuario");
-        });
-
-        // Admin ➝ Consultar Usuário
-        admin.getVisalizarUsuariojButton2().addActionListener(e -> {
-            cardLayout.show(container, "ConsultUsuario");
-        });
-
-        // Admin ➝ Cadastro Livro
-        admin.getCadastrarLivrosjButton3().addActionListener(e -> {
-            cardLayout.show(container, "CadLivro");
-        });
-
-        // Admin ➝ Visualizar Livros
-        admin.getVisualizarLivrosjButton4().addActionListener(e -> {
-            cardLayout.show(container, "VisLivro");
-        });
-
-        // Cadastro Usuário ➝ Voltar para Admin
-        cadUsuario.getCancelarUsuariojButton2().addActionListener(e -> {
-            cardLayout.show(container, "Admin");
-        });
-
-        // Cadastro Livro ➝ Voltar para Admin
-        cadLivro.getCancelarLivrojButton2().addActionListener(e -> {
-            cardLayout.show(container, "Admin");
-        });
-
-        // Consultar Usuário ➝ Voltar para Admin
-        consultUsuario.getVoltarConsultaUsuariojButton().addActionListener(e -> {
-            cardLayout.show(container, "Admin");
-        });
-
-        // Visualizar Livros ➝ Voltar para Admin
-        visLivro.getVoltarVisualizarLivrosjButton().addActionListener(e -> {
-            cardLayout.show(container, "Admin");
-        });
-
-        // =========================
-
-        frame.setContentPane(container);
-        frame.setVisible(true);
+        setContentPane(container);
+        setVisible(true);
 
         // Tela que abre primeiro
         cardLayout.show(container, "Login");
+    }
+
+    // Getters para permitir acesso ao CardLayout e Container nas telas
+    public CardLayout getCardLayout() {
+        return cardLayout;
+    }
+
+    public JPanel getContainer() {
+        return container;
     }
 
     public static void main(String[] args) {

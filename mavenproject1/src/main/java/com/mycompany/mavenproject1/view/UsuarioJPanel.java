@@ -4,17 +4,18 @@ package com.mycompany.mavenproject1.view;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-
+import com.mycompany.mavenproject1.App;
 /**
  *
  * @author jogar
  */
 public class UsuarioJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form UsuarioJPanel
-     */
-    public UsuarioJPanel() {
+    private App app;  // ✅ Mantém a referência ao App para controle do CardLayout
+    
+    // ✅ Construtor ajustado para receber App
+        public UsuarioJPanel(App app) {
+        this.app = app;
         initComponents();
     }
 
@@ -38,8 +39,18 @@ public class UsuarioJPanel extends javax.swing.JPanel {
         BemVindojLabel2.setText("Bem Vindo!");
 
         CadastrarLivrojButton1.setText("Cadastrar Livro");
+        CadastrarLivrojButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarLivrojButton1ActionPerformed(evt);
+            }
+        });
 
         VisualizarLivrosjButton1.setText("Visualizar Livros");
+        VisualizarLivrosjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VisualizarLivrosjButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -66,6 +77,14 @@ public class UsuarioJPanel extends javax.swing.JPanel {
                 .addGap(0, 259, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CadastrarLivrojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarLivrojButton1ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "CadLivro");
+    }//GEN-LAST:event_CadastrarLivrojButton1ActionPerformed
+
+    private void VisualizarLivrosjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarLivrosjButton1ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "VisLivro");
+    }//GEN-LAST:event_VisualizarLivrosjButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

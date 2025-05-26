@@ -66,6 +66,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Visualizar Usu&#xe1;rios"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VisalizarUsuariojButton2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

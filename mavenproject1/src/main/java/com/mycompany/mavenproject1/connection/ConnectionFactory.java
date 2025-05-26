@@ -9,11 +9,11 @@ import java.sql.DriverManager;
  * @author Gabriel s.c
  */
 public class ConnectionFactory {
-    private static String host = "localhost";
-    private static String porta = "3306";
-    private static String db = "projeto_a3";
-    private static String usuario = "root";
-    private static String senha = "1234";
+    private static final String host = "localhost";
+    private static final String porta = "3306";
+    private static final String db = "projeto_a3";
+    private static final String usuario = "root";
+    private static final String senha = "12345";
     
     public static Connection obtemConexao(){
         try {

@@ -74,6 +74,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="EntradaTitulojTextField1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaTitulojTextField1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="AutorjLabel2">
       <Properties>
@@ -81,6 +84,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="EntradaAutorjTextField1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaAutorjTextField1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="TipoLivrojLabel2">
       <Properties>
@@ -105,11 +111,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalvarLivrojButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CancelarLivrojButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelarLivrojButton1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

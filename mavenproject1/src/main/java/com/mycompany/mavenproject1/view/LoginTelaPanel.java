@@ -4,16 +4,22 @@
  */
 package com.mycompany.mavenproject1.view;
 
+import javax.swing.*;
+import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.dao.*;
+import com.mycompany.mavenproject1.model.*;
+
 /**
  *
  * @author jogar
  */
 public class LoginTelaPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form LoginTelaPanel
-     */
-    public LoginTelaPanel() {
+    private App app;  // ✅ Mantém a referência ao App para controle do CardLayout
+
+    // ✅ Construtor ajustado para receber App
+    public LoginTelaPanel(App app) {
+        this.app = app;
         initComponents();
     }
 
@@ -38,6 +44,12 @@ public class LoginTelaPanel extends javax.swing.JPanel {
 
         UsuariojLabel1.setText("Usuário");
 
+        EntradaUsuariojTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaUsuariojTextField1ActionPerformed(evt);
+            }
+        });
+
         SenhajLabel1.setText("Senha");
 
         EntradaSenhajPasswordField1.addActionListener(new java.awt.event.ActionListener() {
@@ -47,8 +59,18 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         });
 
         LoginjButton1.setText("Login");
+        LoginjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginjButton1ActionPerformed(evt);
+            }
+        });
 
         SairLoginjButton1.setText("Sair");
+        SairLoginjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SairLoginjButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -90,6 +112,32 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_EntradaSenhajPasswordField1ActionPerformed
 
+    private void LoginjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginjButton1ActionPerformed
+        String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
+        String usuarioDigitado = EntradaUsuariojTextField1.getText();
+        
+        UsuarioDAO daoUser = new UsuarioDAO();
+        Users usuario = daoUser.BuscarUsuario(usuarioDigitado, senhaDigitada);
+        
+        
+        if (usuario != null && usuario.getSenha().equals(senhaDigitada) && usuario.getLogin().equals(usuarioDigitado)) {
+            if (usuario.getAdministrador() == 1) {
+                app.getCardLayout().show(app.getContainer(), "Admin");
+            } else if (usuario.getAdministrador() == 0){
+                app.getCardLayout().show(app.getContainer(), "Usuario");
+                }
+            } else if (usuario == null){
+                JOptionPane.showMessageDialog(null, "Usuario nao encontrado.");
+        }
+    }//GEN-LAST:event_LoginjButton1ActionPerformed
+
+    private void SairLoginjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairLoginjButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_SairLoginjButton1ActionPerformed
+
+    private void EntradaUsuariojTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaUsuariojTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntradaUsuariojTextField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField EntradaSenhajPasswordField1;

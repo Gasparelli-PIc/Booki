@@ -75,23 +75,6 @@ public class TipoLivroDAO {
 	    }
 	    return tipo;
 	}
-
-	// Atualizar um TipoLivro
-	public void atualizar(TipoLivro tipoLivro) {
-	    String sql = "UPDATE tipoLivro SET tipo = ? WHERE id = ?";
-
-	    try (Connection conn = ConnectionFactory.obtemConexao();
-	         PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-	        stmt.setString(1, tipoLivro.getTipo());
-	        stmt.setInt(2, tipoLivro.getId());
-	        stmt.executeUpdate();
-
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	}
-
 	// Deletar TipoLivro por ID
 	public void deletar(int id) {
 	    String sql = "DELETE FROM tipoLivro WHERE id = ?";
