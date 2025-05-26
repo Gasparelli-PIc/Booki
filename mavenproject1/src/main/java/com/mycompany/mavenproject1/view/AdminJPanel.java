@@ -35,6 +35,11 @@ public class AdminJPanel extends javax.swing.JPanel {
         BemVindojLabel1.setText("Bem Vindo!");
 
         CadastrarUsuariosjButton1.setText("Cadastrar Usuários");
+        CadastrarUsuariosjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarUsuariosjButton1ActionPerformed(evt);
+            }
+        });
 
         VisalizarUsuariojButton2.setText("Visualizar Usuários");
 
@@ -63,6 +68,10 @@ public class AdminJPanel extends javax.swing.JPanel {
                 .addGap(0, 238, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CadastrarUsuariosjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarUsuariosjButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CadastrarUsuariosjButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
