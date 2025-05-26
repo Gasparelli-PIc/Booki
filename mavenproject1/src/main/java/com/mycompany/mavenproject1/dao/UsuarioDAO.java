@@ -27,7 +27,7 @@ public class UsuarioDAO {
 
             stmt.setString(1, usuario.getNome());
             stmt.setInt(2, usuario.getIdade());
-            stmt.setInt(3, usuario.getAdministrador());
+            stmt.setBoolean(3, usuario.getAdministrador());
             stmt.setString(4, usuario.getLogin());
             stmt.setString(5, usuario.getSenha());
             stmt.setInt(6, usuario.getTipoPreferido1());
@@ -53,7 +53,7 @@ public class UsuarioDAO {
                     rs.getInt("id"),
                     rs.getString("nome"),
                     rs.getInt("idade"),
-                    rs.getInt("administrador"),
+                    rs.getBoolean("administrador"),
                     rs.getString("login"),
                     rs.getString("senha"),
                     rs.getInt("tipoPreferido1"),
@@ -85,7 +85,7 @@ public class UsuarioDAO {
                         rs.getInt("id"),
                         rs.getString("nome"),
                         rs.getInt("idade"),
-                        rs.getInt("administrador"),
+                        rs.getBoolean("administrador"),
                         rs.getString("login"),
                         rs.getString("senha"),
                         rs.getInt("tipoPreferido1"),

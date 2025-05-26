@@ -13,7 +13,7 @@ public class ConnectionFactory {
     private static final String porta = "3306";
     private static final String db = "projeto_a3";
     private static final String usuario = "root";
-    private static final String senha = "12345";
+    private static final String senha = "123456";
     
     public static Connection obtemConexao(){
         try {

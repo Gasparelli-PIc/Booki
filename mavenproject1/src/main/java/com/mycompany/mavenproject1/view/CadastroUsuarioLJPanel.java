@@ -4,8 +4,12 @@
  */
 package com.mycompany.mavenproject1.view;
 
+import javax.swing.JOptionPane;
+
 import com.mycompany.mavenproject1.App;
-import javax.swing.*;
+import com.mycompany.mavenproject1.dao.UsuarioDAO;
+import com.mycompany.mavenproject1.model.Users;
+
 /**
  *
  * @author jogar
@@ -13,7 +17,7 @@ import javax.swing.*;
 public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
     private App app;  // ✅ Mantém a referência ao App para controle do CardLayout
-    
+
     // ✅ Construtor ajustado para receber App
     public CadastroUsuarioLJPanel(App app) {
         this.app = app;
@@ -30,19 +34,20 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         if (EntradaIdadejTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo idade é obrigatório.");
         }
-        if (!CienciaESociedadejCheckBox1.isSelected() && !SustentabilidadejCheckBox2.isSelected() && !TecnologiajCheckBox3.isSelected()) {
-            JOptionPane.showMessageDialog(this, "Selecione pelo menos um tipo de livro favorito.");
-            return false; // Impede o salvamento se nenhuma checkbox estiver selecionada
-        }
+//      if (CienciaESociedadejCheckBox1.isSelected() && SustentabilidadejCheckBox2.isSelected() && TecnologiajCheckBox3.isSelected()) {
+//          JOptionPane.showMessageDialog(this, "Selecione apenas dois tipos de livro favorito.");
+//          return false; // Impede o salvamento se todas checkbox estiver selecionada
+//      }
         try {
             Integer.parseInt(EntradaIdadejTextField1.getText().trim());
-        }catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "O campo idade deve ser um número.");
             return false;
-        }    
-        
+        }
+
         return true;
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -83,7 +88,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
         TipoUsuariojLabel1.setText("Tipo Usuário");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuário Administrador", "Usuário Comum" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Usuário Administrador", "Usuário Comum"}));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -92,7 +97,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
         TipoLivrojLabel1.setText("Tipo de Livro Favorito");
 
-        CienciaESociedadejCheckBox1.setText("Ciência e Tecnlogia");
+        CienciaESociedadejCheckBox1.setText("Ciência e sociedade");
         CienciaESociedadejCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CienciaESociedadejCheckBox1ActionPerformed(evt);
@@ -138,67 +143,67 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NomejLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EntradaNomejTextField1)
-                            .addComponent(IdadejLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EntradaIdadejTextField1)
-                            .addComponent(TipoUsuariojLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, 0, Short.MAX_VALUE)
-                            .addComponent(TipoLivrojLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CienciaESociedadejCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TecnologiajCheckBox3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SustentabilidadejCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(SalvarUsuariojButton1)
-                        .addGap(67, 67, 67)
-                        .addComponent(CancelarUsuariojButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(LoginjLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(EntradaLoginCadjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(313, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(NomejLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(EntradaNomejTextField1)
+                                                        .addComponent(IdadejLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(EntradaIdadejTextField1)
+                                                        .addComponent(TipoUsuariojLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jComboBox1, 0, 0, Short.MAX_VALUE)
+                                                        .addComponent(TipoLivrojLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(CienciaESociedadejCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(TecnologiajCheckBox3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(SustentabilidadejCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(72, 72, 72)
+                                                .addComponent(SalvarUsuariojButton1)
+                                                .addGap(67, 67, 67)
+                                                .addComponent(CancelarUsuariojButton2))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(LoginjLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(EntradaLoginCadjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(313, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LoginjLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(EntradaLoginCadjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(NomejLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EntradaNomejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(IdadejLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EntradaIdadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TipoUsuariojLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TipoLivrojLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CienciaESociedadejCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SustentabilidadejCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TecnologiajCheckBox3)
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SalvarUsuariojButton1)
-                    .addComponent(CancelarUsuariojButton2))
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(LoginjLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(EntradaLoginCadjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(NomejLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(EntradaNomejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(IdadejLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(EntradaIdadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TipoUsuariojLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TipoLivrojLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CienciaESociedadejCheckBox1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SustentabilidadejCheckBox2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TecnologiajCheckBox3)
+                                .addGap(42, 42, 42)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(SalvarUsuariojButton1)
+                                        .addComponent(CancelarUsuariojButton2))
+                                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -219,13 +224,44 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_EntradaIdadejTextField1ActionPerformed
 
     private void SalvarUsuariojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarUsuariojButton1ActionPerformed
-        
+        if (!validarCampos()) {
+            return;
+        }
+        String nomeDoUsuario = EntradaNomejTextField1.getText().trim();
+        int idadeDoUsuario = Integer.parseInt(EntradaIdadejTextField1.getText().trim());
+        String loginDoUsuario = EntradaLoginCadjTextField1.getText().trim();
+        String SenhaDoUsuario = "senha";
+        Boolean usuarioAdministrador = jComboBox1.getSelectedItem().equals("Usuário Administrador");
 
-//       if (validarCampos()) {
-//           JOptionPane.showMessageDialog(this, "Usuário salvo com sucesso!");
-//           
-//           app.getCardLayout().show(app.getContainer(), "Admin");
-//       }
+        java.util.List<Integer> tiposSelecionados = new java.util.ArrayList<>();
+
+        if (SustentabilidadejCheckBox2.isSelected()) {
+            tiposSelecionados.add(1);
+        }
+        if (CienciaESociedadejCheckBox1.isSelected()) {
+            tiposSelecionados.add(2);
+        }
+        if (TecnologiajCheckBox3.isSelected()) {
+            tiposSelecionados.add(3);
+        }
+
+        int tipo1 = 0;
+        int tipo2 = 0;
+
+        tipo1 = tiposSelecionados.size() > 0 ? tiposSelecionados.get(0) : 0;
+        tipo2 = tiposSelecionados.size() > 1 ? tiposSelecionados.get(1) : 0;
+
+        Users usuario = new Users(0, nomeDoUsuario, idadeDoUsuario, usuarioAdministrador, loginDoUsuario, SenhaDoUsuario, tipo1, tipo2);
+        UsuarioDAO usDAO = new UsuarioDAO();
+
+        try {
+            usDAO.inserir(usuario);
+            JOptionPane.showMessageDialog(null, "Usuario Cadastrado com sucesso!!!");
+            app.getCardLayout().show(app.getContainer(), "Admin");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar Usuario. \n erro: " + e.getMessage());
+        }
+
     }//GEN-LAST:event_SalvarUsuariojButton1ActionPerformed
 
     private void CancelarUsuariojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarUsuariojButton2ActionPerformed
@@ -243,7 +279,6 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     private void TecnologiajCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TecnologiajCheckBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TecnologiajCheckBox3ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelarUsuariojButton2;

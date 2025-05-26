@@ -9,14 +9,14 @@ public class Users {
     private int id;
     private String nome;
     private int idade;
-    private int administrador;
+    private boolean administrador;
     private String login;
     private String senha;
     private int tipoPreferido1;
     private int tipoPreferido2;
 
     
-    public Users(int id, String nome, int idade, int administrador, String login, String senha, int tipoPreferido1, int tipoPreferido2){
+    public Users(int id, String nome, int idade, boolean administrador, String login, String senha, int tipoPreferido1, int tipoPreferido2){
         this.id = id;
         this.nome = nome;
         this.idade = idade;
@@ -26,6 +26,7 @@ public class Users {
         this.tipoPreferido1 = tipoPreferido1;
         this.tipoPreferido2 = tipoPreferido2;
     }
+    
     //sets
     public void setId(int id){
         this.id = id;
@@ -36,7 +37,7 @@ public class Users {
     public void setIdade(int idade){
         this.idade = idade;
     }
-    public void setAdministrador(int administrador){
+    public void setAdministrador(boolean administrador){
         this.administrador = administrador;        
     }
     public void setLogin(String login){
@@ -62,7 +63,7 @@ public class Users {
     public int getIdade(){
         return this.idade;
     }
-    public int getAdministrador(){
+    public boolean getAdministrador(){
         return this.administrador;
     }
     public String getLogin(){

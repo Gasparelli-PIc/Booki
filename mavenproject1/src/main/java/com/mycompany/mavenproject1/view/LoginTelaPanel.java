@@ -121,9 +121,9 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         
         
         if (usuario != null && usuario.getSenha().equals(senhaDigitada) && usuario.getLogin().equals(usuarioDigitado)) {
-            if (usuario.getAdministrador() == 1) {
+            if (usuario.getAdministrador() == true) {
                 app.getCardLayout().show(app.getContainer(), "Admin");
-            } else if (usuario.getAdministrador() == 0){
+            } else if (usuario.getAdministrador() == false){
                 app.getCardLayout().show(app.getContainer(), "Usuario");
                 }
             } else if (usuario == null){
