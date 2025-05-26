@@ -14,7 +14,7 @@ public class App extends JFrame {
         // Configuração da janela
         setTitle("Sistema de Compartilhamento de Leituras");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setSize(600, 450);
         setLocationRelativeTo(null);
 
         // Layout e container principal

@@ -10,7 +10,7 @@ package com.mycompany.mavenproject1.dao;
  */
 
 import com.mycompany.mavenproject1.connection.ConnectionFactory;
-import com.mycompany.mavenproject1.model.Usuario;
+import com.mycompany.mavenproject1.model.Users;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,18 +18,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioDAO {
-
-    public void inserir(Usuario usuario) {
-        String sql = "INSERT INTO users (nome, idade, administrador, login, senha) VALUES (?, ?, ?, ?, ?)";
+    //Inserir usuario
+    public void inserir(Users usuario) {
+        String sql = "INSERT INTO users (nome, idade, administrador, login, senha, tipoPreferido1, tipoPreferido2) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = ConnectionFactory.obtemConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, usuario.getNome());
             stmt.setInt(2, usuario.getIdade());
-            stmt.setBoolean(3, usuario.getAdministrador());
+            stmt.setInt(3, usuario.getAdministrador());
             stmt.setString(4, usuario.getLogin());
             stmt.setString(5, usuario.getSenha());
+            stmt.setInt(6, usuario.getTipoPreferido1());
+            stmt.setInt(7, usuario.getTipoPreferido2());
 
             stmt.executeUpdate();
 
@@ -37,9 +39,9 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
     }
-
-    public List<Usuario> listarTodos() {
-        List<Usuario> lista = new ArrayList<>();
+    //Fazer lista dos usuario
+    public List<Users> listarTodos() {
+        List<Users> lista = new ArrayList<>();
         String sql = "SELECT * FROM users";
 
         try (Connection conn = ConnectionFactory.obtemConexao();
@@ -47,13 +49,15 @@ public class UsuarioDAO {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                Usuario usuario = new Usuario(
+                Users usuario = new Users(
                     rs.getInt("id"),
                     rs.getString("nome"),
                     rs.getInt("idade"),
-                    rs.getBoolean("administrador"),
+                    rs.getInt("administrador"),
                     rs.getString("login"),
-                    rs.getString("senha")
+                    rs.getString("senha"),
+                    rs.getInt("tipoPreferido1"),
+                    rs.getInt("tipoPreferido2")
                 );
                 lista.add(usuario);
             }
@@ -64,25 +68,28 @@ public class UsuarioDAO {
 
         return lista;
     }
-
-    public Usuario buscarPorId(int id) {
-        Usuario usuario = null;
-        String sql = "SELECT * FROM users WHERE id = ?";
+    //Buscar Usuario
+    public Users BuscarUsuario(String login, String senha) {
+        Users usuario = null;
+        String sql = "SELECT * FROM users WHERE login = ? AND senha = ?";
 
         try (Connection conn = ConnectionFactory.obtemConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, id);
+            stmt.setString(1, login);
+            stmt.setString(2, senha);
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    usuario = new Usuario(
+                    usuario = new Users(
                         rs.getInt("id"),
                         rs.getString("nome"),
                         rs.getInt("idade"),
-                        rs.getBoolean("administrador"),
+                        rs.getInt("administrador"),
                         rs.getString("login"),
-                        rs.getString("senha")
+                        rs.getString("senha"),
+                        rs.getInt("tipoPreferido1"),
+                        rs.getInt("tipoPreferido2")
                     );
                 }
             }
@@ -93,27 +100,7 @@ public class UsuarioDAO {
 
         return usuario;
     }
-
-    public void atualizar(Usuario usuario) {
-        String sql = "UPDATE users SET nome = ?, idade = ?, administrador = ?, login = ?, senha = ? WHERE id = ?";
-
-        try (Connection conn = ConnectionFactory.obtemConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, usuario.getNome());
-            stmt.setInt(2, usuario.getIdade());
-            stmt.setBoolean(3, usuario.getAdministrador());
-            stmt.setString(4, usuario.getLogin());
-            stmt.setString(5, usuario.getSenha());
-            stmt.setInt(6, usuario.getId());
-
-            stmt.executeUpdate();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
+    //Deletar Usuario
     public void deletar(int id) {
         String sql = "DELETE FROM users WHERE id = ?";
 

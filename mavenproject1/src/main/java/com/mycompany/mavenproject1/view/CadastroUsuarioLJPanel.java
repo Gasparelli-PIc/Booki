@@ -25,14 +25,12 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "O campo login é obrigatório.");
         }
         if (EntradaNomejTextField1.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "O campo login é obrigatório.");
+            JOptionPane.showMessageDialog(this, "O campo nome é obrigatório.");
         }
         if (EntradaIdadejTextField1.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "O campo login é obrigatório.");
+            JOptionPane.showMessageDialog(this, "O campo idade é obrigatório.");
         }
-        if (!CienciaESociedadejCheckBox1.isSelected() &&
-            !SustentabilidadejCheckBox2.isSelected() &&
-            !TecnologiajCheckBox3.isSelected()) {
+        if (!CienciaESociedadejCheckBox1.isSelected() && !SustentabilidadejCheckBox2.isSelected() && !TecnologiajCheckBox3.isSelected()) {
             JOptionPane.showMessageDialog(this, "Selecione pelo menos um tipo de livro favorito.");
             return false; // Impede o salvamento se nenhuma checkbox estiver selecionada
         }
@@ -65,6 +63,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         EntradaLoginCadjTextField1 = new javax.swing.JTextField();
 
         setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
 
         NomejLabel1.setText("Nome");
 
@@ -212,7 +211,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void EntradaLoginCadjTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaLoginCadjTextField1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_EntradaLoginCadjTextField1ActionPerformed
 
     private void EntradaIdadejTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaIdadejTextField1ActionPerformed
@@ -220,11 +219,13 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_EntradaIdadejTextField1ActionPerformed
 
     private void SalvarUsuariojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarUsuariojButton1ActionPerformed
-       if (validarCampos()) {
-           JOptionPane.showMessageDialog(this, "Usuário salvo com sucesso!");
-           
-           app.getCardLayout().show(app.getContainer(), "Admin");
-       }
+        
+
+//       if (validarCampos()) {
+//           JOptionPane.showMessageDialog(this, "Usuário salvo com sucesso!");
+//           
+//           app.getCardLayout().show(app.getContainer(), "Admin");
+//       }
     }//GEN-LAST:event_SalvarUsuariojButton1ActionPerformed
 
     private void CancelarUsuariojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarUsuariojButton2ActionPerformed

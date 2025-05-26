@@ -9,14 +9,14 @@ public class Users {
     private int id;
     private String nome;
     private int idade;
-    private boolean administrador;
+    private int administrador;
     private String login;
     private String senha;
-    private String tipoPreferido1;
-    private String tipoPreferido2;
+    private int tipoPreferido1;
+    private int tipoPreferido2;
 
     
-    public Users(int id, String nome, int idade, boolean administrador, String login, String senha, String tipoPreferido1, String tipoPreferido2){
+    public Users(int id, String nome, int idade, int administrador, String login, String senha, int tipoPreferido1, int tipoPreferido2){
         this.id = id;
         this.nome = nome;
         this.idade = idade;
@@ -36,7 +36,7 @@ public class Users {
     public void setIdade(int idade){
         this.idade = idade;
     }
-    public void setAdministrador(boolean administrador){
+    public void setAdministrador(int administrador){
         this.administrador = administrador;        
     }
     public void setLogin(String login){
@@ -45,10 +45,10 @@ public class Users {
     public void setSenha(String senha){
         this.senha = senha;
     }
-    public void setTipoPreferido1(String tipoPreferido1){
+    public void setTipoPreferido1(int tipoPreferido1){
     	this.tipoPreferido1 = tipoPreferido1;
     }
-    public void setTipoPreferido2(String tipoPreferido2){
+    public void setTipoPreferido2(int tipoPreferido2){
     	this.tipoPreferido2 = tipoPreferido2;
     }
     
@@ -62,7 +62,7 @@ public class Users {
     public int getIdade(){
         return this.idade;
     }
-    public boolean getAdministrador(){
+    public int getAdministrador(){
         return this.administrador;
     }
     public String getLogin(){
@@ -71,10 +71,10 @@ public class Users {
     public String getSenha(){
         return this.senha;
     }
-    public String getTipoPreferido1(){
+    public int getTipoPreferido1(){
         return this.tipoPreferido1;
     }
-    public String getTipoPreferido2(){
+    public int getTipoPreferido2(){
         return this.tipoPreferido2;
     }
 }

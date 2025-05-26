@@ -3,8 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.mavenproject1.view;
+
 import javax.swing.*;
 import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.dao.*;
+import com.mycompany.mavenproject1.model.*;
+
 /**
  *
  * @author jogar
@@ -39,6 +43,12 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(600, 400));
 
         UsuariojLabel1.setText("Usuário");
+
+        EntradaUsuariojTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaUsuariojTextField1ActionPerformed(evt);
+            }
+        });
 
         SenhajLabel1.setText("Senha");
 
@@ -106,10 +116,18 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
         String usuarioDigitado = EntradaUsuariojTextField1.getText();
         
-        if (usuarioDigitado.equals("Admin") && senhaDigitada.equals("1234")) {
-            app.getCardLayout().show(app.getContainer(), "Admin");
-        } else {
-            app.getCardLayout().show(app.getContainer(), "Usuario");
+        UsuarioDAO daoUser = new UsuarioDAO();
+        Users usuario = daoUser.BuscarUsuario(usuarioDigitado, senhaDigitada);
+        
+        
+        if (usuario != null && usuario.getSenha().equals(senhaDigitada) && usuario.getLogin().equals(usuarioDigitado)) {
+            if (usuario.getAdministrador() == 1) {
+                app.getCardLayout().show(app.getContainer(), "Admin");
+            } else if (usuario.getAdministrador() == 0){
+                app.getCardLayout().show(app.getContainer(), "Usuario");
+                }
+            } else if (usuario == null){
+                JOptionPane.showMessageDialog(null, "Usuario nao encontrado.");
         }
     }//GEN-LAST:event_LoginjButton1ActionPerformed
 
@@ -117,6 +135,9 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         System.exit(0);
     }//GEN-LAST:event_SairLoginjButton1ActionPerformed
 
+    private void EntradaUsuariojTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaUsuariojTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntradaUsuariojTextField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField EntradaSenhajPasswordField1;

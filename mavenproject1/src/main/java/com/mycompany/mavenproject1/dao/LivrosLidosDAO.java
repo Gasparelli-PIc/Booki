@@ -90,26 +90,6 @@ public class LivrosLidosDAO {
         return livro;
     }
 
-    // Atualizar livro lido
-    public void atualizar(LivrosLidos livro) {
-        String sql = "UPDATE livrosLidos SET titulo = ?, autor = ?, idTipo = ? WHERE id = ?";
-
-        try (Connection conn = ConnectionFactory.obtemConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, livro.getTitulo());
-            stmt.setString(2, livro.getAutor());
-            stmt.setString(3, livro.getTipoLivro());
-            stmt.setInt(4, livro.getIdUsers());
-            stmt.setInt(5, livro.getId());
-
-            stmt.executeUpdate();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     // Deletar livro lido por ID
     public void deletar(int id) {
         String sql = "DELETE FROM livrosLidos WHERE id = ?";

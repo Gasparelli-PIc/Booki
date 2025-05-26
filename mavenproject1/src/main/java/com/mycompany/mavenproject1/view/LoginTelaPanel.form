@@ -69,6 +69,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="EntradaUsuariojTextField1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaUsuariojTextField1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="SenhajLabel1">
       <Properties>
