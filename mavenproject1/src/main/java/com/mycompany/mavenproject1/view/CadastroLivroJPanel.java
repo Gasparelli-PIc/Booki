@@ -54,26 +54,35 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
 
         setMinimumSize(new java.awt.Dimension(600, 400));
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         jLabel1.setText("Título do Livro");
 
+        EntradaTitulojTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         EntradaTitulojTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EntradaTitulojTextField1ActionPerformed(evt);
             }
         });
 
+        AutorjLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         AutorjLabel2.setText("Autor");
 
+        EntradaAutorjTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         EntradaAutorjTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EntradaAutorjTextField1ActionPerformed(evt);
             }
         });
 
+        TipoLivrojLabel2.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         TipoLivrojLabel2.setText("Tipo do Livro");
 
+        TipoLivrojComboBox1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         TipoLivrojComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ciência e Sociedade", "Sustentabilidade", "Tecnologia" }));
 
+        SalvarLivrojButton1.setBackground(new java.awt.Color(87, 176, 109));
+        SalvarLivrojButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        SalvarLivrojButton1.setForeground(new java.awt.Color(255, 255, 255));
         SalvarLivrojButton1.setText("Salvar");
         SalvarLivrojButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +90,9 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
             }
         });
 
+        CancelarLivrojButton1.setBackground(new java.awt.Color(212, 51, 51));
+        CancelarLivrojButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        CancelarLivrojButton1.setForeground(new java.awt.Color(255, 255, 255));
         CancelarLivrojButton1.setText("Cancelar");
         CancelarLivrojButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +110,7 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
                     .addComponent(SalvarLivrojButton1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(EntradaTitulojTextField1)
                             .addComponent(AutorjLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addComponent(EntradaAutorjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -106,7 +118,7 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
                         .addComponent(TipoLivrojComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(61, 61, 61)
                 .addComponent(CancelarLivrojButton1)
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addContainerGap(292, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,11 +135,11 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
                 .addComponent(TipoLivrojLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(TipoLivrojComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SalvarLivrojButton1)
                     .addComponent(CancelarLivrojButton1))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
         );
     }// </editor-fold>//GEN-END:initComponents
 
