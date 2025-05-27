@@ -10,7 +10,7 @@ tipo VARCHAR(50) NOT NULL UNIQUE
 CREATE TABLE users (
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(200) NOT NULL,
-idade INT NOT NULL,
+idade INT,
 administrador BOOLEAN NOT NULL,
 login VARCHAR(200) NOT NULL UNIQUE,
 senha VARCHAR(200) NOT NULL,
@@ -31,3 +31,5 @@ FOREIGN KEY (idTipo) REFERENCES tipoLivro (id)
 );
 
 INSERT INTO tipolivro(tipo) VALUES ("Sustentabilidade"), ("Tecnologia"), ("Ciência e Sociedade");
+
+INSERT INTO users(nome, idade, administrador, login, senha, tipoPreferido1, tipoPreferido2) VALUES ("Gabriel", 20, TRUE, "gasparelli", "123456", 2, 3 );
