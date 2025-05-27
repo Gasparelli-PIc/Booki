@@ -1,20 +1,41 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.mavenproject1.view;
 
-/**
- *
- * @author jogar
- */
+import com.mycompany.mavenproject1.dao.UsuarioDAO;
+import com.mycompany.mavenproject1.model.Users;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ConsultarUsuariosJPanel
-     */
     public ConsultarUsuariosJPanel() {
         initComponents();
+        carregarUsuariosNaTabela();
+    }
+
+    // Método para carregar os usuários na tabela
+    public void carregarUsuariosNaTabela() {
+        UsuarioDAO dao = new UsuarioDAO();
+        List<Users> usuarios = dao.listarTodos();
+        
+    // Ordena em ordem alfabética
+    usuarios.sort((u1, u2) -> u1.getNome().compareToIgnoreCase(u2.getNome()));
+
+
+        DefaultTableModel modelo = (DefaultTableModel) ConsultarUsuariosjTable1.getModel();
+        modelo.setRowCount(0); // Limpa as linhas da tabela antes de adicionar novos dados
+
+        for (Users u : usuarios) {
+            String tipoUsuario = u.getAdministrador() ? "Administrador" : "Comum";
+
+            modelo.addRow(new Object[]{
+                u.getNome(),
+                u.getLogin(),
+                tipoUsuario,
+                u.getIdade(),
+                u.getTipoPreferido1(),
+                u.getTipoPreferido2()
+            });
+        }
     }
 
     /**

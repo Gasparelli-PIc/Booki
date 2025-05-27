@@ -68,6 +68,36 @@ public class UsuarioDAO {
 
         return lista;
     }
+    
+    //Fazer lista dos usuario
+    public List<Users> listarOrdemAlfabética() {
+        List<Users> lista = new ArrayList<>();
+        String sql = "SELECT * FROM users ORDER BY nome ASC";
+
+        try (Connection conn = ConnectionFactory.obtemConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                Users usuario = new Users(
+                    rs.getInt("id"),
+                    rs.getString("nome"),
+                    rs.getInt("idade"),
+                    rs.getBoolean("administrador"),
+                    rs.getString("login"),
+                    rs.getString("senha"),
+                    rs.getInt("tipoPreferido1"),
+                    rs.getInt("tipoPreferido2")
+                );
+                lista.add(usuario);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
     //Buscar Usuario
     public Users BuscarUsuario(String login, String senha) {
         Users usuario = null;
