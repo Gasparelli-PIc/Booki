@@ -5,7 +5,13 @@
 package com.mycompany.mavenproject1.view;
 
 import javax.swing.JOptionPane;
-import com.mycompany.mavenproject1.App;
+
+import com.mycompany.mavenproject1.*;
+import com.mycompany.mavenproject1.dao.LivrosLidosDAO;
+import com.mycompany.mavenproject1.model.LivrosLidos;
+import com.mycompany.mavenproject1.model.TipoLivro;
+import com.mycompany.mavenproject1.model.Users;
+
 /**
  *
  * @author jogar
@@ -13,7 +19,7 @@ import com.mycompany.mavenproject1.App;
 public class CadastroLivroJPanel extends javax.swing.JPanel {
 
     private App app;
-    
+
     public CadastroLivroJPanel(App app) {
         this.app = app;
         initComponents();
@@ -22,18 +28,17 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
     private boolean validarCampos() {
         if (EntradaTitulojTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo Título do livro é obrigatório.");
-        
+
             return false;
         }
         if (EntradaAutorjTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo Autor é obrigatório.");
-        
+
             return false; // Impede o salvamento se nenhuma checkbox estiver selecionada
         }
-        
-            return true;
-        }
-    
+        return true;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,7 +87,7 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
         TipoLivrojLabel2.setText("Tipo do Livro");
 
         TipoLivrojComboBox1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        TipoLivrojComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ciência e Sociedade", "Sustentabilidade", "Tecnologia" }));
+        TipoLivrojComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Ciência e Sociedade", "Sustentabilidade", "Tecnologia"}));
 
         SalvarLivrojButton1.setBackground(new java.awt.Color(87, 176, 109));
         SalvarLivrojButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
@@ -107,43 +112,43 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(SalvarLivrojButton1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EntradaTitulojTextField1)
-                            .addComponent(AutorjLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(EntradaAutorjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TipoLivrojLabel2)
-                        .addComponent(TipoLivrojComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(61, 61, 61)
-                .addComponent(CancelarLivrojButton1)
-                .addContainerGap(292, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(SalvarLivrojButton1)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(EntradaTitulojTextField1)
+                                                        .addComponent(AutorjLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(EntradaAutorjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(TipoLivrojLabel2)
+                                                .addComponent(TipoLivrojComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(61, 61, 61)
+                                .addComponent(CancelarLivrojButton1)
+                                .addContainerGap(292, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(EntradaTitulojTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(AutorjLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(EntradaAutorjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(TipoLivrojLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(TipoLivrojComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SalvarLivrojButton1)
-                    .addComponent(CancelarLivrojButton1))
-                .addGap(43, 43, 43))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(EntradaTitulojTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(AutorjLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(EntradaAutorjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(TipoLivrojLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(TipoLivrojComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(SalvarLivrojButton1)
+                                        .addComponent(CancelarLivrojButton1))
+                                .addGap(43, 43, 43))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -151,13 +156,38 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_EntradaTitulojTextField1ActionPerformed
 
-    private void SalvarLivrojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarLivrojButton1ActionPerformed
-        if (validarCampos()) {
-           JOptionPane.showMessageDialog(this, "Livro salvo com sucesso!");
-           
-           app.getCardLayout().show(app.getContainer(), "Usuario");
-    }//GEN-LAST:event_SalvarLivrojButton1ActionPerformed
+    private void SalvarLivrojButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (!validarCampos()) {
+            return;
+        }
+
+        String tituloLivro = EntradaTitulojTextField1.getText().trim();
+        String autorLivro = EntradaAutorjTextField1.getText().trim();
+        int idUsuarioLogado = Sessao.getIdUsuario();
+        int tipoLivro = 0;
+
+        if (TipoLivrojComboBox1.getSelectedItem().equals("Ciência e Sociedade")) {
+            tipoLivro = 1;
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Sustentabilidade")) {
+            tipoLivro = 2;
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Tecnologia")) {
+            tipoLivro = 3; // Corrigir esse ID se for diferente no banco
+        }
+
+
+        LivrosLidos livrosLidos = new LivrosLidos(0, tituloLivro, autorLivro, tipoLivro, idUsuarioLogado);
+        LivrosLidosDAO LivrosDao = new LivrosLidosDAO();
+
+         try {
+            LivrosDao.inserir(livrosLidos);
+            JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!!!");
+            app.getCardLayout().show(app.getContainer(), "Usuario");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar livro. \n erro: " + e.getMessage());
+        }
+
     }
+
     private void EntradaAutorjTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaAutorjTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EntradaAutorjTextField1ActionPerformed
@@ -165,7 +195,6 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
     private void CancelarLivrojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarLivrojButton1ActionPerformed
         app.getCardLayout().show(app.getContainer(), "Usuario");
     }//GEN-LAST:event_CancelarLivrojButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AutorjLabel2;

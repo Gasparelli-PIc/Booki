@@ -1,22 +1,22 @@
 package com.mycompany.mavenproject1.model;
 
 /**
- * 
+ *
  * @author Marcelo
  */
 public class LivrosLidos {
-    
+
     private int id;
     private String titulo;
     private String autor;
-    private String tipoLivro;
+    private int idTipoLivro;
     private int idUsers;
 
-    public LivrosLidos(int id, String titulo, String autor, String tipoLivro, int idUsers) {
+    public LivrosLidos(int id, String titulo, String autor, int idTipoLivro, int idUsers) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
-        this.tipoLivro = tipoLivro;
+        this.idTipoLivro = idTipoLivro;
         this.idUsers = idUsers;
     }
 
@@ -33,8 +33,8 @@ public class LivrosLidos {
         this.autor = autor;
     }
 
-    public void setTipoLivro(String tipoLivro) {
-        this.tipoLivro = tipoLivro;
+    public void setTipoLivro(int tipoLivro) {
+        this.idTipoLivro = tipoLivro;
     }
 
     public void setIdUsers(int idUsers) {
@@ -54,8 +54,8 @@ public class LivrosLidos {
         return this.autor;
     }
 
-    public String getTipoLivro() {
-        return this.tipoLivro;
+    public int getTipoLivro() {
+        return this.idTipoLivro;
     }
 
     public int getIdUsers() {

@@ -5,7 +5,7 @@
 package com.mycompany.mavenproject1.view;
 
 import javax.swing.*;
-import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.*;
 import com.mycompany.mavenproject1.dao.*;
 import com.mycompany.mavenproject1.model.*;
 
@@ -209,9 +209,12 @@ public class LoginTelaPanel extends javax.swing.JPanel {
             if (usuario != null && usuario.getSenha().equals(senhaDigitada) && usuario.getLogin().equals(usuarioDigitado)) {
                                   
                 if (usuario.getAdministrador() == true) {               
-                    app.getCardLayout().show(app.getContainer(), "Admin");        
+                    app.getCardLayout().show(app.getContainer(), "Admin");
+                    Sessao.setIdUsuario(usuario.getId());
+
                 } else if (usuario.getAdministrador() == false){ 
                     app.getCardLayout().show(app.getContainer(), "Usuario");
+                    Sessao.setIdUsuario(usuario.getId());
                 }
                 } else if (usuario == null){
                     JOptionPane.showMessageDialog(null, "Usuario nao encontrado.");
@@ -240,4 +243,5 @@ public class LoginTelaPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
 }
