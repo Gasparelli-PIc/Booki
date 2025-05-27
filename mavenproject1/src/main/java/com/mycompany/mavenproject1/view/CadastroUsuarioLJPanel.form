@@ -46,7 +46,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField1" min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="SenhajTextField1" min="-2" pref="114" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="EntradaNomejTextField1" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
                                   <Component id="NomejLabel1" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
@@ -94,7 +94,7 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="SenhajTextField1" min="-2" max="-2" attributes="0"/>
                   <Component id="EntradaIdadejTextField1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
@@ -298,7 +298,7 @@
         <Property name="text" type="java.lang.String" value="Senha"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="SenhajTextField1">
     </Component>
   </SubComponents>
 </Form>

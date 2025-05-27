@@ -1,15 +1,22 @@
 package com.mycompany.mavenproject1.view;
 
+import com.mycompany.mavenproject1.App;
 import com.mycompany.mavenproject1.dao.UsuarioDAO;
 import com.mycompany.mavenproject1.model.Users;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
+    
+    private App app;
 
     public ConsultarUsuariosJPanel() {
         initComponents();
         carregarUsuariosNaTabela();
+    }
+
+    public ConsultarUsuariosJPanel(App aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     // Método para carregar os usuários na tabela
@@ -81,6 +88,11 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Sair");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         ordemAlfabeticajButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         ordemAlfabeticajButton1.setText("Ordenar A-Z");
@@ -119,6 +131,10 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     private void ordemAlfabeticajButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordemAlfabeticajButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ordemAlfabeticajButton1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "Usuario");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

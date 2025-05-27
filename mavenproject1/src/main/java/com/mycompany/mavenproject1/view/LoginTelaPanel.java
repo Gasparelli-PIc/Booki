@@ -49,7 +49,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
 
         UsuariojLabel1 = new javax.swing.JLabel();
         EntradaUsuariojTextField1 = new javax.swing.JTextField();
-        SenhajLabel1 = new javax.swing.JLabel();
+        SenhaLoginjLabel1 = new javax.swing.JLabel();
         EntradaSenhajPasswordField1 = new javax.swing.JPasswordField();
         LoginjButton1 = new javax.swing.JButton();
         SairLoginjButton1 = new javax.swing.JButton();
@@ -71,16 +71,16 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         UsuariojLabel1.setPreferredSize(new java.awt.Dimension(80, 20));
 
         EntradaUsuariojTextField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        EntradaUsuariojTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null));
+        EntradaUsuariojTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         EntradaUsuariojTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EntradaUsuariojTextField1ActionPerformed(evt);
             }
         });
 
-        SenhajLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        SenhajLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SenhajLabel1.setText("Senha");
+        SenhaLoginjLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        SenhaLoginjLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SenhaLoginjLabel1.setText("Senha");
 
         EntradaSenhajPasswordField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         EntradaSenhajPasswordField1.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +171,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
                         .addComponent(SairLoginjButton1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(UsuariojLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SenhajLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(SenhaLoginjLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(97, 97, 97))
         );
         layout.setVerticalGroup(
@@ -182,7 +182,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EntradaUsuariojTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(SenhajLabel1)
+                .addComponent(SenhaLoginjLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EntradaSenhajPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
@@ -218,7 +218,6 @@ public class LoginTelaPanel extends javax.swing.JPanel {
                 }
                 } else if (usuario == null){
                     JOptionPane.showMessageDialog(null, "Usuario nao encontrado.");
-                
                 }                
         }
     }//GEN-LAST:event_LoginjButton1ActionPerformed
@@ -236,7 +235,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
     private javax.swing.JTextField EntradaUsuariojTextField1;
     private javax.swing.JButton LoginjButton1;
     private javax.swing.JButton SairLoginjButton1;
-    private javax.swing.JLabel SenhajLabel1;
+    private javax.swing.JLabel SenhaLoginjLabel1;
     private javax.swing.JLabel UsuariojLabel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

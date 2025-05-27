@@ -8,6 +8,7 @@ com\mycompany\mavenproject1\App.class
 com\mycompany\mavenproject1\view\ConsultarUsuariosJPanel.class
 com\mycompany\mavenproject1\view\LoginTelaPanel.class
 com\mycompany\mavenproject1\dao\LivrosLidosDAO.class
+com\mycompany\mavenproject1\view\ConsultarUsuariosJPanel$2.class
 com\mycompany\mavenproject1\view\UsuarioJPanel.class
 com\mycompany\mavenproject1\view\CadastroLivroJPanel.class
 com\mycompany\mavenproject1\connection\ConnectionFactory.class
@@ -21,13 +22,14 @@ com\mycompany\mavenproject1\view\UsuarioJPanel$2.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$2.class
 com\mycompany\mavenproject1\model\LivrosLidos.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$9.class
+com\mycompany\mavenproject1\view\ConsultarUsuariosJPanel$3.class
+com\mycompany\mavenproject1\view\VisualizarLivrosJPanel$2.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel.class
 com\mycompany\mavenproject1\view\UsuarioJPanel$1.class
 com\mycompany\mavenproject1\view\CadastroLivroJPanel$1.class
 com\mycompany\mavenproject1\view\ConsultarUsuariosJPanel$1.class
 com\mycompany\mavenproject1\view\LoginTelaPanel$4.class
 com\mycompany\mavenproject1\view\VisualizarLivrosJPanel.class
-com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$10.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$4.class
 com\mycompany\mavenproject1\dao\TipoLivroDAO.class
 com\mycompany\mavenproject1\view\CadastroLivroJPanel$2.class

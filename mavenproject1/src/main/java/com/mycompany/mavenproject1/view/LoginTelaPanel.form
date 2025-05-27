@@ -40,7 +40,7 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="UsuariojLabel1" max="32767" attributes="0"/>
-                  <Component id="SenhajLabel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="SenhaLoginjLabel1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
           </Group>
@@ -54,7 +54,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="EntradaUsuariojTextField1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Component id="SenhajLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="SenhaLoginjLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="EntradaSenhajPasswordField1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
@@ -103,7 +103,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaUsuariojTextField1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="SenhajLabel1">
+    <Component class="javax.swing.JLabel" name="SenhaLoginjLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="20" style="1"/>

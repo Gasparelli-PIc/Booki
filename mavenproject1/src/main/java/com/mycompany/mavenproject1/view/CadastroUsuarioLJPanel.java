@@ -34,7 +34,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         if (EntradaIdadejTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo idade é obrigatório.");
         }
-        if (entradaSenhaCadjPasswordField1.getText().trim().isEmpty()) {
+        if (SenhajTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo Senha é obrigatório.");
         }
         if (!CienciaESociedadejCheckBox1.isSelected() &&
@@ -89,7 +89,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         LoginjLabel1 = new javax.swing.JLabel();
         EntradaLoginCadjTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        SenhajTextField1 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -211,7 +211,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                             .addGap(106, 106, 106))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(SenhajTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(EntradaNomejTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(NomejLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,7 +247,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                     .addComponent(IdadejLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SenhajTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EntradaIdadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,7 +295,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         String nomeDoUsuario = EntradaNomejTextField1.getText().trim();
         int idadeDoUsuario = Integer.parseInt(EntradaIdadejTextField1.getText().trim());
         String loginDoUsuario = EntradaLoginCadjTextField1.getText().trim();
-        String SenhaDoUsuario = "senha";
+        String SenhaDoUsuario = SenhajTextField1.getText().trim();
         Boolean usuarioAdministrador = jComboBox1.getSelectedItem().equals("Usuário Administrador");
 
         java.util.List<Integer> tiposSelecionados = new java.util.ArrayList<>();
@@ -326,7 +326,6 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar Usuario. \n erro: " + e.getMessage());
         }
-
     }//GEN-LAST:event_SalvarUsuariojButton1ActionPerformed
 
     private void CancelarUsuariojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarUsuariojButton2ActionPerformed
@@ -355,12 +354,12 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel LoginjLabel1;
     private javax.swing.JLabel NomejLabel1;
     private javax.swing.JButton SalvarUsuariojButton1;
+    private javax.swing.JTextField SenhajTextField1;
     private javax.swing.JCheckBox SustentabilidadejCheckBox2;
     private javax.swing.JCheckBox TecnologiajCheckBox3;
     private javax.swing.JLabel TipoLivrojLabel1;
     private javax.swing.JLabel TipoUsuariojLabel1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

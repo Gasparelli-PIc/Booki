@@ -4,19 +4,51 @@
  */
 package com.mycompany.mavenproject1.view;
 
+import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.dao.LivrosLidosDAO;
+import com.mycompany.mavenproject1.model.LivrosLidos;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author jogar
  */
 public class VisualizarLivrosJPanel extends javax.swing.JPanel {
-
+    
+    private App app;
     /**
      * Creates new form VisualizarLivrosJPanel
      */
     public VisualizarLivrosJPanel() {
         initComponents();
+        carregarLivros();
     }
 
+    public VisualizarLivrosJPanel(App aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    public void carregarLivros() {
+        LivrosLidosDAO dao = new LivrosLidosDAO();
+        List<LivrosLidos> livros = dao.listarTodos();
+        
+    // Ordena em ordem alfabética
+        livros.sort((u1, u2) -> u1.getTitulo().compareToIgnoreCase(u2.getTitulo()));
+
+        DefaultTableModel modelo = (DefaultTableModel) VisualizarLivrosjTable1.getModel();
+        modelo.setRowCount(0); // Limpa as linhas da tabela antes de adicionar novos dados
+
+        for (LivrosLidos l : livros) {
+
+            modelo.addRow(new Object[]{
+                l.getTitulo(),
+                l.getAutor(),
+                l.getTipoLivro(),
+            });
+        }
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,6 +97,11 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jButton2.setText("Ordenar A-Z");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -92,6 +129,10 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "Admin");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
