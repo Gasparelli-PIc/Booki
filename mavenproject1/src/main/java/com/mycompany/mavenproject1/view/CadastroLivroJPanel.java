@@ -52,9 +52,11 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
         SalvarLivrojButton1 = new javax.swing.JButton();
         CancelarLivrojButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Título do Livro");
 
         EntradaTitulojTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -64,7 +66,8 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
             }
         });
 
-        AutorjLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        AutorjLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AutorjLabel2.setForeground(new java.awt.Color(255, 255, 255));
         AutorjLabel2.setText("Autor");
 
         EntradaAutorjTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -74,7 +77,8 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
             }
         });
 
-        TipoLivrojLabel2.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        TipoLivrojLabel2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        TipoLivrojLabel2.setForeground(new java.awt.Color(255, 255, 255));
         TipoLivrojLabel2.setText("Tipo do Livro");
 
         TipoLivrojComboBox1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N

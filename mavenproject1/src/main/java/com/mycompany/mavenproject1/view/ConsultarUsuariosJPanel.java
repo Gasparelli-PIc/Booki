@@ -28,9 +28,13 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         ConsultarUsuariosjTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        ordemAlfabeticajButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
 
+        ConsultarUsuariosjTable1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         ConsultarUsuariosjTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -39,7 +43,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Nome", "Login", "Tipo de Usuário", "Idade", "Favorito 1", "Favorito 2"
+                "Nome", "Login", "Usuário", "Idade", "Favorito 1", "Favorito 2"
             }
         ) {
             Class[] types = new Class [] {
@@ -52,25 +56,54 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ConsultarUsuariosjTable1);
 
+        jButton1.setBackground(new java.awt.Color(212, 51, 51));
+        jButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Sair");
+
+        ordemAlfabeticajButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        ordemAlfabeticajButton1.setText("Ordenar A-Z");
+        ordemAlfabeticajButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ordemAlfabeticajButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 225, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ordemAlfabeticajButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 125, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(ordemAlfabeticajButton1)
+                        .addGap(39, 39, 39)
+                        .addComponent(jButton1)))
+                .addGap(0, 100, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ordemAlfabeticajButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordemAlfabeticajButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ordemAlfabeticajButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ConsultarUsuariosjTable1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton ordemAlfabeticajButton1;
     // End of variables declaration//GEN-END:variables
 }

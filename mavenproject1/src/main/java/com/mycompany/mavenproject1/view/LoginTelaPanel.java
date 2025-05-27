@@ -62,7 +62,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(600, 400));
         setPreferredSize(new java.awt.Dimension(600, 400));
 
-        UsuariojLabel1.setFont(new java.awt.Font("SansSerif", 3, 20)); // NOI18N
+        UsuariojLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         UsuariojLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         UsuariojLabel1.setText("Usuário");
         UsuariojLabel1.setMaximumSize(new java.awt.Dimension(40, 40));
@@ -71,14 +71,14 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         UsuariojLabel1.setPreferredSize(new java.awt.Dimension(80, 20));
 
         EntradaUsuariojTextField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        EntradaUsuariojTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        EntradaUsuariojTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null));
         EntradaUsuariojTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EntradaUsuariojTextField1ActionPerformed(evt);
             }
         });
 
-        SenhajLabel1.setFont(new java.awt.Font("SansSerif", 3, 20)); // NOI18N
+        SenhajLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         SenhajLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SenhajLabel1.setText("Senha");
 
@@ -111,7 +111,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(31, 79, 144));
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bem Vindo ");
@@ -121,7 +121,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Sistema de Leituras!");
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("ao");

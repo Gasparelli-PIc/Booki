@@ -38,7 +38,7 @@ public class UsuarioJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(600, 400));
         setRequestFocusEnabled(false);
 
-        CadastrarLivrojButton1.setFont(new java.awt.Font("SansSerif", 3, 20)); // NOI18N
+        CadastrarLivrojButton1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         CadastrarLivrojButton1.setText("Cadastrar Livro");
         CadastrarLivrojButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,7 +46,7 @@ public class UsuarioJPanel extends javax.swing.JPanel {
             }
         });
 
-        VisualizarLivrosjButton1.setFont(new java.awt.Font("SansSerif", 3, 20)); // NOI18N
+        VisualizarLivrosjButton1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         VisualizarLivrosjButton1.setText("Visualizar Livros");
         VisualizarLivrosjButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +56,7 @@ public class UsuarioJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(31, 79, 144));
 
-        BemVindojLabel2.setFont(new java.awt.Font("SansSerif", 3, 28)); // NOI18N
+        BemVindojLabel2.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         BemVindojLabel2.setForeground(new java.awt.Color(255, 255, 255));
         BemVindojLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BemVindojLabel2.setText("Área do Usuário");
