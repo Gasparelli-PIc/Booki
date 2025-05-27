@@ -1,9 +1,18 @@
 package com.mycompany.mavenproject1;
 
-import com.mycompany.mavenproject1.view.*;
+import java.awt.CardLayout;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
+import com.mycompany.mavenproject1.view.AdminJPanel;
+import com.mycompany.mavenproject1.view.CadastroLivroJPanel;
+import com.mycompany.mavenproject1.view.CadastroUsuarioLJPanel;
+import com.mycompany.mavenproject1.view.ConsultarUsuariosJPanel;
+import com.mycompany.mavenproject1.view.LoginTelaPanel;
+import com.mycompany.mavenproject1.view.UsuarioJPanel;
+import com.mycompany.mavenproject1.view.VisualizarLivrosJPanel;
 
 public class App extends JFrame {
 
@@ -16,6 +25,7 @@ public class App extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 450);
         setLocationRelativeTo(null);
+        setResizable(false);
 
         // Layout e container principal
         cardLayout = new CardLayout();

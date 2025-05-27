@@ -1,13 +1,13 @@
 package com.mycompany.mavenproject1.dao;
 
-import com.mycompany.mavenproject1.connection.ConnectionFactory;
-import com.mycompany.mavenproject1.model.LivrosLidos;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.mycompany.mavenproject1.connection.ConnectionFactory;
+import com.mycompany.mavenproject1.model.LivrosLidos;
 
 /**
  * DAO para a tabela livros_lidos
@@ -24,7 +24,7 @@ public class LivrosLidosDAO {
 
             stmt.setString(1, livro.getTitulo());
             stmt.setString(2, livro.getAutor());
-            stmt.setString(3, livro.getTipoLivro());
+            stmt.setInt(3, livro.getTipoLivro());
             stmt.setInt(4, livro.getIdUsers());
 
             stmt.executeUpdate();
@@ -48,7 +48,7 @@ public class LivrosLidosDAO {
                         rs.getInt("id"),
                         rs.getString("titulo"),
                         rs.getString("autor"),
-                        rs.getString("idTipo"),
+                        rs.getInt("idTipo"),
                         rs.getInt("idUsers")
                 );
                 lista.add(livro);
@@ -77,7 +77,7 @@ public class LivrosLidosDAO {
                             rs.getInt("id"),
                             rs.getString("titulo"),
                             rs.getString("autor"),
-                            rs.getString("idTipo"),
+                            rs.getInt("idTipo"),
                             rs.getInt("idUsers")
                     );
                 }
