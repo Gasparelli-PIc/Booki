@@ -89,11 +89,14 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         LoginjLabel1 = new javax.swing.JLabel();
         EntradaLoginCadjTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        entradaSenhaCadjPasswordField1 = new javax.swing.JPasswordField();
+        jTextField1 = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
         setPreferredSize(new java.awt.Dimension(600, 400));
 
+        NomejLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        NomejLabel1.setForeground(new java.awt.Color(255, 255, 255));
         NomejLabel1.setText("Nome");
 
         EntradaNomejTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +105,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             }
         });
 
+        IdadejLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        IdadejLabel1.setForeground(new java.awt.Color(255, 255, 255));
         IdadejLabel1.setText("Idade");
 
         EntradaIdadejTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +115,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             }
         });
 
+        TipoUsuariojLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        TipoUsuariojLabel1.setForeground(new java.awt.Color(255, 255, 255));
         TipoUsuariojLabel1.setText("Tipo Usuário");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuário Administrador", "Usuário Comum" }));
@@ -119,8 +126,12 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             }
         });
 
+        TipoLivrojLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        TipoLivrojLabel1.setForeground(new java.awt.Color(255, 255, 255));
         TipoLivrojLabel1.setText("Tipo de Livro Favorito");
 
+        CienciaESociedadejCheckBox1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        CienciaESociedadejCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         CienciaESociedadejCheckBox1.setText("Ciência e sociedade");
         CienciaESociedadejCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +139,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             }
         });
 
+        SustentabilidadejCheckBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        SustentabilidadejCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
         SustentabilidadejCheckBox2.setText("Sustentabilidade");
         SustentabilidadejCheckBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +148,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             }
         });
 
+        TecnologiajCheckBox3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        TecnologiajCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
         TecnologiajCheckBox3.setText("Tecnologia");
         TecnologiajCheckBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,6 +157,9 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             }
         });
 
+        SalvarUsuariojButton1.setBackground(new java.awt.Color(87, 176, 109));
+        SalvarUsuariojButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        SalvarUsuariojButton1.setForeground(new java.awt.Color(255, 255, 255));
         SalvarUsuariojButton1.setText("Salvar");
         SalvarUsuariojButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,6 +167,9 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             }
         });
 
+        CancelarUsuariojButton2.setBackground(new java.awt.Color(212, 51, 51));
+        CancelarUsuariojButton2.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        CancelarUsuariojButton2.setForeground(new java.awt.Color(255, 255, 255));
         CancelarUsuariojButton2.setText("Cancelar");
         CancelarUsuariojButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,6 +177,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             }
         });
 
+        LoginjLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        LoginjLabel1.setForeground(new java.awt.Color(255, 255, 255));
         LoginjLabel1.setText("Login");
 
         EntradaLoginCadjTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -164,86 +187,87 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Senha");
-
-        entradaSenhaCadjPasswordField1.setText("aaaaaaaaaa");
-        entradaSenhaCadjPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaSenhaCadjPasswordField1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(146, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(EntradaLoginCadjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LoginjLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(97, 97, 97))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(SalvarUsuariojButton1)
+                            .addGap(157, 157, 157)
+                            .addComponent(CancelarUsuariojButton2)
+                            .addGap(106, 106, 106))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(EntradaNomejTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NomejLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TipoUsuariojLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(107, 107, 107)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(CienciaESociedadejCheckBox1)
+                                .addComponent(TipoLivrojLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(SustentabilidadejCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TecnologiajCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EntradaIdadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(IdadejLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(75, 75, 75)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NomejLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EntradaNomejTextField1)
-                            .addComponent(IdadejLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EntradaIdadejTextField1)
-                            .addComponent(TipoUsuariojLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, 0, Short.MAX_VALUE)
-                            .addComponent(TipoLivrojLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CienciaESociedadejCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TecnologiajCheckBox3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SustentabilidadejCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(SalvarUsuariojButton1)
-                        .addGap(67, 67, 67)
-                        .addComponent(CancelarUsuariojButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LoginjLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EntradaLoginCadjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(122, 122, 122)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(entradaSenhaCadjPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))))
-                .addContainerGap(293, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LoginjLabel1)
-                    .addComponent(jLabel1))
+                    .addComponent(NomejLabel1)
+                    .addComponent(LoginjLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EntradaLoginCadjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(entradaSenhaCadjPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(NomejLabel1)
+                    .addComponent(EntradaNomejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EntradaLoginCadjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(IdadejLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EntradaNomejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(IdadejLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EntradaIdadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TipoUsuariojLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TipoLivrojLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CienciaESociedadejCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SustentabilidadejCheckBox2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EntradaIdadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(TipoUsuariojLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(TipoLivrojLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CienciaESociedadejCheckBox1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SustentabilidadejCheckBox2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TecnologiajCheckBox3)
-                .addGap(42, 42, 42)
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SalvarUsuariojButton1)
-                    .addComponent(CancelarUsuariojButton2))
-                .addContainerGap())
+                    .addComponent(CancelarUsuariojButton2)
+                    .addComponent(SalvarUsuariojButton1))
+                .addGap(47, 47, 47))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -321,10 +345,6 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_TecnologiajCheckBox3ActionPerformed
 
-    private void entradaSenhaCadjPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaSenhaCadjPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaSenhaCadjPasswordField1ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelarUsuariojButton2;
     private javax.swing.JCheckBox CienciaESociedadejCheckBox1;
@@ -339,8 +359,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox TecnologiajCheckBox3;
     private javax.swing.JLabel TipoLivrojLabel1;
     private javax.swing.JLabel TipoUsuariojLabel1;
-    private javax.swing.JPasswordField entradaSenhaCadjPasswordField1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
