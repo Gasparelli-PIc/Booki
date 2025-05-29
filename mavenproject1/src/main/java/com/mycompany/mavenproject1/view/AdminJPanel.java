@@ -54,7 +54,7 @@ public class AdminJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(31, 79, 144));
 
-        BemVindojLabel1.setFont(new java.awt.Font("SansSerif", 3, 28)); // NOI18N
+        BemVindojLabel1.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         BemVindojLabel1.setForeground(new java.awt.Color(255, 255, 255));
         BemVindojLabel1.setText("Área do Administrador");
 
@@ -63,7 +63,7 @@ public class AdminJPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(149, Short.MAX_VALUE)
+                .addContainerGap(151, Short.MAX_VALUE)
                 .addComponent(BemVindojLabel1)
                 .addGap(146, 146, 146))
         );
@@ -92,9 +92,6 @@ public class AdminJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(185, 185, 185)
@@ -102,6 +99,7 @@ public class AdminJPanel extends javax.swing.JPanel {
                     .addComponent(VisalizarUsuariojButton2)
                     .addComponent(CadastrarUsuariosjButton1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

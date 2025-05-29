@@ -60,8 +60,8 @@
                               <Component id="TipoLivrojLabel1" min="-2" pref="136" max="-2" attributes="0"/>
                               <Component id="SustentabilidadejCheckBox2" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
                               <Component id="TecnologiajCheckBox3" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                              <Component id="EntradaIdadejTextField1" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
                               <Component id="IdadejLabel1" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
+                              <Component id="EntradaIdadejTextField1" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                       </Group>
