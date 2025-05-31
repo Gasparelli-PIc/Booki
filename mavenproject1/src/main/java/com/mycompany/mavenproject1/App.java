@@ -37,8 +37,10 @@ public class App extends JFrame {
         CadastroLivroJPanel cadLivro = new CadastroLivroJPanel(this);
         CadastroUsuarioLJPanel cadUsuario = new CadastroUsuarioLJPanel(this);
         ConsultarUsuariosJPanel consultUsuario = new ConsultarUsuariosJPanel();
+        consultUsuario.setApp(this);
         UsuarioJPanel usuario = new UsuarioJPanel(this);
         VisualizarLivrosJPanel visLivro = new VisualizarLivrosJPanel();
+        visLivro.setApp(this);
 
         // Adicionar os painéis no container com nomes para navegação
         container.add(login, "Login");

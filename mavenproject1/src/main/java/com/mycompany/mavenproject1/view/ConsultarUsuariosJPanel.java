@@ -14,7 +14,11 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         initComponents();
         carregarUsuariosNaTabela();
     }
-
+    
+    public void setApp(App app) {
+    this.app = app;
+    }
+   
     public ConsultarUsuariosJPanel(App aThis) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -58,6 +62,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         ConsultarUsuariosjTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         ordemAlfabeticajButton1 = new javax.swing.JButton();
+        ExcluirJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -102,6 +107,15 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
             }
         });
 
+        ExcluirJButton.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        ExcluirJButton.setForeground(new java.awt.Color(255, 255, 255));
+        ExcluirJButton.setText("Excluir");
+        ExcluirJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExcluirJButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,7 +125,8 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ordemAlfabeticajButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ordemAlfabeticajButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ExcluirJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
@@ -123,7 +138,9 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
                         .addGap(43, 43, 43)
                         .addComponent(ordemAlfabeticajButton1)
                         .addGap(39, 39, 39)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1)
+                        .addGap(39, 39, 39)
+                        .addComponent(ExcluirJButton)))
                 .addGap(0, 100, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -136,9 +153,14 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         app.getCardLayout().show(app.getContainer(), "Usuario");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void ExcluirJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExcluirJButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ConsultarUsuariosjTable1;
+    private javax.swing.JButton ExcluirJButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton ordemAlfabeticajButton1;

@@ -199,8 +199,20 @@ public class LoginTelaPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_EntradaSenhajPasswordField1ActionPerformed
 
     private void LoginjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginjButton1ActionPerformed
-        String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
-        String usuarioDigitado = EntradaUsuariojTextField1.getText();
+
+        
+//            String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
+//            String usuarioDigitado = EntradaUsuariojTextField1.getText();
+//
+//            if (usuarioDigitado.equalsIgnoreCase("Admin") && senhaDigitada.equals("1234")) {
+//                app.getCardLayout().show(app.getContainer(), "Admin");
+//            } else {
+//                JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
+//            };
+        
+
+            String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
+            String usuarioDigitado = EntradaUsuariojTextField1.getText();
         
         UsuarioDAO daoUser = new UsuarioDAO();
         Users usuario = daoUser.BuscarUsuario(usuarioDigitado, senhaDigitada);
