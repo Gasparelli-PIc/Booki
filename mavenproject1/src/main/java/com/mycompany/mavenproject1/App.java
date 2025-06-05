@@ -19,6 +19,8 @@ public class App extends JFrame {
     private JPanel container;
     private CardLayout cardLayout;
 
+    private ConsultarUsuariosJPanel consultUsuario;
+    private VisualizarLivrosJPanel visLivro;
     public App() {
         // Configuração da janela
         setTitle("Sistema de Compartilhamento de Leituras");
@@ -36,9 +38,11 @@ public class App extends JFrame {
         AdminJPanel admin = new AdminJPanel(this);
         CadastroLivroJPanel cadLivro = new CadastroLivroJPanel(this);
         CadastroUsuarioLJPanel cadUsuario = new CadastroUsuarioLJPanel(this);
-        ConsultarUsuariosJPanel consultUsuario = new ConsultarUsuariosJPanel();
+        consultUsuario = new ConsultarUsuariosJPanel();
+        consultUsuario.setApp(this);
         UsuarioJPanel usuario = new UsuarioJPanel(this);
-        VisualizarLivrosJPanel visLivro = new VisualizarLivrosJPanel();
+        visLivro = new VisualizarLivrosJPanel();
+        visLivro.setApp(this);
 
         // Adicionar os painéis no container com nomes para navegação
         container.add(login, "Login");
@@ -63,6 +67,14 @@ public class App extends JFrame {
 
     public JPanel getContainer() {
         return container;
+    }
+    
+    public ConsultarUsuariosJPanel getConsultarUsuariosJPanel (){
+        return consultUsuario;
+    }
+    
+    public VisualizarLivrosJPanel getVisualizarLivrosJPanel(){
+        return visLivro;
     }
 
     public static void main(String[] args) {

@@ -24,6 +24,10 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         initComponents();
         carregarLivros();
     }
+    
+    public void setApp(App app) {
+    this.app = app;
+    }
 
     public VisualizarLivrosJPanel(App aThis) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -94,6 +98,11 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Sair");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jButton2.setText("Ordenar A-Z");
@@ -131,8 +140,12 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        app.getCardLayout().show(app.getContainer(), "Admin");
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       app.getCardLayout().show(app.getContainer(), "Usuario");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

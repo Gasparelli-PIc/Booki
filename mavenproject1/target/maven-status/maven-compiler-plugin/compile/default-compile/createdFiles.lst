@@ -19,6 +19,7 @@ com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$5.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$7.class
 com\mycompany\mavenproject1\view\LoginTelaPanel$2.class
 com\mycompany\mavenproject1\view\UsuarioJPanel$2.class
+com\mycompany\mavenproject1\view\VisualizarLivrosJPanel$3.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$2.class
 com\mycompany\mavenproject1\model\LivrosLidos.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$9.class
@@ -36,6 +37,7 @@ com\mycompany\mavenproject1\view\CadastroLivroJPanel$2.class
 com\mycompany\mavenproject1\model\TipoLivro.class
 com\mycompany\mavenproject1\view\CadastroLivroJPanel$4.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$1.class
+com\mycompany\mavenproject1\view\ConsultarUsuariosJPanel$4.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$6.class
 com\mycompany\mavenproject1\view\AdminJPanel$1.class
 com\mycompany\mavenproject1\view\LoginTelaPanel$1.class
