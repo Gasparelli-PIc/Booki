@@ -67,7 +67,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
 
-        ConsultarUsuariosjTable1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        ConsultarUsuariosjTable1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         ConsultarUsuariosjTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -107,6 +107,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
             }
         });
 
+        ExcluirJButton.setBackground(new java.awt.Color(0, 0, 0));
         ExcluirJButton.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         ExcluirJButton.setForeground(new java.awt.Color(255, 255, 255));
         ExcluirJButton.setText("Excluir");
@@ -121,27 +122,25 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ordemAlfabeticajButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ExcluirJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(27, 27, 27))
+                .addGap(39, 39, 39)
+                .addComponent(ExcluirJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(ordemAlfabeticajButton1)
+                .addGap(72, 72, 72))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(ordemAlfabeticajButton1)
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton1)
-                        .addGap(39, 39, 39)
-                        .addComponent(ExcluirJButton)))
-                .addGap(0, 100, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(ExcluirJButton)
+                    .addComponent(ordemAlfabeticajButton1))
+                .addGap(0, 59, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -130,10 +130,17 @@
           <Font name="SansSerif" size="12" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Ci&#xea;ncia e Sociedade"/>
-            <StringItem index="1" value="Sustentabilidade"/>
-            <StringItem index="2" value="Tecnologia"/>
+          <StringArray count="10">
+            <StringItem index="0" value="Selecione..."/>
+            <StringItem index="1" value="Aventura"/>
+            <StringItem index="2" value="Ci&#xea;ncia e Sociedade"/>
+            <StringItem index="3" value="Fantasia"/>
+            <StringItem index="4" value="Filosofia"/>
+            <StringItem index="5" value="Poesia"/>
+            <StringItem index="6" value="Romance"/>
+            <StringItem index="7" value="Sustentabilidade"/>
+            <StringItem index="8" value="Tecnologia"/>
+            <StringItem index="9" value="Terror"/>
           </StringArray>
         </Property>
       </Properties>

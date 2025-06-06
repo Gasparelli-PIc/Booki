@@ -90,6 +90,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         EntradaLoginCadjTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         SenhajTextField1 = new javax.swing.JTextField();
+        favoritoUmjComboBox2 = new javax.swing.JComboBox<>();
+        favoritoDoisjComboBox2 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -119,7 +121,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         TipoUsuariojLabel1.setForeground(new java.awt.Color(255, 255, 255));
         TipoUsuariojLabel1.setText("Tipo Usuário");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuário Administrador", "Usuário Comum" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Usuário Administrador", "Usuário Comum" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -191,12 +193,24 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Senha");
 
+        favoritoUmjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        favoritoUmjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Aventura", "Ciência e Sociedade", "Fantasia", "Filosofia", "Poesia", "Romance", "Sustentabilidade", "Tecnologia", "Terror" }));
+
+        favoritoDoisjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        favoritoDoisjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Aventura", "Ciência e Sociedade", "Fantasia", "Filosofia", "Poesia", "Romance", "Sustentabilidade", "Tecnologia", "Terror" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(146, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(favoritoDoisjComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(favoritoUmjComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -241,15 +255,18 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EntradaNomejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EntradaLoginCadjTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(IdadejLabel1))
+                    .addComponent(IdadejLabel1)
+                    .addComponent(favoritoUmjComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SenhajTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(SenhajTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(favoritoDoisjComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(EntradaIdadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(TipoUsuariojLabel1)
@@ -359,6 +376,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox TecnologiajCheckBox3;
     private javax.swing.JLabel TipoLivrojLabel1;
     private javax.swing.JLabel TipoUsuariojLabel1;
+    private javax.swing.JComboBox<String> favoritoDoisjComboBox2;
+    private javax.swing.JComboBox<String> favoritoUmjComboBox2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
