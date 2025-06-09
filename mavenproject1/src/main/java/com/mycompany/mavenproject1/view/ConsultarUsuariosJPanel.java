@@ -5,6 +5,7 @@ import com.mycompany.mavenproject1.dao.UsuarioDAO;
 import com.mycompany.mavenproject1.model.Users;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
 
 public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     
@@ -13,6 +14,10 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     public ConsultarUsuariosJPanel() {
         initComponents();
         carregarUsuariosNaTabela();
+        
+        ConsultarUsuariosjTable1.getColumnModel().getColumn(0).setMinWidth(0);
+        ConsultarUsuariosjTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+        ConsultarUsuariosjTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
     }
     
     public void setApp(App app) {
@@ -39,13 +44,14 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
             String tipoUsuario = u.getAdministrador() ? "Administrador" : "Comum";
 
             modelo.addRow(new Object[]{
+                u.getId(), // nova coluna 0
                 u.getNome(),
                 u.getLogin(),
                 tipoUsuario,
                 u.getIdade(),
                 u.getTipoPreferido1(),
                 u.getTipoPreferido2()
-            });
+                });
         }
     }
 
@@ -153,7 +159,27 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ExcluirJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirJButtonActionPerformed
-        // TODO add your handling code here:
+     int linhaSelecionada = ConsultarUsuariosjTable1.getSelectedRow();
+    
+    if (linhaSelecionada != -1) {
+        DefaultTableModel modelo = (DefaultTableModel) ConsultarUsuariosjTable1.getModel();
+        
+        int id = Integer.parseInt(modelo.getValueAt(linhaSelecionada, 0).toString()); 
+
+        int confirmacao = JOptionPane.showConfirmDialog(this,
+                "Deseja realmente excluir este usuário?", "Confirmação",
+                JOptionPane.YES_NO_OPTION);
+
+        if (confirmacao == JOptionPane.YES_OPTION) {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.deletar(id);
+            modelo.removeRow(linhaSelecionada);
+            JOptionPane.showMessageDialog(this, "Usuário excluído com sucesso.");
+        }
+
+    } else {
+        JOptionPane.showMessageDialog(this, "Selecione um usuário para excluir.");
+    }
     }//GEN-LAST:event_ExcluirJButtonActionPerformed
 
 

@@ -23,6 +23,26 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
     public VisualizarLivrosJPanel() {
         initComponents();
         carregarLivros();
+        
+        VisualizarLivrosjTable1.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null, null, null, null},
+        },
+        new String [] {
+            "ID", "Título", "Autor", "Tipo"
+        }
+    ) {
+        Class[] types = new Class [] {
+            java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+        };
+        public Class getColumnClass(int columnIndex) {
+            return types[columnIndex];
+        }
+    });
+        
+        VisualizarLivrosjTable1.getColumnModel().getColumn(0).setMinWidth(0);
+        VisualizarLivrosjTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+        VisualizarLivrosjTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
     }
     
     public void setApp(App app) {
@@ -45,9 +65,10 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         for (LivrosLidos l : livros) {
 
             modelo.addRow(new Object[]{
+                l.getId(),            // ID (coluna 0)
                 l.getTitulo(),
                 l.getAutor(),
-                l.getTipoLivro(),
+                l.getTipoLivro()
             });
         }
     }
@@ -115,6 +136,11 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
 
         excluirjToggleButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         excluirjToggleButton1.setText("Excluir");
+        excluirjToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirjToggleButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -150,6 +176,29 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        app.getCardLayout().show(app.getContainer(), "Usuario");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void excluirjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirjToggleButton1ActionPerformed
+        int linhaSelecionada = VisualizarLivrosjTable1.getSelectedRow();
+
+    if (linhaSelecionada != -1) {
+        DefaultTableModel modelo = (DefaultTableModel) VisualizarLivrosjTable1.getModel();
+        int id = Integer.parseInt(modelo.getValueAt(linhaSelecionada, 0).toString());
+
+        int confirmacao = javax.swing.JOptionPane.showConfirmDialog(this,
+                "Deseja realmente excluir este livro?", "Confirmação",
+                javax.swing.JOptionPane.YES_NO_OPTION);
+
+        if (confirmacao == javax.swing.JOptionPane.YES_OPTION) {
+            LivrosLidosDAO dao = new LivrosLidosDAO();
+            dao.deletar(id);
+            carregarLivros(); // Atualiza a tabela após exclusão
+            javax.swing.JOptionPane.showMessageDialog(this, "Livro excluído com sucesso.");
+        }
+
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this, "Selecione um livro para excluir.");
+    }
+    }//GEN-LAST:event_excluirjToggleButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
