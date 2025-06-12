@@ -23,6 +23,17 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         this.app = app;
         initComponents();
     }
+    private void limparCampos() {
+        EntradaNomejTextField1.setText("");
+        EntradaIdadejTextField1.setText("");
+        EntradaLoginCadjTextField1.setText("");
+        SenhajTextField1.setText("");
+        jComboBox1.setSelectedIndex(0);
+        CienciaESociedadejCheckBox1.setSelected(false);
+        SustentabilidadejCheckBox2.setSelected(false);
+        TecnologiajCheckBox3.setSelected(false);
+    }
+
      
     private boolean validarCampos() {
         if (EntradaLoginCadjTextField1.getText().trim().isEmpty()) {
@@ -336,13 +347,15 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         Users usuario = new Users(0, nomeDoUsuario, idadeDoUsuario, usuarioAdministrador, loginDoUsuario, SenhaDoUsuario, tipo1, tipo2);
         UsuarioDAO usDAO = new UsuarioDAO();
 
-        try {
-            usDAO.inserir(usuario);
-            JOptionPane.showMessageDialog(null, "Usuario Cadastrado com sucesso!!!");
-            app.getCardLayout().show(app.getContainer(), "Admin");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar Usuario. \n erro: " + e.getMessage());
-        }
+    try {
+        usDAO.inserir(usuario);
+        JOptionPane.showMessageDialog(this, "Usuario Cadastrado com sucesso!!!");
+        limparCampos(); 
+        app.getCardLayout().show(app.getContainer(), "Admin");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Erro ao cadastrar Usuario. \n erro: " + e.getMessage());
+    }
+
     }//GEN-LAST:event_SalvarUsuariojButton1ActionPerformed
 
     private void CancelarUsuariojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarUsuariojButton2ActionPerformed

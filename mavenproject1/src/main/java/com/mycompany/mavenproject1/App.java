@@ -21,6 +21,8 @@ public class App extends JFrame {
 
     private ConsultarUsuariosJPanel consultUsuario;
     private VisualizarLivrosJPanel visLivro;
+    private CadastroUsuarioLJPanel cadUsuario; // <-- Mude para variável de instância
+    private CadastroLivroJPanel cadLivro;     
     public App() {
         // Configuração da janela
         setTitle("Sistema de Compartilhamento de Leituras");
@@ -36,8 +38,8 @@ public class App extends JFrame {
         // Instanciar os painéis (telas), passando this (referência do App)
         LoginTelaPanel login = new LoginTelaPanel(this);
         AdminJPanel admin = new AdminJPanel(this);
-        CadastroLivroJPanel cadLivro = new CadastroLivroJPanel(this);
-        CadastroUsuarioLJPanel cadUsuario = new CadastroUsuarioLJPanel(this);
+        cadLivro = new CadastroLivroJPanel(this);     // <-- Altere aqui
+        cadUsuario = new CadastroUsuarioLJPanel(this);
         consultUsuario = new ConsultarUsuariosJPanel();
         consultUsuario.setApp(this);
         UsuarioJPanel usuario = new UsuarioJPanel(this);
@@ -79,5 +81,13 @@ public class App extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(App::new);
+    }
+    
+    public CadastroUsuarioLJPanel getCadastroUsuarioLJPanel() {
+        return cadUsuario;
+    }
+
+    public CadastroLivroJPanel getCadastroLivroJPanel() {
+        return cadLivro;
     }
 }

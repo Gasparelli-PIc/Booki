@@ -4,11 +4,14 @@
  */
 package com.mycompany.mavenproject1.view;
 
-import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.*;
 import com.mycompany.mavenproject1.dao.LivrosLidosDAO;
 import com.mycompany.mavenproject1.model.LivrosLidos;
+import com.mycompany.mavenproject1.dao.TipoLivroDAO;
+import com.mycompany.mavenproject1.model.TipoLivro;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -53,27 +56,34 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     public void carregarLivros() {
-        LivrosLidosDAO dao = new LivrosLidosDAO();
-        List<LivrosLidos> livros = dao.listarTodos();
-        
-    // Ordena em ordem alfabética
+        int idUsuarioLogado = Sessao.getIdUsuario();
+
+        LivrosLidosDAO livrosDao = new LivrosLidosDAO();
+        TipoLivroDAO tipoDao = new TipoLivroDAO(); 
+
+        List<LivrosLidos> livros = livrosDao.listarPorUsuario(idUsuarioLogado);
+
         livros.sort((u1, u2) -> u1.getTitulo().compareToIgnoreCase(u2.getTitulo()));
 
         DefaultTableModel modelo = (DefaultTableModel) VisualizarLivrosjTable1.getModel();
-        modelo.setRowCount(0); // Limpa as linhas da tabela antes de adicionar novos dados
+        modelo.setRowCount(0);
 
         for (LivrosLidos l : livros) {
+            
+            int idTipo = l.getTipoLivro();
+            TipoLivro tipoLivro = tipoDao.buscarPorId(idTipo); // Busca o objeto TipoLivro pelo ID
+
+            String nomeTipo = (tipoLivro != null) ? tipoLivro.getTipo() : "Desconhecido"; 
 
             modelo.addRow(new Object[]{
-                l.getId(),            // ID (coluna 0)
+                l.getId(),
                 l.getTitulo(),
                 l.getAutor(),
-                l.getTipoLivro()
+                nomeTipo 
             });
         }
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

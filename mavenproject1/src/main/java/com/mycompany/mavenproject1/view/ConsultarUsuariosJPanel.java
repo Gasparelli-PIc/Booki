@@ -3,6 +3,8 @@ package com.mycompany.mavenproject1.view;
 import com.mycompany.mavenproject1.App;
 import com.mycompany.mavenproject1.dao.UsuarioDAO;
 import com.mycompany.mavenproject1.model.Users;
+import com.mycompany.mavenproject1.dao.TipoLivroDAO;
+import com.mycompany.mavenproject1.model.TipoLivro;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -31,26 +33,41 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     // Método para carregar os usuários na tabela
     public void carregarUsuariosNaTabela() {
         UsuarioDAO dao = new UsuarioDAO();
-        List<Users> usuarios = dao.listarTodos();
-        
-    // Ordena em ordem alfabética
-    usuarios.sort((u1, u2) -> u1.getNome().compareToIgnoreCase(u2.getNome()));
+        TipoLivroDAO tipoDao = new TipoLivroDAO(); // <-- Instância para buscar nomes
 
+        List<Users> usuarios = dao.listarTodos();
+
+        // Ordena em ordem alfabética
+        usuarios.sort((u1, u2) -> u1.getNome().compareToIgnoreCase(u2.getNome()));
 
         DefaultTableModel modelo = (DefaultTableModel) ConsultarUsuariosjTable1.getModel();
-        modelo.setRowCount(0); // Limpa as linhas da tabela antes de adicionar novos dados
+        modelo.setRowCount(0); // Limpa as linhas da tabela
 
         for (Users u : usuarios) {
             String tipoUsuario = u.getAdministrador() ? "Administrador" : "Comum";
 
+            // --- Início da Lógica Modificada ---
+
+            // Busca o nome do Tipo Preferido 1
+            int idTipo1 = u.getTipoPreferido1();
+            TipoLivro tipo1 = tipoDao.buscarPorId(idTipo1);
+            String nomeTipo1 = (tipo1 != null) ? tipo1.getTipo() : ""; // Se não tiver, fica em branco
+
+            // Busca o nome do Tipo Preferido 2
+            int idTipo2 = u.getTipoPreferido2();
+            TipoLivro tipo2 = tipoDao.buscarPorId(idTipo2);
+            String nomeTipo2 = (tipo2 != null) ? tipo2.getTipo() : ""; // Se não tiver, fica em branco
+
+            // --- Fim da Lógica Modificada ---
+
             modelo.addRow(new Object[]{
-                u.getId(), // nova coluna 0
+                u.getId(),
                 u.getNome(),
                 u.getLogin(),
                 tipoUsuario,
                 u.getIdade(),
-                u.getTipoPreferido1(),
-                u.getTipoPreferido2()
+                nomeTipo1, // <-- Usamos a variável com o nome aqui
+                nomeTipo2  // <-- E aqui
                 });
         }
     }

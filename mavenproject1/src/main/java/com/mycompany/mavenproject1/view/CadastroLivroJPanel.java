@@ -38,6 +38,11 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
         }
         return true;
     }
+    private void limparCampos() {
+        EntradaTitulojTextField1.setText("");
+        EntradaAutorjTextField1.setText("");
+        TipoLivrojComboBox1.setSelectedIndex(0);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -181,11 +186,11 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
          try {
             LivrosDao.inserir(livrosLidos);
             JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!!!");
+            limparCampos();
             app.getCardLayout().show(app.getContainer(), "Usuario");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar livro. \n erro: " + e.getMessage());
         }
-
     }
 
     private void EntradaAutorjTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaAutorjTextField1ActionPerformed
