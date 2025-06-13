@@ -1,4 +1,4 @@
--package com.mycompany.mavenproject1.view;
+package com.mycompany.mavenproject1.view;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -148,7 +148,7 @@ public class UsuarioJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_CadastrarLivrojButton1ActionPerformed
 
     private void VisualizarLivrosjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarLivrosjButton1ActionPerformed
-----------------------------------------        app.getVisualizarLivrosJPanel().carregarLivros();
+        app.getVisualizarLivrosJPanel().carregarLivros();
         app.getCardLayout().show(app.getContainer(), "VisLivro");
     }//GEN-LAST:event_VisualizarLivrosjButton1ActionPerformed
 

@@ -41,7 +41,7 @@
               </Group>
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Component id="CancelarLivrojButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="267" max="32767" attributes="0"/>
+              <EmptySpace pref="292" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -132,7 +132,7 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="16">
             <StringItem index="0" value="Selecione..."/>
-            <StringItem index="1" value="Arte, Cinema e Fotografia"/>
+            <StringItem index="1" value="Cinema e Fotografia"/>
             <StringItem index="2" value="Autoajuda"/>
             <StringItem index="3" value="Aventura"/>
             <StringItem index="4" value="Ci&#xea;ncia e Sociedade"/>

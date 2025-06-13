@@ -92,7 +92,7 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
         TipoLivrojLabel2.setText("Tipo do Livro");
 
         TipoLivrojComboBox1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        TipoLivrojComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Arte, Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
+        TipoLivrojComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
 
         SalvarLivrojButton1.setBackground(new java.awt.Color(87, 176, 109));
         SalvarLivrojButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
@@ -132,7 +132,7 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
                         .addComponent(TipoLivrojComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(61, 61, 61)
                 .addComponent(CancelarLivrojButton1)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addContainerGap(292, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
