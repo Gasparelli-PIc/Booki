@@ -205,21 +205,26 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         jLabel1.setText("Senha");
 
         favoritoUmjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        favoritoUmjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Aventura", "Ciência e Sociedade", "Fantasia", "Filosofia", "Poesia", "Romance", "Sustentabilidade", "Tecnologia", "Terror" }));
+        favoritoUmjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Arte, Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
 
         favoritoDoisjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        favoritoDoisjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Aventura", "Ciência e Sociedade", "Fantasia", "Filosofia", "Poesia", "Romance", "Sustentabilidade", "Tecnologia", "Terror" }));
+        favoritoDoisjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Arte, Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(favoritoDoisjComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(favoritoUmjComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(favoritoDoisjComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(favoritoUmjComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(SustentabilidadejCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,16 +249,18 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(107, 107, 107)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(CienciaESociedadejCheckBox1)
                                 .addComponent(TipoLivrojLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(SustentabilidadejCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TecnologiajCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(IdadejLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(EntradaIdadejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(75, 75, 75)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TecnologiajCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CienciaESociedadejCheckBox1))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,19 +290,17 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                         .addComponent(TipoUsuariojLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(TipoLivrojLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CienciaESociedadejCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SustentabilidadejCheckBox2)))
+                    .addComponent(TipoLivrojLabel1))
+                .addGap(88, 88, 88)
+                .addComponent(CienciaESociedadejCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TecnologiajCheckBox3)
-                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CancelarUsuariojButton2)
-                    .addComponent(SalvarUsuariojButton1))
-                .addGap(47, 47, 47))
+                    .addComponent(SalvarUsuariojButton1)
+                    .addComponent(SustentabilidadejCheckBox2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TecnologiajCheckBox3)
+                .addGap(35, 35, 35))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -362,17 +367,17 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         app.getCardLayout().show(app.getContainer(), "Admin");
     }//GEN-LAST:event_CancelarUsuariojButton2ActionPerformed
 
-    private void CienciaESociedadejCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CienciaESociedadejCheckBox1ActionPerformed
+    private void TecnologiajCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TecnologiajCheckBox3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CienciaESociedadejCheckBox1ActionPerformed
+    }//GEN-LAST:event_TecnologiajCheckBox3ActionPerformed
 
     private void SustentabilidadejCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SustentabilidadejCheckBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SustentabilidadejCheckBox2ActionPerformed
 
-    private void TecnologiajCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TecnologiajCheckBox3ActionPerformed
+    private void CienciaESociedadejCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CienciaESociedadejCheckBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TecnologiajCheckBox3ActionPerformed
+    }//GEN-LAST:event_CienciaESociedadejCheckBox1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelarUsuariojButton2;

@@ -28,11 +28,19 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="favoritoDoisjComboBox2" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="favoritoDoisjComboBox2" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="favoritoUmjComboBox2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="favoritoUmjComboBox2" min="-2" max="-2" attributes="0"/>
+                      <Component id="SustentabilidadejCheckBox2" min="-2" pref="136" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -64,10 +72,7 @@
                           </Group>
                           <EmptySpace min="107" pref="107" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="CienciaESociedadejCheckBox1" min="-2" max="-2" attributes="0"/>
                               <Component id="TipoLivrojLabel1" min="-2" pref="136" max="-2" attributes="0"/>
-                              <Component id="SustentabilidadejCheckBox2" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                              <Component id="TecnologiajCheckBox3" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
                               <Component id="IdadejLabel1" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
                               <Component id="EntradaIdadejTextField1" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                           </Group>
@@ -79,6 +84,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="TecnologiajCheckBox3" min="-2" pref="136" max="-2" attributes="0"/>
+                  <Component id="CienciaESociedadejCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -116,22 +128,19 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="TipoLivrojLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="CienciaESociedadejCheckBox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="SustentabilidadejCheckBox2" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="TipoLivrojLabel1" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+              <Component id="CienciaESociedadejCheckBox1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="TecnologiajCheckBox3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="CancelarUsuariojButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="SalvarUsuariojButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="SustentabilidadejCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="TecnologiajCheckBox3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -319,17 +328,23 @@
           <Font name="SansSerif" size="12" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="10">
+          <StringArray count="16">
             <StringItem index="0" value="Selecione..."/>
-            <StringItem index="1" value="Aventura"/>
-            <StringItem index="2" value="Ci&#xea;ncia e Sociedade"/>
-            <StringItem index="3" value="Fantasia"/>
-            <StringItem index="4" value="Filosofia"/>
-            <StringItem index="5" value="Poesia"/>
-            <StringItem index="6" value="Romance"/>
-            <StringItem index="7" value="Sustentabilidade"/>
-            <StringItem index="8" value="Tecnologia"/>
-            <StringItem index="9" value="Terror"/>
+            <StringItem index="1" value="Arte, Cinema e Fotografia"/>
+            <StringItem index="2" value="Autoajuda"/>
+            <StringItem index="3" value="Aventura"/>
+            <StringItem index="4" value="Ci&#xea;ncia e Sociedade"/>
+            <StringItem index="5" value="Direito"/>
+            <StringItem index="6" value="Fantasia"/>
+            <StringItem index="7" value="Filosofia"/>
+            <StringItem index="8" value="Hist&#xf3;ria"/>
+            <StringItem index="9" value="Poesia"/>
+            <StringItem index="10" value="Pol&#xed;tica"/>
+            <StringItem index="11" value="Romance"/>
+            <StringItem index="12" value="Sustentabilidade"/>
+            <StringItem index="13" value="Tecnologia"/>
+            <StringItem index="14" value="Terror"/>
+            <StringItem index="15" value="Turismo e Viagem"/>
           </StringArray>
         </Property>
       </Properties>
@@ -343,17 +358,23 @@
           <Font name="SansSerif" size="12" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="10">
+          <StringArray count="16">
             <StringItem index="0" value="Selecione..."/>
-            <StringItem index="1" value="Aventura"/>
-            <StringItem index="2" value="Ci&#xea;ncia e Sociedade"/>
-            <StringItem index="3" value="Fantasia"/>
-            <StringItem index="4" value="Filosofia"/>
-            <StringItem index="5" value="Poesia"/>
-            <StringItem index="6" value="Romance"/>
-            <StringItem index="7" value="Sustentabilidade"/>
-            <StringItem index="8" value="Tecnologia"/>
-            <StringItem index="9" value="Terror"/>
+            <StringItem index="1" value="Arte, Cinema e Fotografia"/>
+            <StringItem index="2" value="Autoajuda"/>
+            <StringItem index="3" value="Aventura"/>
+            <StringItem index="4" value="Ci&#xea;ncia e Sociedade"/>
+            <StringItem index="5" value="Direito"/>
+            <StringItem index="6" value="Fantasia"/>
+            <StringItem index="7" value="Filosofia"/>
+            <StringItem index="8" value="Hist&#xf3;ria"/>
+            <StringItem index="9" value="Poesia"/>
+            <StringItem index="10" value="Pol&#xed;tica"/>
+            <StringItem index="11" value="Romance"/>
+            <StringItem index="12" value="Sustentabilidade"/>
+            <StringItem index="13" value="Tecnologia"/>
+            <StringItem index="14" value="Terror"/>
+            <StringItem index="15" value="Turismo e Viagem"/>
           </StringArray>
         </Property>
       </Properties>

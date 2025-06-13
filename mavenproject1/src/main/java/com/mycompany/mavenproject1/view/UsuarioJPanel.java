@@ -1,4 +1,4 @@
-package com.mycompany.mavenproject1.view;
+-package com.mycompany.mavenproject1.view;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -32,7 +32,9 @@ public class UsuarioJPanel extends javax.swing.JPanel {
         VisualizarLivrosjButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         BemVindojLabel2 = new javax.swing.JLabel();
+        DeslogarjButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        VisualizarTodosLivrosjButton1 = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(600, 400));
         setPreferredSize(new java.awt.Dimension(600, 400));
@@ -63,21 +65,33 @@ public class UsuarioJPanel extends javax.swing.JPanel {
         BemVindojLabel2.setFocusable(false);
         BemVindojLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        DeslogarjButton1.setBackground(new java.awt.Color(212, 51, 51));
+        DeslogarjButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        DeslogarjButton1.setForeground(new java.awt.Color(255, 255, 255));
+        DeslogarjButton1.setText("Deslogar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(187, Short.MAX_VALUE)
-                .addComponent(BemVindojLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, 179))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BemVindojLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(179, 179, 179))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(DeslogarjButton1)
+                        .addGap(107, 107, 107))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(BemVindojLabel2)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(DeslogarjButton1)
+                .addGap(37, 37, 37))
         );
 
         jPanel2.setBackground(new java.awt.Color(31, 79, 144));
@@ -93,28 +107,37 @@ public class UsuarioJPanel extends javax.swing.JPanel {
             .addGap(0, 130, Short.MAX_VALUE)
         );
 
+        VisualizarTodosLivrosjButton1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        VisualizarTodosLivrosjButton1.setText("Visualizar todos Livros");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(203, 203, 203)
+                .addGap(209, 209, 209)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(VisualizarLivrosjButton1)
                     .addComponent(CadastrarLivrojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(VisualizarTodosLivrosjButton1)
+                .addGap(170, 170, 170))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
+                .addComponent(VisualizarTodosLivrosjButton1)
+                .addGap(12, 12, 12)
                 .addComponent(CadastrarLivrojButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(VisualizarLivrosjButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -125,7 +148,7 @@ public class UsuarioJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_CadastrarLivrojButton1ActionPerformed
 
     private void VisualizarLivrosjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarLivrosjButton1ActionPerformed
-        app.getVisualizarLivrosJPanel().carregarLivros();
+----------------------------------------        app.getVisualizarLivrosJPanel().carregarLivros();
         app.getCardLayout().show(app.getContainer(), "VisLivro");
     }//GEN-LAST:event_VisualizarLivrosjButton1ActionPerformed
 
@@ -133,7 +156,9 @@ public class UsuarioJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BemVindojLabel2;
     private javax.swing.JButton CadastrarLivrojButton1;
+    private javax.swing.JButton DeslogarjButton1;
     private javax.swing.JButton VisualizarLivrosjButton1;
+    private javax.swing.JButton VisualizarTodosLivrosjButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
