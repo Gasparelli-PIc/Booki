@@ -208,6 +208,11 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
         favoritoUmjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         favoritoUmjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Aventura", "Ciência e Sociedade", "Fantasia", "Filosofia", "Poesia", "Romance", "Sustentabilidade", "Tecnologia", "Terror" }));
+        favoritoUmjComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                favoritoUmjComboBox2ActionPerformed(evt);
+            }
+        });
 
         favoritoDoisjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         favoritoDoisjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Aventura", "Ciência e Sociedade", "Fantasia", "Filosofia", "Poesia", "Romance", "Sustentabilidade", "Tecnologia", "Terror" }));
@@ -396,6 +401,10 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     private void TecnologiajCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TecnologiajCheckBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TecnologiajCheckBox3ActionPerformed
+
+    private void favoritoUmjComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoritoUmjComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_favoritoUmjComboBox2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelarUsuariojButton2;
