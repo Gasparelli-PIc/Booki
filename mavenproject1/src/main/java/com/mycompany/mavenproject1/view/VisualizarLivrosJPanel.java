@@ -99,9 +99,12 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         excluirjToggleButton1 = new javax.swing.JToggleButton();
 
+        setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
 
-        VisualizarLivrosjTable1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        VisualizarLivrosjTable1.setAutoCreateRowSorter(true);
+        VisualizarLivrosjTable1.setBackground(new java.awt.Color(131, 179, 244));
+        VisualizarLivrosjTable1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         VisualizarLivrosjTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -144,7 +147,9 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
             }
         });
 
+        excluirjToggleButton1.setBackground(new java.awt.Color(0, 0, 0));
         excluirjToggleButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        excluirjToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         excluirjToggleButton1.setText("Excluir");
         excluirjToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

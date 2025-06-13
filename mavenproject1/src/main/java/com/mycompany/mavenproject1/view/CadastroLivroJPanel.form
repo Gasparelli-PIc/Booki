@@ -24,31 +24,36 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="SalvarLivrojButton1" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel1" max="32767" attributes="0"/>
-                          <Component id="EntradaTitulojTextField1" max="32767" attributes="0"/>
-                          <Component id="AutorjLabel2" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="215" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel1" max="32767" attributes="0"/>
+                              <Component id="EntradaTitulojTextField1" max="32767" attributes="0"/>
+                              <Component id="AutorjLabel2" min="-2" pref="101" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="EntradaAutorjTextField1" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="TipoLivrojLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="TipoLivrojComboBox1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="EntradaAutorjTextField1" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="TipoLivrojLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="TipoLivrojComboBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
+                      <Component id="SalvarLivrojButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Component id="CancelarLivrojButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-              <Component id="CancelarLivrojButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="292" max="32767" attributes="0"/>
+              <EmptySpace pref="205" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="EntradaTitulojTextField1" min="-2" max="-2" attributes="0"/>
@@ -60,12 +65,12 @@
               <Component id="TipoLivrojLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="TipoLivrojComboBox1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="100" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="SalvarLivrojButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="CancelarLivrojButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="SalvarLivrojButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace pref="66" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
