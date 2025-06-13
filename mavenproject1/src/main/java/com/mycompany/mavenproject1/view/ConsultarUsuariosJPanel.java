@@ -63,7 +63,6 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
             modelo.addRow(new Object[]{
                 u.getId(),
                 u.getNome(),
-                u.getLogin(),
                 tipoUsuario,
                 u.getIdade(),
                 nomeTipo1, // <-- Usamos a variável com o nome aqui

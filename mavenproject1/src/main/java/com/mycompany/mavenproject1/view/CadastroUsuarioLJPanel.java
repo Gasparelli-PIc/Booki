@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 import com.mycompany.mavenproject1.App;
 import com.mycompany.mavenproject1.dao.UsuarioDAO;
 import com.mycompany.mavenproject1.model.Users;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -205,10 +207,15 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         jLabel1.setText("Senha");
 
         favoritoUmjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        favoritoUmjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Arte, Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
+        favoritoUmjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
+        favoritoUmjComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                favoritoUmjComboBox2ActionPerformed(evt);
+            }
+        });
 
         favoritoDoisjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        favoritoDoisjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Arte, Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
+        favoritoDoisjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -343,11 +350,32 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             tiposSelecionados.add(3);
         }
 
-        int tipo1 = 0;
-        int tipo2 = 0;
+//        int tipo1 = 0;
+//        int tipo2 = 0;
+//
+//        tipo1 = tiposSelecionados.size() > 0 ? tiposSelecionados.get(0) : 0;
+//        tipo2 = tiposSelecionados.size() > 1 ? tiposSelecionados.get(1) : 0;
+        
+        // 1) coleta checkboxes
+    List<Integer> tipos = new ArrayList<>();
+    if (SustentabilidadejCheckBox2.isSelected()) tipos.add(1);
+    if (CienciaESociedadejCheckBox1.isSelected()) tipos.add(2);
+    if (TecnologiajCheckBox3.isSelected())         tipos.add(3);
 
-        tipo1 = tiposSelecionados.size() > 0 ? tiposSelecionados.get(0) : 0;
-        tipo2 = tiposSelecionados.size() > 1 ? tiposSelecionados.get(1) : 0;
+    // 2) valida que haja ao menos 1 e no máximo 2
+    if (tipos.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Selecione pelo menos um tipo de livro.");
+        return;
+    }
+    if (tipos.size() > 2) {
+        JOptionPane.showMessageDialog(this, "Selecione no máximo dois tipos de livro.");
+        return;
+    }
+
+    // 3) define tipo1 e tipo2
+    int tipo1 = tipos.get(0);
+    // se não tiver segundo, duplica o primeiro
+    int tipo2 = (tipos.size() > 1) ? tipos.get(1) : tipo1;
 
         Users usuario = new Users(0, nomeDoUsuario, idadeDoUsuario, usuarioAdministrador, loginDoUsuario, SenhaDoUsuario, tipo1, tipo2);
         UsuarioDAO usDAO = new UsuarioDAO();
@@ -378,6 +406,10 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     private void CienciaESociedadejCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CienciaESociedadejCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CienciaESociedadejCheckBox1ActionPerformed
+
+    private void favoritoUmjComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoritoUmjComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_favoritoUmjComboBox2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelarUsuariojButton2;

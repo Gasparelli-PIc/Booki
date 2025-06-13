@@ -169,14 +169,15 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
         String tituloLivro = EntradaTitulojTextField1.getText().trim();
         String autorLivro = EntradaAutorjTextField1.getText().trim();
         int idUsuarioLogado = Sessao.getIdUsuario();
+        
         int tipoLivro = 0;
 
         if (TipoLivrojComboBox1.getSelectedItem().equals("Ciência e Sociedade")) {
-            tipoLivro = 1;
+            tipoLivro = 3;
         } else if (TipoLivrojComboBox1.getSelectedItem().equals("Sustentabilidade")) {
-            tipoLivro = 2;
+            tipoLivro = 1;
         } else if (TipoLivrojComboBox1.getSelectedItem().equals("Tecnologia")) {
-            tipoLivro = 3; // Corrigir esse ID se for diferente no banco
+            tipoLivro = 2; // Corrigir esse ID se for diferente no banco
         }
 
 
