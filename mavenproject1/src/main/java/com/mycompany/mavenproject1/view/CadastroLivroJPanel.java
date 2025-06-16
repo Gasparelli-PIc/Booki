@@ -36,6 +36,11 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
 
             return false; // Impede o salvamento se nenhuma checkbox estiver selecionada
         }
+        if (TipoLivrojComboBox1.getSelectedIndex() == 0) {
+        JOptionPane.showMessageDialog(this,
+            "Por favor, escolha um tipo de livro válido.");
+        return false;
+        }
         return true;
     }
     private void limparCampos() {
@@ -175,14 +180,45 @@ public class CadastroLivroJPanel extends javax.swing.JPanel {
         
         int tipoLivro = 0;
 
-        if (TipoLivrojComboBox1.getSelectedItem().equals("Ciência e Sociedade")) {
-            tipoLivro = 3;
-        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Sustentabilidade")) {
+        if (TipoLivrojComboBox1.getSelectedItem().equals("Cinema e Fotografia")) {
             tipoLivro = 1;
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Autoajuda")) {
+            tipoLivro = 2;
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Aventura")) {
+            tipoLivro = 3; // Corrigir esse ID se for diferente no banco
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Ciência e Sociedade")) {
+            tipoLivro = 4;
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Direito")) {
+            tipoLivro = 5; // Corrigir esse ID se for diferente no banco
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Fantasia")) {
+            tipoLivro = 6;
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Filosofia")) {
+            tipoLivro = 7; // Corrigir esse ID se for diferente no banco
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("História")) {
+            tipoLivro = 8;
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Poesia")) {
+            tipoLivro = 9; // Corrigir esse ID se for diferente no banco
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Política")) {
+            tipoLivro = 10;
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Romance")) {
+            tipoLivro = 11; // Corrigir esse ID se for diferente no banco
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Sustentabilidade")) {
+            tipoLivro = 12;
         } else if (TipoLivrojComboBox1.getSelectedItem().equals("Tecnologia")) {
-            tipoLivro = 2; // Corrigir esse ID se for diferente no banco
+            tipoLivro = 13; // Corrigir esse ID se for diferente no banco
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Terror")) {
+            tipoLivro = 14; // Corrigir esse ID se for diferente no banco
+        } else if (TipoLivrojComboBox1.getSelectedItem().equals("Turismo e Viagem")) {
+            tipoLivro = 15; // Corrigir esse ID se for diferente no banco
+        } 
+        
+        if (tipoLivro == 0) {
+            JOptionPane.showMessageDialog(this,
+            "Tipo de livro não reconhecido. Selecione um valor válido.");
+            return;
         }
 
+        System.out.println("Inserindo livro com idTipo = " + tipoLivro);
 
         LivrosLidos livrosLidos = new LivrosLidos(0, tituloLivro, autorLivro, tipoLivro, idUsuarioLogado);
         LivrosLidosDAO LivrosDao = new LivrosLidosDAO();
