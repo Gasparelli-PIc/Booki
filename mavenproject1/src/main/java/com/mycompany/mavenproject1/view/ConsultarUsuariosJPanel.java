@@ -1,10 +1,5 @@
 package com.mycompany.mavenproject1.view;
 
-import com.mycompany.mavenproject1.App;
-import com.mycompany.mavenproject1.dao.UsuarioDAO;
-import com.mycompany.mavenproject1.model.Users;
-import com.mycompany.mavenproject1.dao.TipoLivroDAO;
-import com.mycompany.mavenproject1.model.TipoLivro;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -13,6 +8,12 @@ import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+
+import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.dao.UsuarioDAO;
+import com.mycompany.mavenproject1.model.Users;
+import com.mycompany.mavenproject1.dao.TipoLivroDAO;
+import com.mycompany.mavenproject1.model.TipoLivro;
 
 public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     

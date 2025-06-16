@@ -5,22 +5,17 @@
 package com.mycompany.mavenproject1.view;
 
 import javax.swing.JOptionPane;
+import java.util.List;
+import java.util.ArrayList;
 
 import com.mycompany.mavenproject1.App;
 import com.mycompany.mavenproject1.dao.UsuarioDAO;
 import com.mycompany.mavenproject1.model.Users;
-import java.util.List;
-import java.util.ArrayList;
 
-/**
- *
- * @author jogar
- */
 public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
-    private App app;  // ✅ Mantém a referência ao App para controle do CardLayout
+    private App app;
 
-    // ✅ Construtor ajustado para receber App
     public CadastroUsuarioLJPanel(App app) {
         this.app = app;
         initComponents();

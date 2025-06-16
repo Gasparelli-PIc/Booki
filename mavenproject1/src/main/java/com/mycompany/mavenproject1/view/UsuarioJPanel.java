@@ -5,15 +5,11 @@ package com.mycompany.mavenproject1.view;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 import com.mycompany.mavenproject1.App;
-/**
- *
- * @author jogar
- */
+
 public class UsuarioJPanel extends javax.swing.JPanel {
 
-    private App app;  // ✅ Mantém a referência ao App para controle do CardLayout
+    private App app;
     
-    // ✅ Construtor ajustado para receber App
         public UsuarioJPanel(App app) {
         this.app = app;
         initComponents();

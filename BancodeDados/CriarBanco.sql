@@ -48,4 +48,4 @@ INSERT INTO tipoLivro (tipo) VALUES
 ('Terror'),
 ('Turismo e Viagem');
 
-INSERT INTO users(nome, idade, administrador, login, senha, tipoPreferido1, tipoPreferido2) VALUES ("admin", 0, TRUE, "adminstrador", "admin", 1, 1 );
+INSERT INTO users(nome, idade, administrador, login, senha, tipoPreferido1, tipoPreferido2) VALUES ("administrador", 0, TRUE, "admin", "admin", 1, 1 );

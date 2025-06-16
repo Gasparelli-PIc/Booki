@@ -5,15 +5,12 @@
 package com.mycompany.mavenproject1.view;
 import com.mycompany.mavenproject1.App;
 import javax.swing.*;
-/**
- *
- * @author jogar
- */
+
 public class AdminJPanel extends javax.swing.JPanel {
 
-   private App app;  // ✅ Mantém a referência ao App para controle do CardLayout
+   private App app;
 
-    // ✅ Construtor ajustado para receber App
+
     public AdminJPanel(App app) {
         this.app = app;
         initComponents();

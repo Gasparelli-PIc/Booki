@@ -4,11 +4,6 @@
  */
 package com.mycompany.mavenproject1.view;
 
-import com.mycompany.mavenproject1.*;
-import com.mycompany.mavenproject1.dao.LivrosLidosDAO;
-import com.mycompany.mavenproject1.model.LivrosLidos;
-import com.mycompany.mavenproject1.dao.TipoLivroDAO;
-import com.mycompany.mavenproject1.model.TipoLivro;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import java.util.Collections;
@@ -17,12 +12,12 @@ import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
+import com.mycompany.mavenproject1.*;
+import com.mycompany.mavenproject1.dao.LivrosLidosDAO;
+import com.mycompany.mavenproject1.model.LivrosLidos;
+import com.mycompany.mavenproject1.dao.TipoLivroDAO;
+import com.mycompany.mavenproject1.model.TipoLivro;
 
-
-/**
- *
- * @author jogar
- */
 public class VisualizarLivrosJPanel extends javax.swing.JPanel {
     
     private App app;
@@ -191,7 +186,7 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // 1) pega o model atual
+     // 1) pega o model atual
     DefaultTableModel model = (DefaultTableModel) VisualizarLivrosjTable1.getModel();
 
     // 2) cria o sorter e associa à tabela (se já existir um sorter, ele será substituído)

@@ -12,10 +12,6 @@ import com.mycompany.mavenproject1.model.LivrosLidos;
 import com.mycompany.mavenproject1.model.TipoLivro;
 import com.mycompany.mavenproject1.model.Users;
 
-/**
- *
- * @author jogar
- */
 public class CadastroLivroJPanel extends javax.swing.JPanel {
 
     private App app;

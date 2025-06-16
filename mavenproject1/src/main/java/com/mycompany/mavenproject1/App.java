@@ -5,6 +5,8 @@ import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.ImageIcon;
+import java.awt.Image;
 
 import com.mycompany.mavenproject1.view.AdminJPanel;
 import com.mycompany.mavenproject1.view.CadastroLivroJPanel;
@@ -13,6 +15,9 @@ import com.mycompany.mavenproject1.view.ConsultarUsuariosJPanel;
 import com.mycompany.mavenproject1.view.LoginTelaPanel;
 import com.mycompany.mavenproject1.view.UsuarioJPanel;
 import com.mycompany.mavenproject1.view.VisualizarLivrosJPanel;
+
+
+
 
 public class App extends JFrame {
 
@@ -23,6 +28,7 @@ public class App extends JFrame {
     private VisualizarLivrosJPanel visLivro;
     private CadastroUsuarioLJPanel cadUsuario; // <-- Mude para variável de instância
     private CadastroLivroJPanel cadLivro;     
+    
     public App() {
         // Configuração da janela
         setTitle("Sistema de Compartilhamento de Leituras");
@@ -58,7 +64,8 @@ public class App extends JFrame {
         setContentPane(container);
         setVisible(true);
 
-        // Tela que abre primeiro
+        Image icon = new ImageIcon(getClass().getResource("/images/Logo.png")).getImage();
+        setIconImage(icon);
         cardLayout.show(container, "Login");
     }
 

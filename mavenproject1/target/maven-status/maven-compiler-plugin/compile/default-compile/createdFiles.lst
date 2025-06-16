@@ -2,7 +2,6 @@ com\mycompany\mavenproject1\view\VisualizarLivrosJPanel$1.class
 com\mycompany\mavenproject1\view\AdminJPanel.class
 com\mycompany\mavenproject1\view\CadastroUsuarioLJPanel$8.class
 com\mycompany\mavenproject1\view\LoginTelaPanel$3.class
-com\mycompany\mavenproject1\view\LogoJPanel.class
 com\mycompany\mavenproject1\dao\LivrosLidosDAO.class
 com\mycompany\mavenproject1\view\CadastroLivroJPanel.class
 com\mycompany\mavenproject1\view\AdminJPanel$2.class

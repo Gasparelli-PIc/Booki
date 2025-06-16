@@ -4,12 +4,7 @@
  */
 package com.mycompany.mavenproject1.view;
 
-/**
- *
- * @author Caua
- */
 public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
-
     /**
      * Creates new form VisualizarLivroTodosJPanel
      */
