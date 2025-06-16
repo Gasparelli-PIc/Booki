@@ -1,40 +1,73 @@
 package com.mycompany.mavenproject1.view;
 
+import com.mycompany.mavenproject1.App;
 import com.mycompany.mavenproject1.dao.UsuarioDAO;
 import com.mycompany.mavenproject1.model.Users;
+import com.mycompany.mavenproject1.dao.TipoLivroDAO;
+import com.mycompany.mavenproject1.model.TipoLivro;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
 
 public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
+    
+    private App app;
 
     public ConsultarUsuariosJPanel() {
         initComponents();
         carregarUsuariosNaTabela();
+        
+        ConsultarUsuariosjTable1.getColumnModel().getColumn(0).setMinWidth(0);
+        ConsultarUsuariosjTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+        ConsultarUsuariosjTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
+    }
+    
+    public void setApp(App app) {
+    this.app = app;
+    }
+   
+    public ConsultarUsuariosJPanel(App aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     // Método para carregar os usuários na tabela
     public void carregarUsuariosNaTabela() {
         UsuarioDAO dao = new UsuarioDAO();
-        List<Users> usuarios = dao.listarTodos();
-        
-    // Ordena em ordem alfabética
-    usuarios.sort((u1, u2) -> u1.getNome().compareToIgnoreCase(u2.getNome()));
+        TipoLivroDAO tipoDao = new TipoLivroDAO(); // <-- Instância para buscar nomes
 
+        List<Users> usuarios = dao.listarTodos();
+
+        // Ordena em ordem alfabética
+        usuarios.sort((u1, u2) -> u1.getNome().compareToIgnoreCase(u2.getNome()));
 
         DefaultTableModel modelo = (DefaultTableModel) ConsultarUsuariosjTable1.getModel();
-        modelo.setRowCount(0); // Limpa as linhas da tabela antes de adicionar novos dados
+        modelo.setRowCount(0); // Limpa as linhas da tabela
 
         for (Users u : usuarios) {
             String tipoUsuario = u.getAdministrador() ? "Administrador" : "Comum";
 
+            // --- Início da Lógica Modificada ---
+
+            // Busca o nome do Tipo Preferido 1
+            int idTipo1 = u.getTipoPreferido1();
+            TipoLivro tipo1 = tipoDao.buscarPorId(idTipo1);
+            String nomeTipo1 = (tipo1 != null) ? tipo1.getTipo() : ""; // Se não tiver, fica em branco
+
+            // Busca o nome do Tipo Preferido 2
+            int idTipo2 = u.getTipoPreferido2();
+            TipoLivro tipo2 = tipoDao.buscarPorId(idTipo2);
+            String nomeTipo2 = (tipo2 != null) ? tipo2.getTipo() : ""; // Se não tiver, fica em branco
+
+            // --- Fim da Lógica Modificada ---
+
             modelo.addRow(new Object[]{
+                u.getId(),
                 u.getNome(),
-                u.getLogin(),
                 tipoUsuario,
                 u.getIdade(),
-                u.getTipoPreferido1(),
-                u.getTipoPreferido2()
-            });
+                nomeTipo1, // <-- Usamos a variável com o nome aqui
+                nomeTipo2  // <-- E aqui
+                });
         }
     }
 
@@ -51,11 +84,13 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         ConsultarUsuariosjTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         ordemAlfabeticajButton1 = new javax.swing.JButton();
+        ExcluirJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
 
-        ConsultarUsuariosjTable1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        ConsultarUsuariosjTable1.setBackground(new java.awt.Color(71, 119, 184));
+        ConsultarUsuariosjTable1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         ConsultarUsuariosjTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -81,6 +116,11 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Sair");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         ordemAlfabeticajButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         ordemAlfabeticajButton1.setText("Ordenar A-Z");
@@ -90,29 +130,40 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
             }
         });
 
+        ExcluirJButton.setBackground(new java.awt.Color(0, 0, 0));
+        ExcluirJButton.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        ExcluirJButton.setForeground(new java.awt.Color(255, 255, 255));
+        ExcluirJButton.setText("Excluir");
+        ExcluirJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExcluirJButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ordemAlfabeticajButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(27, 27, 27))
+                .addGap(39, 39, 39)
+                .addComponent(ExcluirJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(ordemAlfabeticajButton1)
+                .addGap(72, 72, 72))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(ordemAlfabeticajButton1)
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton1)))
-                .addGap(0, 100, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(ExcluirJButton)
+                    .addComponent(ordemAlfabeticajButton1))
+                .addGap(0, 59, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -120,9 +171,38 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_ordemAlfabeticajButton1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "Admin");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ExcluirJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirJButtonActionPerformed
+     int linhaSelecionada = ConsultarUsuariosjTable1.getSelectedRow();
+    
+    if (linhaSelecionada != -1) {
+        DefaultTableModel modelo = (DefaultTableModel) ConsultarUsuariosjTable1.getModel();
+        
+        int id = Integer.parseInt(modelo.getValueAt(linhaSelecionada, 0).toString()); 
+
+        int confirmacao = JOptionPane.showConfirmDialog(this,
+                "Deseja realmente excluir este usuário?", "Confirmação",
+                JOptionPane.YES_NO_OPTION);
+
+        if (confirmacao == JOptionPane.YES_OPTION) {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.deletar(id);
+            modelo.removeRow(linhaSelecionada);
+            JOptionPane.showMessageDialog(this, "Usuário excluído com sucesso.");
+        }
+
+    } else {
+        JOptionPane.showMessageDialog(this, "Selecione um usuário para excluir.");
+    }
+    }//GEN-LAST:event_ExcluirJButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ConsultarUsuariosjTable1;
+    private javax.swing.JButton ExcluirJButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton ordemAlfabeticajButton1;

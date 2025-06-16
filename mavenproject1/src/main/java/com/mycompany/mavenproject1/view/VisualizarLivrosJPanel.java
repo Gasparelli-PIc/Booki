@@ -4,17 +4,84 @@
  */
 package com.mycompany.mavenproject1.view;
 
+import com.mycompany.mavenproject1.*;
+import com.mycompany.mavenproject1.dao.LivrosLidosDAO;
+import com.mycompany.mavenproject1.model.LivrosLidos;
+import com.mycompany.mavenproject1.dao.TipoLivroDAO;
+import com.mycompany.mavenproject1.model.TipoLivro;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
+
 /**
  *
  * @author jogar
  */
 public class VisualizarLivrosJPanel extends javax.swing.JPanel {
-
+    
+    private App app;
     /**
      * Creates new form VisualizarLivrosJPanel
      */
     public VisualizarLivrosJPanel() {
         initComponents();
+        carregarLivros();
+        
+        VisualizarLivrosjTable1.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null, null, null, null},
+        },
+        new String [] {
+            "ID", "Título", "Autor", "Tipo"
+        }
+    ) {
+        Class[] types = new Class [] {
+            java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+        };
+        public Class getColumnClass(int columnIndex) {
+            return types[columnIndex];
+        }
+    });
+        
+        VisualizarLivrosjTable1.getColumnModel().getColumn(0).setMinWidth(0);
+        VisualizarLivrosjTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+        VisualizarLivrosjTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
+    }
+    
+    public void setApp(App app) {
+    this.app = app;
+    }
+
+    public VisualizarLivrosJPanel(App aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    public void carregarLivros() {
+        int idUsuarioLogado = Sessao.getIdUsuario();
+
+        LivrosLidosDAO livrosDao = new LivrosLidosDAO();
+        TipoLivroDAO tipoDao = new TipoLivroDAO(); 
+
+        List<LivrosLidos> livros = livrosDao.listarPorUsuario(idUsuarioLogado);
+
+        livros.sort((u1, u2) -> u1.getTitulo().compareToIgnoreCase(u2.getTitulo()));
+
+        DefaultTableModel modelo = (DefaultTableModel) VisualizarLivrosjTable1.getModel();
+        modelo.setRowCount(0);
+
+        for (LivrosLidos l : livros) {
+            
+            int idTipo = l.getTipoLivro();
+            TipoLivro tipoLivro = tipoDao.buscarPorId(idTipo); // Busca o objeto TipoLivro pelo ID
+
+            String nomeTipo = (tipoLivro != null) ? tipoLivro.getTipo() : "Desconhecido"; 
+
+            modelo.addRow(new Object[]{
+                l.getId(),
+                l.getTitulo(),
+                l.getAutor(),
+                nomeTipo 
+            });
+        }
     }
 
     /**
@@ -30,10 +97,14 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         VisualizarLivrosjTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        excluirjToggleButton1 = new javax.swing.JToggleButton();
 
+        setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
 
-        VisualizarLivrosjTable1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        VisualizarLivrosjTable1.setAutoCreateRowSorter(true);
+        VisualizarLivrosjTable1.setBackground(new java.awt.Color(71, 119, 184));
+        VisualizarLivrosjTable1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         VisualizarLivrosjTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -62,40 +133,92 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Sair");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jButton2.setText("Ordenar A-Z");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        excluirjToggleButton1.setBackground(new java.awt.Color(0, 0, 0));
+        excluirjToggleButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        excluirjToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        excluirjToggleButton1.setText("Excluir");
+        excluirjToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirjToggleButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(112, 112, 112)
+                .addComponent(excluirjToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 100, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(excluirjToggleButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
+                .addGap(0, 55, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       app.getCardLayout().show(app.getContainer(), "Usuario");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void excluirjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirjToggleButton1ActionPerformed
+        int linhaSelecionada = VisualizarLivrosjTable1.getSelectedRow();
+
+    if (linhaSelecionada != -1) {
+        DefaultTableModel modelo = (DefaultTableModel) VisualizarLivrosjTable1.getModel();
+        int id = Integer.parseInt(modelo.getValueAt(linhaSelecionada, 0).toString());
+
+        int confirmacao = javax.swing.JOptionPane.showConfirmDialog(this,
+                "Deseja realmente excluir este livro?", "Confirmação",
+                javax.swing.JOptionPane.YES_NO_OPTION);
+
+        if (confirmacao == javax.swing.JOptionPane.YES_OPTION) {
+            LivrosLidosDAO dao = new LivrosLidosDAO();
+            dao.deletar(id);
+            carregarLivros(); // Atualiza a tabela após exclusão
+            javax.swing.JOptionPane.showMessageDialog(this, "Livro excluído com sucesso.");
+        }
+
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this, "Selecione um livro para excluir.");
+    }
+    }//GEN-LAST:event_excluirjToggleButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable VisualizarLivrosjTable1;
+    private javax.swing.JToggleButton excluirjToggleButton1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;

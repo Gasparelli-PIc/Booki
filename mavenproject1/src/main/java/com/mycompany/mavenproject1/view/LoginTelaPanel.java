@@ -49,7 +49,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
 
         UsuariojLabel1 = new javax.swing.JLabel();
         EntradaUsuariojTextField1 = new javax.swing.JTextField();
-        SenhajLabel1 = new javax.swing.JLabel();
+        SenhaLoginjLabel1 = new javax.swing.JLabel();
         EntradaSenhajPasswordField1 = new javax.swing.JPasswordField();
         LoginjButton1 = new javax.swing.JButton();
         SairLoginjButton1 = new javax.swing.JButton();
@@ -57,6 +57,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -71,16 +72,16 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         UsuariojLabel1.setPreferredSize(new java.awt.Dimension(80, 20));
 
         EntradaUsuariojTextField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        EntradaUsuariojTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null));
+        EntradaUsuariojTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         EntradaUsuariojTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EntradaUsuariojTextField1ActionPerformed(evt);
             }
         });
 
-        SenhajLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        SenhajLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SenhajLabel1.setText("Senha");
+        SenhaLoginjLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        SenhaLoginjLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SenhaLoginjLabel1.setText("Senha");
 
         EntradaSenhajPasswordField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         EntradaSenhajPasswordField1.addActionListener(new java.awt.event.ActionListener() {
@@ -126,22 +127,31 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("ao");
 
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Caua\\Downloads\\Logo.png")); // NOI18N
+        jLabel4.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(72, 72, 72))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(23, 23, 23))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 29, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(72, 72, 72))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(23, 23, 23))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(104, 104, 104))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 6, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +162,9 @@ public class LoginTelaPanel extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -171,7 +183,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
                         .addComponent(SairLoginjButton1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(UsuariojLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SenhajLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(SenhaLoginjLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(97, 97, 97))
         );
         layout.setVerticalGroup(
@@ -182,7 +194,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EntradaUsuariojTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(SenhajLabel1)
+                .addComponent(SenhaLoginjLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EntradaSenhajPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
@@ -199,8 +211,20 @@ public class LoginTelaPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_EntradaSenhajPasswordField1ActionPerformed
 
     private void LoginjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginjButton1ActionPerformed
-        String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
-        String usuarioDigitado = EntradaUsuariojTextField1.getText();
+
+        
+//            String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
+//            String usuarioDigitado = EntradaUsuariojTextField1.getText();
+//
+//            if (usuarioDigitado.equalsIgnoreCase("Admin") && senhaDigitada.equals("1234")) {
+//                app.getCardLayout().show(app.getContainer(), "Admin");
+//            } else {
+//                JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
+//            };
+        
+
+            String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
+            String usuarioDigitado = EntradaUsuariojTextField1.getText();
         
         UsuarioDAO daoUser = new UsuarioDAO();
         Users usuario = daoUser.BuscarUsuario(usuarioDigitado, senhaDigitada);
@@ -218,7 +242,6 @@ public class LoginTelaPanel extends javax.swing.JPanel {
                 }
                 } else if (usuario == null){
                     JOptionPane.showMessageDialog(null, "Usuario nao encontrado.");
-                
                 }                
         }
     }//GEN-LAST:event_LoginjButton1ActionPerformed
@@ -236,11 +259,12 @@ public class LoginTelaPanel extends javax.swing.JPanel {
     private javax.swing.JTextField EntradaUsuariojTextField1;
     private javax.swing.JButton LoginjButton1;
     private javax.swing.JButton SairLoginjButton1;
-    private javax.swing.JLabel SenhajLabel1;
+    private javax.swing.JLabel SenhaLoginjLabel1;
     private javax.swing.JLabel UsuariojLabel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 

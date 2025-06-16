@@ -35,31 +35,34 @@ public class LivrosLidosDAO {
     }
 
     // Listar todos os livros lidos
-    public List<LivrosLidos> listarTodos() {
-        List<LivrosLidos> lista = new ArrayList<>();
-        String sql = "SELECT * FROM livrosLidos";
+    public List<LivrosLidos> listarPorUsuario(int idUsuario) {
+    List<LivrosLidos> lista = new ArrayList<>();
+    String sql = "SELECT * FROM livrosLidos WHERE idUsers = ?";
 
-        try (Connection conn = ConnectionFactory.obtemConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
+    try (Connection conn = ConnectionFactory.obtemConexao();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            while (rs.next()) {
-                LivrosLidos livro = new LivrosLidos(
-                        rs.getInt("id"),
-                        rs.getString("titulo"),
-                        rs.getString("autor"),
-                        rs.getInt("idTipo"),
-                        rs.getInt("idUsers")
-                );
-                lista.add(livro);
-            }
+        stmt.setInt(1, idUsuario);
+        ResultSet rs = stmt.executeQuery();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        while (rs.next()) {
+            LivrosLidos livro = new LivrosLidos(
+                    rs.getInt("id"),
+                    rs.getString("titulo"),
+                    rs.getString("autor"),
+                    rs.getInt("idTipo"),
+                    rs.getInt("idUsers")
+            );
+            lista.add(livro);
         }
 
-        return lista;
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+
+    return lista;
+}
+
 
     // Buscar livro lido por ID
     public LivrosLidos buscarPorId(int id) {
