@@ -89,7 +89,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
 
-        ConsultarUsuariosjTable1.setBackground(new java.awt.Color(131, 179, 244));
+        ConsultarUsuariosjTable1.setBackground(new java.awt.Color(71, 119, 184));
         ConsultarUsuariosjTable1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         ConsultarUsuariosjTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

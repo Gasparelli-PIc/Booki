@@ -28,110 +28,117 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace min="92" pref="92" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="TecnologiajCheckBox3" min="-2" pref="136" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="SustentabilidadejCheckBox2" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                          <Component id="CienciaESociedadejCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="NomejLabel1" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
+                              <Component id="TipoUsuariojLabel1" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="SalvarUsuariojButton1" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="IdadejLabel1" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
+                          <Component id="EntradaIdadejTextField1" min="-2" pref="148" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="EntradaNomejTextField1" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Component id="NomejLabel1" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Component id="TipoUsuariojLabel1" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Component id="SenhajTextField1" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="107" pref="107" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="favoritoDoisjComboBox2" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="favoritoUmjComboBox2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="TipoLivrojLabel1" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Component id="LoginjLabel1" min="-2" pref="114" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="EntradaLoginCadjTextField1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="EntradaIdadejTextField1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="IdadejLabel1" alignment="0" pref="136" max="32767" attributes="0"/>
-                                      </Group>
+                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="EntradaLoginCadjTextField1" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel1" min="-2" pref="57" max="-2" attributes="0"/>
+                                  <Component id="favoritoDoisjComboBox2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="favoritoUmjComboBox2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="LoginjLabel1" min="-2" pref="114" max="-2" attributes="0"/>
+                                  <Component id="TipoLivrojLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SenhajTextField1" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="CancelarUsuariojButton2" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jLabel1" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="SalvarUsuariojButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="154" max="32767" attributes="0"/>
-                              <Component id="CancelarUsuariojButton2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="CienciaESociedadejCheckBox1" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="SustentabilidadejCheckBox2" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="TecnologiajCheckBox3" min="-2" pref="32" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="EntradaNomejTextField1" min="-2" pref="149" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="CienciaESociedadejCheckBox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="SustentabilidadejCheckBox2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="CienciaESociedadejCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CancelarUsuariojButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="NomejLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LoginjLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="EntradaNomejTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="EntradaLoginCadjTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="IdadejLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="LoginjLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="NomejLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="SenhajTextField1" min="-2" max="-2" attributes="0"/>
-                          <Component id="EntradaIdadejTextField1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="EntradaLoginCadjTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EntradaNomejTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="SenhajTextField1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="IdadejLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="EntradaIdadejTextField1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="TipoUsuariojLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="TipoLivrojLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="favoritoDoisjComboBox2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="favoritoUmjComboBox2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="CancelarUsuariojButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="SalvarUsuariojButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="favoritoUmjComboBox2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="SalvarUsuariojButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="SustentabilidadejCheckBox2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="TecnologiajCheckBox3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -149,6 +156,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="EntradaNomejTextField1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="12" style="0"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaNomejTextField1ActionPerformed"/>
       </Events>
@@ -165,6 +177,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="EntradaIdadejTextField1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="12" style="0"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaIdadejTextField1ActionPerformed"/>
       </Events>
@@ -177,11 +194,14 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Tipo Usu&#xe1;rio"/>
+        <Property name="text" type="java.lang.String" value="Tipo de Usu&#xe1;rio"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="12" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
             <StringItem index="0" value="Selecione..."/>
@@ -205,13 +225,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Tipo de Livro Favorito"/>
+        <Property name="text" type="java.lang.String" value="Tipos de Livros Favoritos"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="CienciaESociedadejCheckBox1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="12" style="0"/>
+          <Font name="SansSerif" size="8" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -296,6 +316,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="EntradaLoginCadjTextField1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="12" style="0"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaLoginCadjTextField1ActionPerformed"/>
       </Events>
@@ -303,7 +328,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="12" style="0"/>
+          <Font name="SansSerif" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -312,6 +337,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="SenhajTextField1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="12" style="0"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="favoritoUmjComboBox2">
       <Properties>

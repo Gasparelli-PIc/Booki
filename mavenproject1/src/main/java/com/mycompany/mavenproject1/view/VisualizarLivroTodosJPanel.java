@@ -33,8 +33,7 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(31, 79, 144));
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setBackground(new java.awt.Color(131, 179, 244));
+        jTable1.setBackground(new java.awt.Color(71, 119, 184));
         jTable1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
