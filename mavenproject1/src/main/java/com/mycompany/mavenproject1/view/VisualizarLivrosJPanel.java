@@ -11,6 +11,12 @@ import com.mycompany.mavenproject1.dao.TipoLivroDAO;
 import com.mycompany.mavenproject1.model.TipoLivro;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import java.util.Collections;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
 
 
 /**
@@ -185,7 +191,19 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // 1) pega o model atual
+    DefaultTableModel model = (DefaultTableModel) VisualizarLivrosjTable1.getModel();
 
+    // 2) cria o sorter e associa à tabela (se já existir um sorter, ele será substituído)
+    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+    VisualizarLivrosjTable1.setRowSorter(sorter);
+
+    // 3) define a lista de ordenação: coluna 1 (Título), ordem crescente
+    sorter.setSortKeys(
+        Collections.singletonList(
+            new RowSorter.SortKey(1, SortOrder.ASCENDING)
+        )
+    );
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -8,6 +8,11 @@ import com.mycompany.mavenproject1.model.TipoLivro;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
+import java.util.Collections;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     
@@ -168,7 +173,19 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ordemAlfabeticajButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordemAlfabeticajButton1ActionPerformed
-        // TODO add your handling code here:
+        // 1) pega o model da tabela
+        DefaultTableModel model = (DefaultTableModel) ConsultarUsuariosjTable1.getModel();
+
+    // 2) cria o sorter e associa à tabela
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        ConsultarUsuariosjTable1.setRowSorter(sorter);
+
+    // 3) define que vai ordenar o modelo pela coluna 1 (Nome) em ordem crescente
+        sorter.setSortKeys(
+            Collections.singletonList(
+                new RowSorter.SortKey(1, SortOrder.ASCENDING)
+            )
+        );
     }//GEN-LAST:event_ordemAlfabeticajButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
