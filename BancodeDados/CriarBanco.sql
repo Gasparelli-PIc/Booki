@@ -31,7 +31,8 @@ FOREIGN KEY (idTipo) REFERENCES tipoLivro (id)
 );
 
 INSERT INTO tipoLivro (tipo) VALUES
-('Arte, Cinema e Fotografia'),
+('Arte'),
+('Cinema e Fotografia'),
 ('Autoajuda'),
 ('Aventura'),
 ('Ciência e Sociedade'),
@@ -47,4 +48,4 @@ INSERT INTO tipoLivro (tipo) VALUES
 ('Terror'),
 ('Turismo e Viagem');
 
-INSERT INTO users(nome, idade, administrador, login, senha, tipoPreferido1, tipoPreferido2) VALUES ("Gabriel", 20, TRUE, "gasparelli", "123456", 2, 3 );
+INSERT INTO users(nome, idade, administrador, login, senha, tipoPreferido1, tipoPreferido2) VALUES ("admin", 0, TRUE, "adminstrador", "admin", 1, 1 );
