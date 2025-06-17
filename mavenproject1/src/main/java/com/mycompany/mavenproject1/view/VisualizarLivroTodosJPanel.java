@@ -22,23 +22,31 @@ import com.mycompany.mavenproject1.App;
 public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
     
     private App app;
+    private TableRowSorter<DefaultTableModel> sorter;
     /**
      * Creates new form VisualizarLivroTodosJPanel
      */
     public VisualizarLivroTodosJPanel(App app) {
     this.app = app;
     initComponents();
+    inicializarTabela();
+    carregarLivrosDeTodosUsuarios();
     }
     
     public VisualizarLivroTodosJPanel() {
         initComponents();
+        inicializarTabela();
         carregarLivrosDeTodosUsuarios();
+    }
+
+        public void setApp(App app) {
+        this.app = app;
+    }
         
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-            {null, null, null, null},
-        },
-        new String [] {
+    private void inicializarTabela() {
+        DefaultTableModel model = new DefaultTableModel(
+            new Object [][]{},
+            new String [] {
             "ID", "Título", "Autor", "Tipo"
         }
     ) {
@@ -48,15 +56,16 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
         public Class getColumnClass(int columnIndex) {
             return types[columnIndex];
         }
-    });
+    };
+        jTable1.setModel(model);
+        
+        // Configura o sorter uma única vez
+        sorter = new TableRowSorter<>(model);
+        jTable1.setRowSorter(sorter);
         
         jTable1.getColumnModel().getColumn(0).setMinWidth(0);
         jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
-    }
-    
-    public void setApp(App app) {
-    this.app = app;
     }
     
     private void carregarLivrosDeTodosUsuarios() {
@@ -173,19 +182,11 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void OrdenarjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarjButton2ActionPerformed
-        // 1) pega o model atual
-    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-
-    // 2) cria o sorter e associa à tabela (se já existir um sorter, ele será substituído)
-    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
-    jTable1.setRowSorter(sorter);
-
-    // 3) define a lista de ordenação: coluna 1 (Título), ordem crescente
-    sorter.setSortKeys(
-        Collections.singletonList(
-            new RowSorter.SortKey(1, SortOrder.ASCENDING)
-        )
-    );
+     // Define sort key na coluna do Título (coluna 1)
+        sorter.setSortKeys(
+            Collections.singletonList(new RowSorter.SortKey(1, SortOrder.ASCENDING))
+        );
+        sorter.sort();   
     }//GEN-LAST:event_OrdenarjButton2ActionPerformed
 
 
