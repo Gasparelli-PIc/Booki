@@ -73,8 +73,12 @@ public class App extends JFrame {
         return container;
     }
     
-    public ConsultarUsuariosJPanel getConsultarUsuariosJPanel (){
+    public ConsultarUsuariosJPanel getConsultarUsuariosJPanel(){
         return consultUsuario;
+    }
+    
+    public VisualizarLivroTodosJPanel getVisualizarLivroTodosJPanel(){
+        return visLivroTodos;
     }
     
     public VisualizarLivrosJPanel getVisualizarLivrosJPanel(){

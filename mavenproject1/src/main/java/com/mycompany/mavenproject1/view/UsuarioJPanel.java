@@ -154,6 +154,7 @@ public class UsuarioJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_VisualizarLivrosjButton1ActionPerformed
 
     private void VisualizarTodosLivrosjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarTodosLivrosjButton1ActionPerformed
+        app.getVisualizarLivroTodosJPanel().carregarLivrosDeTodosUsuarios();
         app.getCardLayout().show(app.getContainer(), "visLivroTodos");
     }//GEN-LAST:event_VisualizarTodosLivrosjButton1ActionPerformed
 

@@ -18,6 +18,8 @@ import com.mycompany.mavenproject1.model.LivrosLidos;
 import com.mycompany.mavenproject1.dao.TipoLivroDAO;
 import com.mycompany.mavenproject1.model.TipoLivro;
 import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.dao.UsuarioDAO;
+import com.mycompany.mavenproject1.model.Users;
 
 public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
     
@@ -27,10 +29,10 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
      * Creates new form VisualizarLivroTodosJPanel
      */
     public VisualizarLivroTodosJPanel(App app) {
-    this.app = app;
-    initComponents();
-    inicializarTabela();
-    carregarLivrosDeTodosUsuarios();
+        this.app = app;
+        initComponents();
+        inicializarTabela();
+        carregarLivrosDeTodosUsuarios();
     }
     
     public VisualizarLivroTodosJPanel() {
@@ -47,11 +49,11 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
         DefaultTableModel model = new DefaultTableModel(
             new Object [][]{},
             new String [] {
-            "ID", "Título", "Autor", "Tipo"
+            "ID", "Título", "Autor", "Tipo", "Usuario"
         }
     ) {
         Class[] types = new Class [] {
-            java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
         };
         public Class getColumnClass(int columnIndex) {
             return types[columnIndex];
@@ -59,7 +61,7 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
     };
         jTable1.setModel(model);
         
-        // Configura o sorter uma única vez
+        // configura o sorter uma unica vez
         sorter = new TableRowSorter<>(model);
         jTable1.setRowSorter(sorter);
         
@@ -68,9 +70,10 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
     }
     
-    private void carregarLivrosDeTodosUsuarios() {
+    public void carregarLivrosDeTodosUsuarios() {
         LivrosLidosDAO livrosDao = new LivrosLidosDAO();
         TipoLivroDAO tipoDao = new TipoLivroDAO();
+        UsuarioDAO usuarioDao = new UsuarioDAO();
 
         List<LivrosLidos> livros = livrosDao.listarTodos();
 
@@ -80,6 +83,14 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
         modelo.setRowCount(0);
 
         for (LivrosLidos l : livros) {
+            
+            String nomeUsuario = "Desconhecido";
+            if (l.getIdUsers() > 0) {
+                Users usuario = usuarioDao.BuscarUsuario(l.getIdUsers()); 
+                if (usuario != null) {
+                    nomeUsuario = usuario.getNome();
+                }
+            }
             
             int idTipo = l.getTipoLivro();
             TipoLivro tipoLivro = tipoDao.buscarPorId(idTipo);
@@ -91,6 +102,7 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
                 l.getTitulo(),
                 l.getAutor(),
                 nomeTipo,
+                nomeUsuario
             });
         }
     }
@@ -106,25 +118,28 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        OrdenarjButton2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(31, 79, 144));
 
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Titulo", "Autor", "Tipo"
+                "Titulo", "Autor", "Tipo", "Usuario"
             }
         ));
+        jTable1.setToolTipText("");
+        jTable1.setColumnSelectionAllowed(true);
         jTable1.setMaximumSize(new java.awt.Dimension(560, 285));
         jTable1.setMinimumSize(new java.awt.Dimension(560, 285));
-        jTable1.setPreferredSize(new java.awt.Dimension(560, 80));
+        jTable1.setPreferredSize(new java.awt.Dimension(560, 285));
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
@@ -140,14 +155,6 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
             }
         });
 
-        OrdenarjButton2.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
-        OrdenarjButton2.setText("Ordenar A-Z");
-        OrdenarjButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrdenarjButton2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,9 +165,7 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(OrdenarjButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(229, 229, 229)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
@@ -169,11 +174,9 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(OrdenarjButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     
@@ -191,7 +194,6 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton OrdenarjButton2;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

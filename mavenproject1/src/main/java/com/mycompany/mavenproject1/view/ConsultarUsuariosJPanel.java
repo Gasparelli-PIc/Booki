@@ -89,12 +89,12 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         ConsultarUsuariosjTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        ordemAlfabeticajButton1 = new javax.swing.JButton();
         ExcluirJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
 
+        ConsultarUsuariosjTable1.setAutoCreateRowSorter(true);
         ConsultarUsuariosjTable1.setBackground(new java.awt.Color(255, 255, 255));
         ConsultarUsuariosjTable1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         ConsultarUsuariosjTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -120,7 +120,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         ConsultarUsuariosjTable1.setMaximumSize(new java.awt.Dimension(565, 285));
         ConsultarUsuariosjTable1.setMinimumSize(new java.awt.Dimension(565, 285));
         ConsultarUsuariosjTable1.setName(""); // NOI18N
-        ConsultarUsuariosjTable1.setPreferredSize(new java.awt.Dimension(565, 80));
+        ConsultarUsuariosjTable1.setPreferredSize(new java.awt.Dimension(565, 280));
         jScrollPane1.setViewportView(ConsultarUsuariosjTable1);
 
         jButton1.setBackground(new java.awt.Color(212, 51, 51));
@@ -130,14 +130,6 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        ordemAlfabeticajButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
-        ordemAlfabeticajButton1.setText("Ordenar A-Z");
-        ordemAlfabeticajButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ordemAlfabeticajButton1ActionPerformed(evt);
             }
         });
 
@@ -160,9 +152,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(102, 102, 102)
                         .addComponent(ExcluirJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ordemAlfabeticajButton1)
-                        .addGap(18, 18, 18)
+                        .addGap(151, 151, 151)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -177,27 +167,10 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ExcluirJButton)
-                    .addComponent(ordemAlfabeticajButton1)
                     .addComponent(jButton1))
                 .addGap(0, 55, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ordemAlfabeticajButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordemAlfabeticajButton1ActionPerformed
-        // 1) pega o model da tabela
-        DefaultTableModel model = (DefaultTableModel) ConsultarUsuariosjTable1.getModel();
-
-    // 2) cria o sorter e associa à tabela
-        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
-        ConsultarUsuariosjTable1.setRowSorter(sorter);
-
-    // 3) define que vai ordenar o modelo pela coluna 1 (Nome) em ordem crescente
-        sorter.setSortKeys(
-            Collections.singletonList(
-                new RowSorter.SortKey(1, SortOrder.ASCENDING)
-            )
-        );
-    }//GEN-LAST:event_ordemAlfabeticajButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         app.getCardLayout().show(app.getContainer(), "Admin");
@@ -233,6 +206,5 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     private javax.swing.JButton ExcluirJButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton ordemAlfabeticajButton1;
     // End of variables declaration//GEN-END:variables
 }

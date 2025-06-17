@@ -144,4 +144,34 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
     }
+    public Users BuscarUsuario(int id) {
+        Users usuario = null;
+        String sql = "SELECT * FROM users WHERE id = ?";
+
+        try (Connection conn = ConnectionFactory.obtemConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    usuario = new Users(
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getInt("idade"),
+                        rs.getBoolean("administrador"),
+                        rs.getString("login"),
+                        rs.getString("senha"),
+                        rs.getInt("tipoPreferido1"),
+                        rs.getInt("tipoPreferido2")
+                    );
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return usuario;
+    }
 }

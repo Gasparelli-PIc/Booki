@@ -97,7 +97,6 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         VisualizarLivrosjTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         excluirjToggleButton1 = new javax.swing.JToggleButton();
 
         setBackground(new java.awt.Color(31, 79, 144));
@@ -130,7 +129,7 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         });
         VisualizarLivrosjTable1.setMaximumSize(new java.awt.Dimension(560, 285));
         VisualizarLivrosjTable1.setMinimumSize(new java.awt.Dimension(560, 285));
-        VisualizarLivrosjTable1.setPreferredSize(new java.awt.Dimension(560, 80));
+        VisualizarLivrosjTable1.setPreferredSize(new java.awt.Dimension(560, 285));
         jScrollPane1.setViewportView(VisualizarLivrosjTable1);
 
         jButton1.setBackground(new java.awt.Color(212, 51, 51));
@@ -140,14 +139,6 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
-        jButton2.setText("Ordenar A-Z");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -170,9 +161,7 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(102, 102, 102)
                         .addComponent(excluirjToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
+                        .addGap(151, 151, 151)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -187,27 +176,10 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(excluirjToggleButton1)
-                    .addComponent(jButton2)
                     .addComponent(jButton1))
                 .addGap(0, 55, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     // 1) pega o model atual
-    DefaultTableModel model = (DefaultTableModel) VisualizarLivrosjTable1.getModel();
-
-    // 2) cria o sorter e associa à tabela (se já existir um sorter, ele será substituído)
-    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
-    VisualizarLivrosjTable1.setRowSorter(sorter);
-
-    // 3) define a lista de ordenação: coluna 1 (Título), ordem crescente
-    sorter.setSortKeys(
-        Collections.singletonList(
-            new RowSorter.SortKey(1, SortOrder.ASCENDING)
-        )
-    );
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        app.getCardLayout().show(app.getContainer(), "Usuario");
@@ -241,7 +213,6 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
     private javax.swing.JTable VisualizarLivrosjTable1;
     private javax.swing.JToggleButton excluirjToggleButton1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

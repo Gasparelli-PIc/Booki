@@ -26,7 +26,7 @@ titulo varchar(200) NOT NULL,
 autor varchar(200) NOT NULL,
 idTipo int,
 idUsers INT,
-FOREIGN KEY (idUsers) REFERENCES users (id),
+FOREIGN KEY (idUsers) REFERENCES users (id) ON DELETE CASCADE,
 FOREIGN KEY (idTipo) REFERENCES tipoLivro (id)
 );
 

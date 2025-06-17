@@ -109,7 +109,7 @@ public class LivrosLidosDAO {
     }
     
     public List<LivrosLidos> listarTodos() {
-        String sql = "SELECT * FROM livros_lidos";    
+        String sql = "SELECT * FROM livroslidos";    
         List<LivrosLidos> lista = new ArrayList<>();
 
         try (Connection conn = ConnectionFactory.obtemConexao();
@@ -121,7 +121,7 @@ public class LivrosLidosDAO {
                   rs.getInt("id"),
                    rs.getString("titulo"),
                    rs.getString("autor"),
-                   rs.getInt("idTipoLivro"),
+                   rs.getInt("idTipo"),
                    rs.getInt("idUsers")   
                );
                lista.add(l);
