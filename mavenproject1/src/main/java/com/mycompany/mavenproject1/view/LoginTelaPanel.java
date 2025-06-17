@@ -15,6 +15,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
 
     private App app;  
 
+    //configuração da janela
     public LoginTelaPanel(App app) {
         this.app = app;
         initComponents();
@@ -28,24 +29,24 @@ public class LoginTelaPanel extends javax.swing.JPanel {
         
     }
     
+    //limpar os campos ao voltar para tela de lgin
     private void limparCampo(){
         EntradaSenhajPasswordField1.setText("");
         EntradaUsuariojTextField1.setText("");
     }
 
+    //fazer a validação dos campos
     private boolean validarCampos() {
         if (EntradaUsuariojTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo Usuário é obrigatório.");
-        
             return false;
         }
         if (EntradaSenhajPasswordField1.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "O campo Senha é obrigatório.");
-        
-            return false; // Impede o salvamento se nenhuma checkbox estiver selecionada
+            JOptionPane.showMessageDialog(this, "O campo Senha é obrigatório."); 
+            return false;
         }
-            return true;
-        }
+        return true;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -191,8 +192,8 @@ public class LoginTelaPanel extends javax.swing.JPanel {
 
     private void LoginjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginjButton1ActionPerformed
 
-            String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
-            String usuarioDigitado = EntradaUsuariojTextField1.getText();
+        String senhaDigitada = new String(EntradaSenhajPasswordField1.getPassword());
+        String usuarioDigitado = EntradaUsuariojTextField1.getText();
         
         UsuarioDAO daoUser = new UsuarioDAO();
         Users usuario = daoUser.BuscarUsuario(usuarioDigitado, senhaDigitada);

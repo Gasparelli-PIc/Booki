@@ -24,7 +24,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     }
     
     public void setApp(App app) {
-    this.app = app;
+        this.app = app;
     }
    
     public ConsultarUsuariosJPanel(App aThis) {

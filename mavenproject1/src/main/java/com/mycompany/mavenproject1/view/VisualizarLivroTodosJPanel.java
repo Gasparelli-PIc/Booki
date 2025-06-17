@@ -53,7 +53,6 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
             String nomeTipo = (tipoLivro != null) ? tipoLivro.getTipo() : "Desconhecido";
 
             modelo.addRow(new Object[]{
-
                 l.getTitulo(),
                 l.getAutor(),
                 nomeTipo,
