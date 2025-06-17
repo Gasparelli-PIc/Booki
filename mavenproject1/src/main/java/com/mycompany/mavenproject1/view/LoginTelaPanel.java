@@ -30,6 +30,7 @@ public class LoginTelaPanel extends javax.swing.JPanel {
     
     private void limparCampo(){
         EntradaSenhajPasswordField1.setText("");
+        EntradaUsuariojTextField1.setText("");
     }
 
     private boolean validarCampos() {
