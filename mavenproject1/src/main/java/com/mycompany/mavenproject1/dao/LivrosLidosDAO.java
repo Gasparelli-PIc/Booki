@@ -107,4 +107,29 @@ public class LivrosLidosDAO {
             e.printStackTrace();
         }
     }
+    
+    public List<LivrosLidos> listarTodos() {
+        String sql = "SELECT * FROM livros_lidos";    
+        List<LivrosLidos> lista = new ArrayList<>();
+
+        try (Connection conn = ConnectionFactory.obtemConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+               LivrosLidos l = new LivrosLidos(
+                  rs.getInt("id"),
+                   rs.getString("titulo"),
+                   rs.getString("autor"),
+                   rs.getInt("idTipoLivro"),
+                   rs.getInt("idUsers")   
+               );
+               lista.add(l);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return lista;
+    }
+
 }

@@ -4,22 +4,87 @@
  */
 package com.mycompany.mavenproject1.view;
 
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import java.util.Collections;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
+import com.mycompany.mavenproject1.*;
+import com.mycompany.mavenproject1.dao.LivrosLidosDAO;
+import com.mycompany.mavenproject1.model.LivrosLidos;
+import com.mycompany.mavenproject1.dao.TipoLivroDAO;
+import com.mycompany.mavenproject1.model.TipoLivro;
 import com.mycompany.mavenproject1.App;
 
 public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
     
     private App app;
+    /**
+     * Creates new form VisualizarLivroTodosJPanel
+     */
     public VisualizarLivroTodosJPanel(App app) {
     this.app = app;
     initComponents();
-     /**
-     * Creates new form VisualizarLivroTodosJPanel
-     */
     }
+    
     public VisualizarLivroTodosJPanel() {
         initComponents();
+        carregarLivrosDeTodosUsuarios();
+        
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null, null, null, null},
+        },
+        new String [] {
+            "ID", "Título", "Autor", "Tipo"
+        }
+    ) {
+        Class[] types = new Class [] {
+            java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+        };
+        public Class getColumnClass(int columnIndex) {
+            return types[columnIndex];
+        }
+    });
+        
+        jTable1.getColumnModel().getColumn(0).setMinWidth(0);
+        jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
     }
+    
+    public void setApp(App app) {
+    this.app = app;
+    }
+    
+    private void carregarLivrosDeTodosUsuarios() {
+        LivrosLidosDAO livrosDao = new LivrosLidosDAO();
+        TipoLivroDAO tipoDao = new TipoLivroDAO();
 
+        List<LivrosLidos> livros = livrosDao.listarTodos();
+
+        livros.sort((u1, u2) -> u1.getTitulo().compareToIgnoreCase(u2.getTitulo()));
+
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        modelo.setRowCount(0);
+
+        for (LivrosLidos l : livros) {
+            
+            int idTipo = l.getTipoLivro();
+            TipoLivro tipoLivro = tipoDao.buscarPorId(idTipo);
+            
+            String nomeTipo = (tipoLivro != null) ? tipoLivro.getTipo() : "Desconhecido";
+
+            modelo.addRow(new Object[]{
+                l.getId(),
+                l.getTitulo(),
+                l.getAutor(),
+                nomeTipo,
+            });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,7 +101,6 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(31, 79, 144));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -69,6 +133,11 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
 
         OrdenarjButton2.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         OrdenarjButton2.setText("Ordenar A-Z");
+        OrdenarjButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrdenarjButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -80,9 +149,9 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
+                        .addGap(179, 179, 179)
                         .addComponent(OrdenarjButton2)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
@@ -91,17 +160,33 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(OrdenarjButton2))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(OrdenarjButton2)
+                    .addComponent(jButton1))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         app.getCardLayout().show(app.getContainer(), "Usuario");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void OrdenarjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarjButton2ActionPerformed
+        // 1) pega o model atual
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+    // 2) cria o sorter e associa à tabela (se já existir um sorter, ele será substituído)
+    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+    jTable1.setRowSorter(sorter);
+
+    // 3) define a lista de ordenação: coluna 1 (Título), ordem crescente
+    sorter.setSortKeys(
+        Collections.singletonList(
+            new RowSorter.SortKey(1, SortOrder.ASCENDING)
+        )
+    );
+    }//GEN-LAST:event_OrdenarjButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
