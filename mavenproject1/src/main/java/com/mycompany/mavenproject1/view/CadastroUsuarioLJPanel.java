@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.Sessao;
 import com.mycompany.mavenproject1.dao.UsuarioDAO;
 import com.mycompany.mavenproject1.model.Users;
 
@@ -20,18 +21,17 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         this.app = app;
         initComponents();
     }
+
     private void limparCampos() {
         EntradaNomejTextField1.setText("");
         EntradaIdadejTextField1.setText("");
         EntradaLoginCadjTextField1.setText("");
         SenhajTextField1.setText("");
         jComboBox1.setSelectedIndex(0);
-        CienciaESociedadejCheckBox1.setSelected(false);
-        SustentabilidadejCheckBox2.setSelected(false);
-        TecnologiajCheckBox3.setSelected(false);
+        favoritoUmjComboBox2.setSelectedItem("Selecione...");
+        favoritoDoisjComboBox.setSelectedItem("Selecione...");
     }
 
-     
     private boolean validarCampos() {
         if (EntradaLoginCadjTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo login é obrigatório.");
@@ -45,27 +45,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         if (SenhajTextField1.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "O campo Senha é obrigatório.");
         }
-        if (!CienciaESociedadejCheckBox1.isSelected() &&
-        !SustentabilidadejCheckBox2.isSelected() &&
-        !TecnologiajCheckBox3.isSelected()) {
-        JOptionPane.showMessageDialog(this, "Selecione pelo menos um Tipo de Livro Favorito.");
-        return false; // Impede o salvamento se nenhuma checkbox estiver selecionada
-        }
-
-        int selectedCount = 0;
-        if (CienciaESociedadejCheckBox1.isSelected()) {
-            selectedCount++;
-        }
-        if (SustentabilidadejCheckBox2.isSelected()) {
-        selectedCount++;
-        }
-        if (TecnologiajCheckBox3.isSelected()) {
-        selectedCount++;
-        }
-
-        if (selectedCount > 2) { // Alterado de '== 3' para '> 2' para ser mais robusto caso adicione mais no futuro
-        JOptionPane.showMessageDialog(this, "Selecione no máximo dois Tipos de Livro Favorito.");
-        return false; // Impede o salvamento se mais de duas checkbox estiverem selecionadas
+        if (favoritoDoisjComboBox.getSelectedItem() == "Selecione..." && favoritoUmjComboBox2.getSelectedItem() == "Selecione...") {
+            JOptionPane.showMessageDialog(this, "Selecione pelomenos um tipo de livro");
         }
 
         try {
@@ -74,7 +55,6 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "O campo idade deve ser um número.");
             return false;
         }
-
         return true;
     }
 
@@ -89,17 +69,14 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         TipoUsuariojLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         TipoLivrojLabel1 = new javax.swing.JLabel();
-        CienciaESociedadejCheckBox1 = new javax.swing.JCheckBox();
-        SustentabilidadejCheckBox2 = new javax.swing.JCheckBox();
-        TecnologiajCheckBox3 = new javax.swing.JCheckBox();
         SalvarUsuariojButton1 = new javax.swing.JButton();
         CancelarUsuariojButton2 = new javax.swing.JButton();
         LoginjLabel1 = new javax.swing.JLabel();
         EntradaLoginCadjTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         SenhajTextField1 = new javax.swing.JTextField();
+        favoritoDoisjComboBox = new javax.swing.JComboBox<>();
         favoritoUmjComboBox2 = new javax.swing.JComboBox<>();
-        favoritoDoisjComboBox2 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(31, 79, 144));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -143,33 +120,6 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         TipoLivrojLabel1.setForeground(new java.awt.Color(255, 255, 255));
         TipoLivrojLabel1.setText("Tipos de Livros Favoritos");
 
-        CienciaESociedadejCheckBox1.setFont(new java.awt.Font("SansSerif", 0, 8)); // NOI18N
-        CienciaESociedadejCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        CienciaESociedadejCheckBox1.setText("Ciência e sociedade");
-        CienciaESociedadejCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CienciaESociedadejCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        SustentabilidadejCheckBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        SustentabilidadejCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
-        SustentabilidadejCheckBox2.setText("Sustentabilidade");
-        SustentabilidadejCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SustentabilidadejCheckBox2ActionPerformed(evt);
-            }
-        });
-
-        TecnologiajCheckBox3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        TecnologiajCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
-        TecnologiajCheckBox3.setText("Tecnologia");
-        TecnologiajCheckBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TecnologiajCheckBox3ActionPerformed(evt);
-            }
-        });
-
         SalvarUsuariojButton1.setBackground(new java.awt.Color(87, 176, 109));
         SalvarUsuariojButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         SalvarUsuariojButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,6 +157,14 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
         SenhajTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
 
+        favoritoDoisjComboBox.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        favoritoDoisjComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
+        favoritoDoisjComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                favoritoDoisjComboBoxActionPerformed(evt);
+            }
+        });
+
         favoritoUmjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         favoritoUmjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
         favoritoUmjComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -214,9 +172,6 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                 favoritoUmjComboBox2ActionPerformed(evt);
             }
         });
-
-        favoritoDoisjComboBox2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        favoritoDoisjComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Cinema e Fotografia", "Autoajuda", "Aventura", "Ciência e Sociedade", "Direito", "Fantasia", "Filosofia", "História", "Poesia", "Política", "Romance", "Sustentabilidade", "Tecnologia", "Terror", "Turismo e Viagem" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -241,8 +196,8 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(favoritoDoisjComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(favoritoUmjComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(favoritoDoisjComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(LoginjLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TipoLivrojLabel1)
                                     .addComponent(SenhajTextField1)
@@ -250,11 +205,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                                         .addComponent(CancelarUsuariojButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(23, 23, 23)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(85, 85, 85)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(CienciaESociedadejCheckBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                            .addComponent(SustentabilidadejCheckBox2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TecnologiajCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(117, 117, 117))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(EntradaNomejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -267,9 +218,7 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CienciaESociedadejCheckBox1)
-                            .addComponent(CancelarUsuariojButton2)))
+                        .addComponent(CancelarUsuariojButton2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -299,19 +248,15 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(TipoLivrojLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(favoritoDoisjComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(favoritoUmjComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(favoritoUmjComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(favoritoDoisjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(62, 62, 62)
                         .addComponent(SalvarUsuariojButton1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SustentabilidadejCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TecnologiajCheckBox3))
+                .addGap(52, 52, 52))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-   
     private void EntradaNomejTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaNomejTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EntradaNomejTextField1ActionPerformed
@@ -332,62 +277,101 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         if (!validarCampos()) {
             return;
         }
+
+        int idUsuarioLogado = Sessao.getIdUsuario();
+
         String nomeDoUsuario = EntradaNomejTextField1.getText().trim();
         int idadeDoUsuario = Integer.parseInt(EntradaIdadejTextField1.getText().trim());
         String loginDoUsuario = EntradaLoginCadjTextField1.getText().trim();
         String SenhaDoUsuario = SenhajTextField1.getText().trim();
         Boolean usuarioAdministrador = jComboBox1.getSelectedItem().equals("Usuário Administrador");
 
-        java.util.List<Integer> tiposSelecionados = new java.util.ArrayList<>();
-
-        if (SustentabilidadejCheckBox2.isSelected()) {
-            tiposSelecionados.add(1);
-        }
-        if (CienciaESociedadejCheckBox1.isSelected()) {
-            tiposSelecionados.add(2);
-        }
-        if (TecnologiajCheckBox3.isSelected()) {
-            tiposSelecionados.add(3);
-        }
-
-//        int tipo1 = 0;
-//        int tipo2 = 0;
-//
-//        tipo1 = tiposSelecionados.size() > 0 ? tiposSelecionados.get(0) : 0;
-//        tipo2 = tiposSelecionados.size() > 1 ? tiposSelecionados.get(1) : 0;
+        int tipo1 = 0;
+        int tipo2 = 0; 
         
-        // 1) coleta checkboxes
-    List<Integer> tipos = new ArrayList<>();
-    if (SustentabilidadejCheckBox2.isSelected()) tipos.add(1);
-    if (CienciaESociedadejCheckBox1.isSelected()) tipos.add(2);
-    if (TecnologiajCheckBox3.isSelected())         tipos.add(3);
-
-    // 2) valida que haja ao menos 1 e no máximo 2
-    if (tipos.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Selecione pelo menos um tipo de livro.");
-        return;
-    }
-    if (tipos.size() > 2) {
-        JOptionPane.showMessageDialog(this, "Selecione no máximo dois tipos de livro.");
-        return;
-    }
-
-    // 3) define tipo1 e tipo2
-    int tipo1 = tipos.get(0);
-    // se não tiver segundo, duplica o primeiro
-    int tipo2 = (tipos.size() > 1) ? tipos.get(1) : tipo1;
+        if (favoritoUmjComboBox2.getSelectedItem().equals("Cinema e Fotografia")) {
+            tipo1 = 1;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Autoajuda")) {
+            tipo1 = 2;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Aventura")) {
+            tipo1 = 3;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Ciência e Sociedade")) {
+            tipo1 = 4;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Direito")) {
+            tipo1 = 5;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Fantasia")) {
+            tipo1 = 6;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Filosofia")) {
+            tipo1 = 7;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("História")) {
+            tipo1 = 8;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Poesia")) {
+            tipo1 = 9;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Política")) {
+            tipo1 = 10;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Romance")) {
+            tipo1 = 11;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Sustentabilidade")) {
+            tipo1 = 12;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Tecnologia")) {
+            tipo1 = 13;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Terror")) {
+            tipo1 = 14;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Turismo e Viagem")) {
+            tipo1 = 15;
+        } else if (favoritoUmjComboBox2.getSelectedItem().equals("Selecione...")){
+            tipo1 = 16;
+        }
+        
+        if (favoritoDoisjComboBox.getSelectedItem().equals("Cinema e Fotografia")) {
+            tipo2 = 1;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Autoajuda")) {
+            tipo2 = 2;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Aventura")) {
+            tipo2 = 3;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Ciência e Sociedade")) {
+            tipo2 = 4;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Direito")) {
+            tipo2 = 5;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Fantasia")) {
+            tipo2 = 6;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Filosofia")) {
+            tipo2 = 7;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("História")) {
+            tipo2 = 8;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Poesia")) {
+            tipo2 = 9;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Política")) {
+            tipo2 = 10;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Romance")) {
+            tipo2 = 11;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Sustentabilidade")) {
+            tipo2 = 12;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Tecnologia")) {
+            tipo2 = 13;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Terror")) {
+            tipo2 = 14;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Turismo e Viagem")) {
+            tipo2 = 15;
+        } else if (favoritoDoisjComboBox.getSelectedItem().equals("Selecione...")){
+            tipo2 = 16;
+        }
+        
+        if (tipo1 == 0 || tipo2 == 0){
+            JOptionPane.showMessageDialog(this, "como voce conseguiu fazer isso, coloque alguma coisa");
+        }
 
         Users usuario = new Users(0, nomeDoUsuario, idadeDoUsuario, usuarioAdministrador, loginDoUsuario, SenhaDoUsuario, tipo1, tipo2);
         UsuarioDAO usDAO = new UsuarioDAO();
 
-    try {
-        usDAO.inserir(usuario);
-        JOptionPane.showMessageDialog(this, "Usuario Cadastrado com sucesso!!!");
-        limparCampos(); 
-        app.getCardLayout().show(app.getContainer(), "Admin");
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Erro ao cadastrar Usuario. \n erro: " + e.getMessage());
-    }
+        try {
+            usDAO.inserir(usuario);
+            JOptionPane.showMessageDialog(this, "Usuario Cadastrado com sucesso!!!");
+            limparCampos();
+            app.getCardLayout().show(app.getContainer(), "Admin");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Erro ao cadastrar Usuario. \n erro: " + e.getMessage());
+        }
 
     }//GEN-LAST:event_SalvarUsuariojButton1ActionPerformed
 
@@ -395,17 +379,9 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
         app.getCardLayout().show(app.getContainer(), "Admin");
     }//GEN-LAST:event_CancelarUsuariojButton2ActionPerformed
 
-    private void TecnologiajCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TecnologiajCheckBox3ActionPerformed
+    private void favoritoDoisjComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoritoDoisjComboBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TecnologiajCheckBox3ActionPerformed
-
-    private void SustentabilidadejCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SustentabilidadejCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SustentabilidadejCheckBox2ActionPerformed
-
-    private void CienciaESociedadejCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CienciaESociedadejCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CienciaESociedadejCheckBox1ActionPerformed
+    }//GEN-LAST:event_favoritoDoisjComboBoxActionPerformed
 
     private void favoritoUmjComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoritoUmjComboBox2ActionPerformed
         // TODO add your handling code here:
@@ -413,7 +389,6 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelarUsuariojButton2;
-    private javax.swing.JCheckBox CienciaESociedadejCheckBox1;
     private javax.swing.JTextField EntradaIdadejTextField1;
     private javax.swing.JTextField EntradaLoginCadjTextField1;
     private javax.swing.JTextField EntradaNomejTextField1;
@@ -422,11 +397,9 @@ public class CadastroUsuarioLJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel NomejLabel1;
     private javax.swing.JButton SalvarUsuariojButton1;
     private javax.swing.JTextField SenhajTextField1;
-    private javax.swing.JCheckBox SustentabilidadejCheckBox2;
-    private javax.swing.JCheckBox TecnologiajCheckBox3;
     private javax.swing.JLabel TipoLivrojLabel1;
     private javax.swing.JLabel TipoUsuariojLabel1;
-    private javax.swing.JComboBox<String> favoritoDoisjComboBox2;
+    private javax.swing.JComboBox<String> favoritoDoisjComboBox;
     private javax.swing.JComboBox<String> favoritoUmjComboBox2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

@@ -127,7 +127,6 @@ public class AdminJPanel extends javax.swing.JPanel {
 
     private void VisalizarUsuariojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisalizarUsuariojButton2ActionPerformed
         app.getConsultarUsuariosJPanel().carregarUsuariosNaTabela();
-        
         app.getCardLayout().show(app.getContainer(), "ConsultUsuario");
 
     }//GEN-LAST:event_VisalizarUsuariojButton2ActionPerformed

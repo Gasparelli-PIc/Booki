@@ -39,7 +39,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
     // Método para carregar os usuários na tabela
     public void carregarUsuariosNaTabela() {
         UsuarioDAO dao = new UsuarioDAO();
-        TipoLivroDAO tipoDao = new TipoLivroDAO(); // <-- Instância para buscar nomes
+        TipoLivroDAO tipoDao = new TipoLivroDAO(); 
 
         List<Users> usuarios = dao.listarTodos();
 

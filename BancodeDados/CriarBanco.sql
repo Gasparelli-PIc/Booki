@@ -4,7 +4,7 @@ USE projeto_a3;
 
 CREATE TABLE tipoLivro (
 id INT PRIMARY KEY AUTO_INCREMENT,
-tipo VARCHAR(50) NOT NULL
+tipo VARCHAR(50)
 );
 
 CREATE TABLE users (
@@ -31,7 +31,6 @@ FOREIGN KEY (idTipo) REFERENCES tipoLivro (id)
 );
 
 INSERT INTO tipoLivro (tipo) VALUES
-('Arte'),
 ('Cinema e Fotografia'),
 ('Autoajuda'),
 ('Aventura'),
@@ -46,6 +45,7 @@ INSERT INTO tipoLivro (tipo) VALUES
 ('Sustentabilidade'),
 ('Tecnologia'),
 ('Terror'),
-('Turismo e Viagem');
+('Turismo e Viagem'),
+('');
 
 INSERT INTO users(nome, idade, administrador, login, senha, tipoPreferido1, tipoPreferido2) VALUES ("administrador", 0, TRUE, "admin", "admin", 1, 1 );

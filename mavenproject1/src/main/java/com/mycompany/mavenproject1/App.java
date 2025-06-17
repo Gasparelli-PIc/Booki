@@ -44,7 +44,7 @@ public class App extends JFrame {
         // Instanciar os painéis (telas), passando this (referência do App)
         LoginTelaPanel login = new LoginTelaPanel(this);
         AdminJPanel admin = new AdminJPanel(this);
-        cadLivro = new CadastroLivroJPanel(this);     // <-- Altere aqui
+        cadLivro = new CadastroLivroJPanel(this);     
         cadUsuario = new CadastroUsuarioLJPanel(this);
         consultUsuario = new ConsultarUsuariosJPanel();
         consultUsuario.setApp(this);
