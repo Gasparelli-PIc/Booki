@@ -18,6 +18,7 @@ public class ConsultarUsuariosJPanel extends javax.swing.JPanel {
         initComponents();
         carregarUsuariosNaTabela();
         
+        //apaga a primeira colina 
         ConsultarUsuariosjTable1.getColumnModel().getColumn(0).setMinWidth(0);
         ConsultarUsuariosjTable1.getColumnModel().getColumn(0).setMaxWidth(0);
         ConsultarUsuariosjTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
