@@ -11,6 +11,10 @@ package com.mycompany.mavenproject1;
 public class Sessao {
     
     private static int idUsuario;
+    
+    public static void logout(){
+        idUsuario = 0;
+    }
 
     public static void setIdUsuario(int id) {
         idUsuario = id;

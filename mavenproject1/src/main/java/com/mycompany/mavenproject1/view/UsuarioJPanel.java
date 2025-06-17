@@ -5,6 +5,7 @@ package com.mycompany.mavenproject1.view;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.Sessao;
 
 public class UsuarioJPanel extends javax.swing.JPanel {
 
@@ -65,26 +66,31 @@ public class UsuarioJPanel extends javax.swing.JPanel {
         DeslogarjButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         DeslogarjButton1.setForeground(new java.awt.Color(255, 255, 255));
         DeslogarjButton1.setText("Deslogar");
+        DeslogarjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeslogarjButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(187, Short.MAX_VALUE)
-                .addComponent(BemVindojLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, 179))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 506, Short.MAX_VALUE)
                 .addComponent(DeslogarjButton1))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(179, 179, 179)
+                .addComponent(BemVindojLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(DeslogarjButton1)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BemVindojLabel2)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(31, 79, 144));
@@ -102,35 +108,37 @@ public class UsuarioJPanel extends javax.swing.JPanel {
 
         VisualizarTodosLivrosjButton1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         VisualizarTodosLivrosjButton1.setText("Visualizar todos Livros");
+        VisualizarTodosLivrosjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VisualizarTodosLivrosjButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(209, 209, 209)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(VisualizarLivrosjButton1)
-                    .addComponent(CadastrarLivrojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(VisualizarTodosLivrosjButton1)
-                .addGap(170, 170, 170))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(CadastrarLivrojButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(VisualizarLivrosjButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(VisualizarTodosLivrosjButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(VisualizarTodosLivrosjButton1)
-                .addGap(12, 12, 12)
-                .addComponent(CadastrarLivrojButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CadastrarLivrojButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(VisualizarLivrosjButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(VisualizarTodosLivrosjButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -144,6 +152,15 @@ public class UsuarioJPanel extends javax.swing.JPanel {
         app.getVisualizarLivrosJPanel().carregarLivros();
         app.getCardLayout().show(app.getContainer(), "VisLivro");
     }//GEN-LAST:event_VisualizarLivrosjButton1ActionPerformed
+
+    private void VisualizarTodosLivrosjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarTodosLivrosjButton1ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "visLivroTodos");
+    }//GEN-LAST:event_VisualizarTodosLivrosjButton1ActionPerformed
+
+    private void DeslogarjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeslogarjButton1ActionPerformed
+        Sessao.logout();
+        app.getCardLayout().show(app.getContainer(), "Login");
+    }//GEN-LAST:event_DeslogarjButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

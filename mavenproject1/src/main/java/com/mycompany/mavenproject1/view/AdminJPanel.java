@@ -4,6 +4,7 @@
  */
 package com.mycompany.mavenproject1.view;
 import com.mycompany.mavenproject1.App;
+import com.mycompany.mavenproject1.Sessao;
 import javax.swing.*;
 
 public class AdminJPanel extends javax.swing.JPanel {
@@ -34,7 +35,7 @@ public class AdminJPanel extends javax.swing.JPanel {
 
         setMinimumSize(new java.awt.Dimension(600, 400));
 
-        CadastrarUsuariosjButton1.setFont(new java.awt.Font("SansSerif", 3, 20)); // NOI18N
+        CadastrarUsuariosjButton1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         CadastrarUsuariosjButton1.setText("Cadastrar Usuários");
         CadastrarUsuariosjButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -42,7 +43,7 @@ public class AdminJPanel extends javax.swing.JPanel {
             }
         });
 
-        VisalizarUsuariojButton2.setFont(new java.awt.Font("SansSerif", 3, 20)); // NOI18N
+        VisalizarUsuariojButton2.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         VisalizarUsuariojButton2.setText("Visualizar Usuários");
         VisalizarUsuariojButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,6 +61,11 @@ public class AdminJPanel extends javax.swing.JPanel {
         deslogarjButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         deslogarjButton1.setForeground(new java.awt.Color(255, 255, 255));
         deslogarjButton1.setText("Deslogar");
+        deslogarjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deslogarjButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,23 +106,23 @@ public class AdminJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(VisalizarUsuariojButton2)
-                    .addComponent(CadastrarUsuariosjButton1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(CadastrarUsuariosjButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(VisalizarUsuariojButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(192, 192, 192))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(CadastrarUsuariosjButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(VisalizarUsuariojButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -130,6 +136,11 @@ public class AdminJPanel extends javax.swing.JPanel {
         app.getCardLayout().show(app.getContainer(), "ConsultUsuario");
 
     }//GEN-LAST:event_VisalizarUsuariojButton2ActionPerformed
+
+    private void deslogarjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deslogarjButton1ActionPerformed
+        Sessao.logout();
+        app.getCardLayout().show(app.getContainer(), "Login");        // TODO add your handling code here:
+    }//GEN-LAST:event_deslogarjButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

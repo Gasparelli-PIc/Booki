@@ -4,10 +4,18 @@
  */
 package com.mycompany.mavenproject1.view;
 
+import com.mycompany.mavenproject1.App;
+
 public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
-    /**
+    
+    private App app;
+    public VisualizarLivroTodosJPanel(App app) {
+    this.app = app;
+    initComponents();
+     /**
      * Creates new form VisualizarLivroTodosJPanel
      */
+    }
     public VisualizarLivroTodosJPanel() {
         initComponents();
     }
@@ -50,6 +58,11 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Sair");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         OrdenarjButton2.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         OrdenarjButton2.setText("Ordenar A-Z");
@@ -77,6 +90,10 @@ public class VisualizarLivroTodosJPanel extends javax.swing.JPanel {
                 .addContainerGap(41, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        app.getCardLayout().show(app.getContainer(), "Usuario");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

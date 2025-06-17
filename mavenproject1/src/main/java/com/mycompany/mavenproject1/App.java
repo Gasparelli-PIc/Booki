@@ -8,16 +8,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 
-import com.mycompany.mavenproject1.view.AdminJPanel;
-import com.mycompany.mavenproject1.view.CadastroLivroJPanel;
-import com.mycompany.mavenproject1.view.CadastroUsuarioLJPanel;
-import com.mycompany.mavenproject1.view.ConsultarUsuariosJPanel;
-import com.mycompany.mavenproject1.view.LoginTelaPanel;
-import com.mycompany.mavenproject1.view.UsuarioJPanel;
-import com.mycompany.mavenproject1.view.VisualizarLivrosJPanel;
-
-
-
+import com.mycompany.mavenproject1.view.*;
 
 public class App extends JFrame {
 
@@ -27,11 +18,12 @@ public class App extends JFrame {
     private ConsultarUsuariosJPanel consultUsuario;
     private VisualizarLivrosJPanel visLivro;
     private CadastroUsuarioLJPanel cadUsuario; // <-- Mude para variável de instância
-    private CadastroLivroJPanel cadLivro;     
+    private CadastroLivroJPanel cadLivro;   
+    private VisualizarLivroTodosJPanel visLivroTodos;
     
     public App() {
         // Configuração da janela
-        setTitle("Sistema de Compartilhamento de Leituras");
+        setTitle("Booki");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 450);
         setLocationRelativeTo(null);
@@ -44,13 +36,15 @@ public class App extends JFrame {
         // Instanciar os painéis (telas), passando this (referência do App)
         LoginTelaPanel login = new LoginTelaPanel(this);
         AdminJPanel admin = new AdminJPanel(this);
+        UsuarioJPanel usuario = new UsuarioJPanel(this);
         cadLivro = new CadastroLivroJPanel(this);     
         cadUsuario = new CadastroUsuarioLJPanel(this);
         consultUsuario = new ConsultarUsuariosJPanel();
-        consultUsuario.setApp(this);
-        UsuarioJPanel usuario = new UsuarioJPanel(this);
         visLivro = new VisualizarLivrosJPanel();
+        visLivroTodos = new VisualizarLivroTodosJPanel(this);
+        consultUsuario.setApp(this);
         visLivro.setApp(this);
+        
 
         // Adicionar os painéis no container com nomes para navegação
         container.add(login, "Login");
@@ -60,6 +54,7 @@ public class App extends JFrame {
         container.add(consultUsuario, "ConsultUsuario");
         container.add(usuario, "Usuario");
         container.add(visLivro, "VisLivro");
+        container.add(visLivroTodos, "visLivroTodos");
 
         setContentPane(container);
         setVisible(true);
