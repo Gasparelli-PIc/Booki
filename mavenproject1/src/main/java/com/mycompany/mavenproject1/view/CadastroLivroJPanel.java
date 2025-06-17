@@ -9,8 +9,6 @@ import javax.swing.JOptionPane;
 import com.mycompany.mavenproject1.*;
 import com.mycompany.mavenproject1.dao.LivrosLidosDAO;
 import com.mycompany.mavenproject1.model.LivrosLidos;
-import com.mycompany.mavenproject1.model.TipoLivro;
-import com.mycompany.mavenproject1.model.Users;
 
 public class CadastroLivroJPanel extends javax.swing.JPanel {
 

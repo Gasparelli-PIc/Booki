@@ -6,11 +6,6 @@ package com.mycompany.mavenproject1.view;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import java.util.Collections;
-import javax.swing.RowSorter;
-import javax.swing.SortOrder;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 
 import com.mycompany.mavenproject1.*;
 import com.mycompany.mavenproject1.dao.LivrosLidosDAO;
@@ -21,9 +16,7 @@ import com.mycompany.mavenproject1.model.TipoLivro;
 public class VisualizarLivrosJPanel extends javax.swing.JPanel {
     
     private App app;
-    /**
-     * Creates new form VisualizarLivrosJPanel
-     */
+
     public VisualizarLivrosJPanel() {
         initComponents();
         carregarLivros();

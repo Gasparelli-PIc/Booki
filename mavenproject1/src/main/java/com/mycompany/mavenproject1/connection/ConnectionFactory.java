@@ -4,10 +4,6 @@ package com.mycompany.mavenproject1.connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-/**
- *
- * @author Gabriel s.c
- */
 public class ConnectionFactory {
     private static final String host = "localhost";
     private static final String porta = "3306";

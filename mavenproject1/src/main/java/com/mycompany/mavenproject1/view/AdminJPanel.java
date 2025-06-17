@@ -5,7 +5,6 @@
 package com.mycompany.mavenproject1.view;
 import com.mycompany.mavenproject1.App;
 import com.mycompany.mavenproject1.Sessao;
-import javax.swing.*;
 
 public class AdminJPanel extends javax.swing.JPanel {
 

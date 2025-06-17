@@ -1,9 +1,5 @@
 package com.mycompany.mavenproject1.model;
 
-/**
- *
- * @author Marcelo
- */
 public class LivrosLidos {
 
     private int id;

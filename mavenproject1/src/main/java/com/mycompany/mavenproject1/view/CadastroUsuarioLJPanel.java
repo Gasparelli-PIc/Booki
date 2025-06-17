@@ -5,8 +5,6 @@
 package com.mycompany.mavenproject1.view;
 
 import javax.swing.JOptionPane;
-import java.util.List;
-import java.util.ArrayList;
 
 import com.mycompany.mavenproject1.App;
 import com.mycompany.mavenproject1.Sessao;

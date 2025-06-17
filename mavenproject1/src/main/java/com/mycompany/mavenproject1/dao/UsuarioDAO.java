@@ -4,11 +4,6 @@
  */
 package com.mycompany.mavenproject1.dao;
 
-/**
- *
- * @author Marcelo
- */
-
 import com.mycompany.mavenproject1.connection.ConnectionFactory;
 import com.mycompany.mavenproject1.model.Users;
 import java.sql.Connection;
