@@ -104,7 +104,7 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(600, 400));
 
         VisualizarLivrosjTable1.setAutoCreateRowSorter(true);
-        VisualizarLivrosjTable1.setBackground(new java.awt.Color(71, 119, 184));
+        VisualizarLivrosjTable1.setBackground(new java.awt.Color(255, 255, 255));
         VisualizarLivrosjTable1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         VisualizarLivrosjTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,6 +128,9 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        VisualizarLivrosjTable1.setMaximumSize(new java.awt.Dimension(560, 285));
+        VisualizarLivrosjTable1.setMinimumSize(new java.awt.Dimension(560, 285));
+        VisualizarLivrosjTable1.setPreferredSize(new java.awt.Dimension(560, 80));
         jScrollPane1.setViewportView(VisualizarLivrosjTable1);
 
         jButton1.setBackground(new java.awt.Color(212, 51, 51));
@@ -163,19 +166,24 @@ public class VisualizarLivrosJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(excluirjToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(excluirjToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(excluirjToggleButton1)
